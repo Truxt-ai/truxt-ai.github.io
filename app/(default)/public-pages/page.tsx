@@ -6,6 +6,7 @@ export const metadata = {
 import Image from 'next/image';
 import FeaturesPlanet from '@/components/features-planet';
 import Cta from '@/components/cta';
+import img from '@/public/images/public-pages-ui.png';
 
 interface Feature {
     title: string;
@@ -53,7 +54,7 @@ export default function Apps() {
             <Hero />
             <div className='mx-auto max-w-6xl px-4 sm:px-6'>
                 <div className='md:py-10'>
-                    <Image src="/images/public-pages-ui.png" alt="UI" width={500} height={500} />
+                    <Image src={img} alt="UI" width={500} height={500} />
                 </div>
             </div>
             <FeaturesPlanet title={'Features and Applications'} content={featureData} />

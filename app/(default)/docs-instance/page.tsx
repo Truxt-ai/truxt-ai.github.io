@@ -7,6 +7,7 @@ import Image from 'next/image';
 import FeaturesPlanet from '@/components/features-planet';
 import Cta from '@/components/cta';
 import { MessageSquare, Users, FolderOpen, Building, Sliders, Brain, LucideIcon } from 'lucide-react';
+import img2 from '@/public/images/docs-instance.png';
 
 
 interface Feature {
@@ -55,7 +56,7 @@ export default function Apps() {
             <div className='mx-auto max-w-6xl px-4 sm:px-6'>
                 <div className='md:py-10'>
                     <Image 
-                        src="/images/docs-instance.png" 
+                        src={img2} 
                         alt='Docs instance display' 
                         layout='responsive' 
                         width={400} 
