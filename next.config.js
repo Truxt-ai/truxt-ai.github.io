@@ -12,8 +12,8 @@ const nextConfig = {
   images: {
     domains: ['res.cloudinary.com','www.youtube.com'],
   },
-  basePath: '/',
-  assetPrefix: '/',
+  basePath: '',
+  assetPrefix: '',
   images: {
     unoptimized: true, // To support images for GitHub Pages
   },
