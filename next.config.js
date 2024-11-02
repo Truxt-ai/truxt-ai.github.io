@@ -12,8 +12,8 @@ const nextConfig = {
   images: {
     domains: ['res.cloudinary.com','www.youtube.com'],
   },
-  basePath: '/truxt-landing-page-next-js',
-  assetPrefix: '/truxt-landing-page-next-js/',
+  basePath: '/',
+  assetPrefix: '/',
   images: {
     unoptimized: true, // To support images for GitHub Pages
   },
