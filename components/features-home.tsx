@@ -3,6 +3,8 @@
 import Image from 'next/image';
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from '@/components/ui/carousel';
 import { Bot, Zap, UserCog, BarChart2, TrendingUp, Search, Link, Shield, Sliders, LucideIcon } from 'lucide-react';
+import img from '@/public/images/public-pages-ui.png';
+import img2 from '@/public/images/docs-instance.png';
 
 
 const icons: LucideIcon[] = [Bot, Zap, UserCog, BarChart2, TrendingUp, Search, Link, Shield, Sliders];
@@ -12,7 +14,7 @@ const carouselItems = [
         id: 1,
         title: 'Public Pages',
         image: {
-            src: '/images/public-pages-ui.png',
+            src: img,
             alt: 'AI Chatbot Interface',
             width: 800,
             height: 600
@@ -42,7 +44,7 @@ const carouselItems = [
         id: 2,
         title: 'Sandbox',
         image: {
-            src: '/images/public-pages-ui.png',
+            src: img,
             alt: 'Analytics Dashboard',
             width: 800,
             height: 600
@@ -72,7 +74,7 @@ const carouselItems = [
         id: 3,
         title: 'Docs Instance',
         image: {
-            src: '/images/docs-instance.png',
+            src: img2,
             alt: 'Integration Hub',
             width: 800,
             height: 600
@@ -115,7 +117,7 @@ export default function FeaturesHome() {
                                     <div className='p-6 md:p-10'>
                                         <h2 className='text-2xl font-bold mb-6 text-center'>{item.title}</h2>
                                         <div className='relative w-full aspect-video mb-8'>
-                                            <Image src={item.image.src} alt={item.image.alt} className='object-cover rounded-lg' priority />
+                                            <Image src={item.image.src} width={item.image.width} height={item.image.height} alt={item.image.alt} className='object-cover rounded-lg m-auto' priority />
                                         </div>
                                         <div className='grid gap-6 lg:grid-cols-3'>
                                             {item.features.map((feature) => {
