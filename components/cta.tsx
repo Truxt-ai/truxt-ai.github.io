@@ -18,10 +18,7 @@ export default function Cta() {
                         <h2 className='mb-6 border-y text-3xl font-bold text-gray-200 [border-image:linear-gradient(to_right,transparent,theme(colors.slate.700/.7),transparent)1] md:mb-12 md:text-4xl'>Supercharge your customer support with Generative AI</h2>
                         <div className='mx-auto max-w-xs sm:flex sm:max-w-none sm:justify-center'>
                             <a className='btn group mb-4 w-full bg-gradient-to-t from-blue-600 to-blue-500 bg-[length:100%_100%] bg-[bottom] text-white shadow hover:bg-[length:100%_150%] sm:mb-0 sm:w-auto' href='https://truxt.truxt.xyz/' target='_blank'>
-                                <span className='relative inline-flex items-center'>
-                                    See our demo
-                                    <span className='ml-1 tracking-normal text-blue-300 transition-transform group-hover:translate-x-0.5'>-&gt;</span>
-                                </span>
+                                <span className='relative inline-flex items-center'>Create your own playground</span>
                             </a>
                         </div>
                     </div>

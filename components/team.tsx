@@ -1,17 +1,7 @@
 import Image from 'next/image';
-import { StaticImageData } from 'next/image';
-import TeamMember01 from '@/public/images/team-member-01.jpg';
-import TeamMember02 from '@/public/images/team-member-02.jpg';
-import TeamMember03 from '@/public/images/team-member-03.jpg';
-import TeamMember04 from '@/public/images/team-member-04.jpg';
-import TeamMember05 from '@/public/images/team-member-05.jpg';
-import TeamMember06 from '@/public/images/team-member-06.jpg';
-import TeamMember07 from '@/public/images/team-member-07.jpg';
-import TeamMember08 from '@/public/images/team-member-08.jpg';
-import TeamMember09 from '@/public/images/team-member-09.jpg';
 
 type TeamMemberProps = {
-  image: StaticImageData;
+  image: string;
   name: string;
   role: string;
   description: string;
@@ -34,22 +24,17 @@ const TeamMember: React.FC<TeamMemberProps> = ({ image, name, role, description,
 
 const Team: React.FC = () => {
   const teamMembers = [
-    { image: TeamMember01, name: 'Naveen Kumar', role: 'CEO & Co-founder', description: 'Duis aute irure dolor in reprehenderit in voluptate velit esse cillum sint occaecat cupidatat.', delay: 0 },
-    { image: TeamMember02, name: 'Gourav Ghoshal', role: 'CTO & Co-founder', description: 'Duis aute irure dolor in reprehenderit in voluptate velit esse cillum sint occaecat cupidatat.', delay: 150 },
-    { image: TeamMember03, name: 'Ravi Verma', role: 'Community Manager', description: 'Duis aute irure dolor in reprehenderit in voluptate velit esse cillum sint occaecat cupidatat.', delay: 300 },
-    // { image: TeamMember04, name: 'Anthony McGargle', role: 'Lead Front-end Engineer', description: 'Duis aute irure dolor in reprehenderit in voluptate velit esse cillum sint occaecat cupidatat.', delay: 450 },
-    // { image: TeamMember05, name: 'Jessie Pietrasiak', role: 'Head of Design', description: 'Duis aute irure dolor in reprehenderit in voluptate velit esse cillum sint occaecat cupidatat.', delay: 600 },
-    // { image: TeamMember06, name: 'Marina Hoffman', role: 'Front-end Engineer', description: 'Duis aute irure dolor in reprehenderit in voluptate velit esse cillum sint occaecat cupidatat.', delay: 750 },
-    // { image: TeamMember07, name: 'Tamara Hastings', role: 'Product Developer', description: 'Duis aute irure dolor in reprehenderit in voluptate velit esse cillum sint occaecat cupidatat.', delay: 900 },
-    // { image: TeamMember08, name: 'Rachel Vervack', role: 'Senior Data Scientist', description: 'Duis aute irure dolor in reprehenderit in voluptate velit esse cillum sint occaecat cupidatat.', delay: 1050 },
-    // { image: TeamMember09, name: 'Andrew Laurencio', role: 'Front-end Engineer', description: 'Duis aute irure dolor in reprehenderit in voluptate velit esse cillum sint occaecat cupidatat.', delay: 1200 },
-  ];
+    { image: 'https://media.licdn.com/dms/image/v2/D4E03AQEEFapjHaLR9w/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1703351265781?e=2147483647&v=beta&t=g8VbnTPzR4FfCrv0ZXq8577asEgSZxjUgQqU22iEt3c', name: 'Naveen Kumar', role: 'CEO & Co-founder', description: 'Duis aute irure dolor in reprehenderit in voluptate velit esse cillum sint occaecat cupidatat.', delay: 0 },
+    { image: 'https://avatars.githubusercontent.com/u/57912157?v=4', name: 'Gourav Ghoshal', role: 'Software Engineer', description: 'Duis aute irure dolor in reprehenderit in voluptate velit esse cillum sint occaecat cupidatat.', delay: 150 },
+    { image: 'https://media.licdn.com/dms/image/v2/C4E03AQFI5FEwYwZBAw/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1659542006451?e=1736380800&v=beta&t=X9Gb1atM9hyXdmj9XyBkymYYBBBF0RMsL980GJrHrfI', name: 'Ravi Verma', role: 'Software Engineer', description: 'Duis aute irure dolor in reprehenderit in voluptate velit esse cillum sint occaecat cupidatat.', delay: 300 },
+    { image: 'https://avatars.githubusercontent.com/u/94908262?v=4', name: 'Pratham Saxena', role: 'Software Engineer', description: 'Duis aute irure dolor in reprehenderit in voluptate velit esse cillum sint occaecat cupidatat.', delay: 350 },
+   ];
 
   return (
     <section className="bg-gradient-to-b from-gray-100 to-white border-t border-gray-200">
       <div className="max-w-6xl mx-auto px-4 sm:px-6">
         <div className="py-12 md:py-20">
-          <div className="max-w-sm sm:max-w-5xl sm:flex sm:flex-wrap sm:justify-center justify-center -my-6 sm:-my-8 sm:-mx-3 mx-auto" data-aos-id-team>
+          <div className="max-w-sm sm:max-w-5xl sm:flex sm:flex-wrap sm:-my-8 m-auto" data-aos-id-team>
             {teamMembers.map((member, index) => (
               <TeamMember key={index} {...member} />
             ))}
