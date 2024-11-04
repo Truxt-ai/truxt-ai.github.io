@@ -10,7 +10,7 @@ import FeaturesPlanet from "@/components/features-planet";
 import Features from "@/components/features-home";
 import Cta from "@/components/cta";
 
-import { Gauge, Settings, Blocks, Fingerprint, CheckCircle, BarChart, LucideIcon } from 'lucide-react'
+import { Fingerprint, CheckCircle, BarChart, LucideIcon } from 'lucide-react'
 
 interface Feature {
   title: string
@@ -20,43 +20,28 @@ interface Feature {
 
 const featureData: Feature[] = [
   {
-    title: "Speed",
-    description: "Point out the efficiency and fast response times your AI tool offers. Instant query resolution leads to enhanced productivity, enabling teams to make decisions quickly and stay agile in dynamic business environments.",
-    icon: Gauge
-  },
-  {
-    title: "Scalability",
-    description: "Emphasize the ability of your AI to handle large volumes of queries seamlessly, supporting fast-growing teams by scaling from hundreds to hundreds of thousands of requests per month without compromising performance.",
-    icon: BarChart
-  },
-  {
-    title: "Customization",
-    description: "Talk about how your generative AI tool can be tailored to specific business needs. Whether it's adapting to unique industry data or integrating seamlessly with existing workflows, your AI solution is flexible and personalized.",
-    icon: Settings
-  },
-  {
-    title: "Integration",
-    description: "Highlight the tool's ease of integration with existing systems and platforms, ensuring smooth adoption without disrupting operations. Your AI can work alongside popular collaboration tools, CRM platforms, and databases, offering a frictionless experience.",
-    icon: Blocks
+    title: "Accuracy",
+    description: "Truxt combines its deep expertise in Customer Experience with advanced GenAI to deliver superior accuracy. Our Pre-trained GenAI Platform comprehensively analyzes various knowledge bases, providing precise understanding of customer inquiries for relevant and accurate responses. This enhances customer satisfaction and trust in our automated solutions.",
+    icon: CheckCircle
   },
   {
     title: "Security",
-    description: "Discuss the robust security measures your AI platform incorporates, including data encryption, secure sandbox environments, and access controls, ensuring sensitive information remains protected while maintaining compliance with industry standards.",
+    description: "We are committed to data security. 'Your organization's data stays within your boundaries, ensuring absolute confidentiality and control.' We implement stringent data protection measures to securely manage organizational data, protecting sensitive customer and business information within the enterprise.",
     icon: Fingerprint
   },
   {
-    title: "Accuracy",
-    description: "Highlight how your AI tool delivers precise and contextually relevant responses, reducing errors and improving decision-making. Showcase the quality of AI-driven insights that ensure teams get the right answers consistently.",
-    icon: CheckCircle
-  }
+    title: "Scalability",
+    description: "Truxt's AI workforce operates 24/7, eliminating wait times and staffing issues. Our highly scalable platform efficiently manages growing support volumes, maintaining quality while being cost-effective. This makes it an ideal choice for growing businesses seeking dependable, scalable customer support solutions.",
+    icon: BarChart
+  },
 ]
 
 export default function Home() {
   return (
     <>
       <Hero />
-      <BusinessCategories />
       <LargeTestimonial />
+      <BusinessCategories />
       <FeaturesPlanet title="Truxt helps your team to work efficiently" content={featureData}/>
       <Features />
       <Cta />

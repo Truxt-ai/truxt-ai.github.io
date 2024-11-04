@@ -108,6 +108,7 @@ export default function FeaturesHome() {
             <div className='absolute left-1/2 top-0 -z-10 -translate-x-1/2 -translate-y-1/2' aria-hidden='true'>
                 <div className='h-80 w-80 rounded-full bg-gradient-to-tr from-primary to-secondary opacity-40 blur-[160px] will-change-[filter]' />
             </div>
+            <h2 className='text-5xl text-center'>Our Products</h2>
             <div className='mx-auto max-w-6xl px-4 sm:px-6'>
                 <Carousel className='w-full'>
                     <CarouselContent>
@@ -115,10 +116,10 @@ export default function FeaturesHome() {
                             <CarouselItem key={item.id}>
                                 <div className='rounded-lg overflow-hidden'>
                                     <div className='p-6 md:p-10'>
-                                        <h2 className='text-2xl font-bold mb-6 text-center'>{item.title}</h2>
                                         <div className='relative w-full aspect-video mb-8'>
                                             <Image src={item.image.src} width={item.image.width} height={item.image.height} alt={item.image.alt} className='object-cover rounded-lg m-auto' priority />
                                         </div>
+                                        <h2 className='text-2xl font-bold mb-6 text-center'>{item.title}</h2>
                                         <div className='grid gap-6 lg:grid-cols-3'>
                                             {item.features.map((feature) => {
                                                 const IconComponent = icons[feature.iconIndex];

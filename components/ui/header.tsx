@@ -3,7 +3,6 @@ import Link from 'next/link';
 import MobileMenu from './mobile-menu';
 import Dropdown from '../dropdown';
 
-// Define types for our navigation items
 type NavItem = {
     title: string;
     href: string;
@@ -16,44 +15,39 @@ type DropdownItem = {
 
 type NavItems = (NavItem | DropdownItem)[];
 
-// JSON structure for navigation items
 const navigationData: NavItems = [
-    // {
-    //     title: 'Docs',
-    //     href: '/documentation'
-    // },
-    // {
-    //     title: 'Integrations',
-    //     href: '/integrations'
-    // },
     {
-        title: 'Public Pages',
-        href: '/public-pages'
+        title: 'Products',
+        items: [
+            { title: 'Public Pages', href: '/public-pages' },
+            { title: 'Sandbox', href: '/sandbox' },
+            { title: 'Docs Instance', href: '/docs-instance' }
+        ]
     },
     {
-        title: 'Sandbox',
-        href: '/sandbox'
+        title: 'Playground',
+        href: '/playground'
     },
     {
-        title: 'Docs Instance',
-        href: '/docs-instance'
-    },
-
-    // {
-    //     title: 'Products',
-    //     items: [
-    //         { title: 'Public Pages', href: '/public-pages' },
-    //         { title: 'Sandbox', href: '/sandbox' },
-    //         { title: 'Docs Instance', href: '/docs-instance' }
-    //     ]
-    // },
-    {
-        title: 'Team',
-        href: '/team'
+        title: 'Resources',
+        items: [
+            { title: 'Blogs', href: '/blogs' },
+            { title: 'Docs', href: '/docs' },
+            { title: 'FAQ', href: '/faq' }
+        ]
     },
     {
-        title: 'FAQ',
-        href: '/faq'
+        title: 'Pricing',
+        href: '/pricing'
+    },
+    {
+        title: 'Company',
+        items: [
+            { title: 'About Truxt', href: '/about' },
+            { title: 'Team', href: '/team' },
+            { title: 'Contact Us', href: '/contact-us' },
+            // { title: 'Career', href: '/career' }
+        ]
     }
 ];
 
@@ -61,17 +55,16 @@ export default function Header() {
     return (
         <header className='fixed top-2 z-30 w-full md:top-6'>
             <div className='mx-auto max-w-6xl px-4 sm:px-6'>
-                <div className='relative flex h-14 items-center justify-between gap-3 rounded-2xl bg-white/90 px-3 shadow-lg shadow-black/[0.03] backdrop-blur-sm before:pointer-events-none before:absolute before:inset-0 before:rounded-[inherit] before:border before:border-transparent before:[background:linear-gradient(theme(colors.gray.100),theme(colors.gray.200))_border-box] before:[mask-composite:exclude_!important] before:[mask:linear-gradient(white_0_0)_padding-box,_linear-gradient(white_0_0)]'>
+                <div className='relative flex h-14 items-center justify-between gap-3 rounded-2xl bg-white/90 px-3 shadow-lg shadow-black/[0.03] backdrop-blur-sm'>
                     {/* Site branding */}
                     <div className='flex flex-1 items-center'>
-                        <Link href='/'>
-                            <img src={'https://res.cloudinary.com/dqumxmkt7/image/upload/v1729240685/t2wtznrhjqi5yffsoacv.webp'} alt='Truxt' width={32} height={32} />
+                        <Link href='/' className='flex items-center gap-2'>
+                            <img src='https://res.cloudinary.com/dqumxmkt7/image/upload/v1729240685/t2wtznrhjqi5yffsoacv.webp' alt='Truxt' width={32} height={32} />
+                            <h2>Truxt</h2>
                         </Link>
                     </div>
 
-                    {/* Desktop navigation */}
-                    <nav className='hidden md:flex md:grow'>
-                        {/* Desktop menu links */}
+                    <nav className='hidden md:flex items-center md:grow'>
                         <ul className='flex grow flex-wrap items-center justify-center gap-4 text-sm lg:gap-8'>
                             {navigationData.map((item, index) => (
                                 <li key={index} className='px-3 py-1'>

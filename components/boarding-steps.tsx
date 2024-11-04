@@ -14,7 +14,7 @@ interface Step {
 const steps: Step[] = [
     {
         id: 1,
-        title: 'Register over Truxt',
+        title: 'Register',
         description: "Create your account and set up your organization's profile",
         icon: UserCog
     },
@@ -26,7 +26,7 @@ const steps: Step[] = [
     },
     {
         id: 3,
-        title: 'Start using Truxt',
+        title: 'Start query',
         description: 'Begin leveraging AI-powered support automation',
         icon: Wand
     }
