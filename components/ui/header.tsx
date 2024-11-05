@@ -65,7 +65,7 @@ export default function Header() {
                     <div className='flex flex-1 items-center'>
                         <Link href='/' className='flex items-center gap-2'>
                             <img src='https://res.cloudinary.com/dqumxmkt7/image/upload/v1729240685/t2wtznrhjqi5yffsoacv.webp' alt='Truxt' width={32} height={32} />
-                            <h2 className='text-xl'>Truxt</h2>
+                            <h2 className='text-2xl'>Truxt</h2>
                         </Link>
                     </div>
 

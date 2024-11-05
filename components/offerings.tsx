@@ -33,9 +33,9 @@ function Offerings() {
     ];
     return (
         <div className='bg-gradient-to-b from-gray-100 to-white border-t border-gray-200 p-6 flex flex-col justify-center items-center'>
-            <h1 className='text-3xl font-bold text-gray-900 mb-3'>Our Offerings</h1>
+            <h1 className='text-3xl font-bold text-gray-900 mb-3 uppercase'>Our Offerings</h1>
             <p className='text-lg text-gray-700'>Discover how Truxt can revolutionize your organization's knowledge management and customer support</p>
-            <div className='mx-auto flex max-w-5xl justify-center gap-6 py-12'>
+            <div className='mx-auto flex max-w-7xl justify-center gap-6 py-12'>
                 {offerings.map((offering, index) => (
                     <Card key={index} className='w-full overflow-hidden transition-all duration-300 ease-in-out hover:shadow-lg dark:hover:shadow-primary/20'>
                         <CardHeader className='p-6'>
