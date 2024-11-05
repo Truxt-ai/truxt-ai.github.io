@@ -1,11 +1,12 @@
 import React from 'react'
+import Hero from '../customers/hero';
 
 function Page() {
   return (
     <div>
-        <h1>End 2 End Gen AI</h1>
+        <Hero/>
     </div>
-  )
+)
 }
 
 export default Page;
