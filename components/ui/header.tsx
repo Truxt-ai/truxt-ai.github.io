@@ -27,7 +27,7 @@ const navigationData: NavItems = [
     },
     {
         title: 'DevOps GPT',
-        href: '/'
+        href: '/devops-gpt'
     },
     {
         title: 'Playground',
