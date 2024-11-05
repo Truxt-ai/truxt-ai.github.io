@@ -18,15 +18,24 @@ type NavItems = (NavItem | DropdownItem)[];
 const navigationData: NavItems = [
     {
         title: 'Products',
-        items: [
-            { title: 'Public Pages', href: '/public-pages' },
-            { title: 'Sandbox', href: '/sandbox' },
-            { title: 'Docs Instance', href: '/docs-instance' }
-        ]
+        // items: [
+        //     { title: 'End2End Customer Support in Gen AI', href: '/public-pages' },
+        //     { title: 'Truxt Gen AI Platform', href: '/sandbox' },
+        //     { title: 'DevOps GPT', href: '/docs-instance' }
+        // ]
+        href:'/'
+    },
+    {
+        title: 'DevOps GPT',
+        href: '/'
     },
     {
         title: 'Playground',
         href: '/playground'
+    },
+    {
+        title: 'Pricing',
+        href: '/pricing'
     },
     {
         title: 'Resources',
@@ -37,15 +46,11 @@ const navigationData: NavItems = [
         ]
     },
     {
-        title: 'Pricing',
-        href: '/pricing'
-    },
-    {
         title: 'Company',
         items: [
             { title: 'About Truxt', href: '/about' },
             { title: 'Team', href: '/team' },
-            { title: 'Contact Us', href: '/contact-us' },
+            { title: 'Contact Us', href: '/contact-us' }
             // { title: 'Career', href: '/career' }
         ]
     }
@@ -60,7 +65,7 @@ export default function Header() {
                     <div className='flex flex-1 items-center'>
                         <Link href='/' className='flex items-center gap-2'>
                             <img src='https://res.cloudinary.com/dqumxmkt7/image/upload/v1729240685/t2wtznrhjqi5yffsoacv.webp' alt='Truxt' width={32} height={32} />
-                            <h2>Truxt</h2>
+                            <h2 className='text-xl'>Truxt</h2>
                         </Link>
                     </div>
 
@@ -71,12 +76,14 @@ export default function Header() {
                                     {'href' in item ? (
                                         <Link href={item.href} className='flex items-center text-gray-700 transition hover:text-gray-900'>
                                             {item.title}
+                                            {item.title === 'DevOps GPT' ?
+                                             <div className='relative left-1 bottom-2 bg-gradient-to-tr from-blue-600 to-blue-300 px-2 text-xs text-white'>New</div> : null}
                                         </Link>
                                     ) : (
                                         <Dropdown title={item.title}>
                                             {item.items.map((subItem, subIndex) => (
-                                                <li key={subIndex}>
-                                                    <Link href={subItem.href} className='flex rounded-lg px-2 py-1.5 text-sm text-gray-700 hover:bg-gray-100'>
+                                                <li key={subIndex} className=''>
+                                                    <Link href={subItem.href} className='flex rounded-lg px-2 py-1.5 text-sm text-gray-700 hover:bg-gray-100 whitespace-nowrap'>
                                                         {subItem.title}
                                                     </Link>
                                                 </li>

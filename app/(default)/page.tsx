@@ -9,8 +9,10 @@ import LargeTestimonial from "@/components/large-testimonial";
 import FeaturesPlanet from "@/components/features-planet";
 import Features from "@/components/features-home";
 import Cta from "@/components/cta";
+import Offerings from "@/components/offerings";
 
 import { Fingerprint, CheckCircle, BarChart, LucideIcon } from 'lucide-react'
+import WhyTruxt from "@/components/why-truxt";
 
 interface Feature {
   title: string
@@ -42,8 +44,10 @@ export default function Home() {
       <Hero />
       <LargeTestimonial />
       <BusinessCategories />
+      <Offerings/>
       <FeaturesPlanet title="Truxt helps your team to work efficiently" content={featureData}/>
-      <Features />
+      <WhyTruxt/>
+      {/* <Features /> */}
       <Cta />
     </>
   );

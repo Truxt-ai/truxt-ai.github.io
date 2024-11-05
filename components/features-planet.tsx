@@ -16,8 +16,8 @@ export default function FeaturesPlanet({ title, content }: FeaturesPlanetProps) 
     return (
         <section className='relative before:absolute before:inset-0 before:-z-20 before:bg-gray-900'>
             <div className='mx-auto max-w-6xl px-4 sm:px-6'>
-                <div className='py-12 md:py-20'>
-                    <div className='mx-auto max-w-3xl pb-16 text-center md:pb-20'>
+                <div className='py-6 md:py-10'>
+                    <div className='mx-auto max-w-3xl pb-6 text-center md:pb-10'>
                         <h2 className='text-3xl font-bold text-gray-200 md:text-4xl'>{title}</h2>
                     </div>
 
