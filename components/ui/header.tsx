@@ -18,12 +18,7 @@ type NavItems = (NavItem | DropdownItem)[];
 const navigationData: NavItems = [
     {
         title: 'Products',
-        // items: [
-        //     { title: 'End2End Customer Support in Gen AI', href: '/public-pages' },
-        //     { title: 'Truxt Gen AI Platform', href: '/sandbox' },
-        //     { title: 'DevOps GPT', href: '/docs-instance' }
-        // ]
-        href:'/'
+        href:'/products'
     },
     {
         title: 'DevOps GPT',

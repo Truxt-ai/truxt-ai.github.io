@@ -7,7 +7,6 @@ import { Card, CardContent } from "@/components/ui/card"
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
 import { CheckCircle2 } from 'lucide-react'
 import HeroHome from './hero';
-// import { toast } from "@/components/ui/use-toast"
 
 export default function Page() {
     const [formData, setFormData] = useState({
