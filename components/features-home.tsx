@@ -108,7 +108,7 @@ export default function FeaturesHome() {
             <div className='absolute left-1/2 top-0 -z-10 -translate-x-1/2 -translate-y-1/2' aria-hidden='true'>
                 <div className='h-80 w-80 rounded-full bg-gradient-to-tr from-primary to-secondary opacity-40 blur-[160px] will-change-[filter]' />
             </div>
-            <h2 className='text-5xl text-center'>Our Products</h2>
+            <h2 className='text-5xl bold text-gray-900 text-center'>Our Solutions</h2>
             <div className='mx-auto max-w-6xl px-4 sm:px-6'>
                 <Carousel className='w-full'>
                     <CarouselContent>
