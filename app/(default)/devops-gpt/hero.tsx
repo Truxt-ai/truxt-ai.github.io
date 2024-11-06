@@ -10,15 +10,18 @@ export default function HeroHome() {
                     <div className='pb-12 text-center md:pb-16'>
                         <h1 className='mb-6 border-y text-5xl font-bold [border-image:linear-gradient(to_right,transparent,theme(colors.slate.300/.8),transparent)1] md:text-6xl' data-aos='zoom-y-out' data-aos-delay={150}>
                             Introducing DevOps GPT
+                            <div className='absolute right-28 bottom-14 bg-gradient-to-tr from-blue-600 to-blue-300 px-2 text-xs text-white tracking-wide'>Upcoming</div>
+
                         </h1>
+                        
                         <div className='mx-auto max-w-3xl'>
                             <p className='mb-8 text-lg text-gray-700' data-aos='zoom-y-out' data-aos-delay={300}>
                                 Revolutionize your DevOps workflow with AI-powered assistance
                             </p>
                         </div>
-                        <Button size='lg' onClick={() => document.getElementById('waitlist')?.scrollIntoView({ behavior: 'smooth' })}>
+                        {/* <Button size='lg' onClick={() => document.getElementById('waitlist')?.scrollIntoView({ behavior: 'smooth' })}>
                             Join the Waitlist
-                        </Button>
+                        </Button> */}
                     </div>
                 </div>
             </div>

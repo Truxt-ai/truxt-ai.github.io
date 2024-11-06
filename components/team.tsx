@@ -24,10 +24,10 @@ const TeamMember: React.FC<TeamMemberProps> = ({ image, name, role, description,
 
 const Team: React.FC = () => {
   const teamMembers = [
-    { image: 'https://media.licdn.com/dms/image/v2/D4E03AQEEFapjHaLR9w/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1703351265781?e=2147483647&v=beta&t=g8VbnTPzR4FfCrv0ZXq8577asEgSZxjUgQqU22iEt3c', name: 'Naveen Kumar', role: 'CEO & Co-founder', description: 'Duis aute irure dolor in reprehenderit in voluptate velit esse cillum sint occaecat cupidatat.', delay: 0 },
-    { image: 'https://avatars.githubusercontent.com/u/57912157?v=4', name: 'Gourav Ghosal', role: 'Software Engineer', description: 'Duis aute irure dolor in reprehenderit in voluptate velit esse cillum sint occaecat cupidatat.', delay: 150 },
-    { image: 'https://media.licdn.com/dms/image/v2/C4E03AQFI5FEwYwZBAw/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1659542006451?e=1736380800&v=beta&t=X9Gb1atM9hyXdmj9XyBkymYYBBBF0RMsL980GJrHrfI', name: 'Ravi Verma', role: 'Software Engineer', description: 'Duis aute irure dolor in reprehenderit in voluptate velit esse cillum sint occaecat cupidatat.', delay: 300 },
-    { image: 'https://avatars.githubusercontent.com/u/94908262?v=4', name: 'Pratham Saxena', role: 'Software Engineer', description: 'Duis aute irure dolor in reprehenderit in voluptate velit esse cillum sint occaecat cupidatat.', delay: 350 },
+    { image: 'https://media.licdn.com/dms/image/v2/D4E03AQEEFapjHaLR9w/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1703351265781?e=2147483647&v=beta&t=g8VbnTPzR4FfCrv0ZXq8577asEgSZxjUgQqU22iEt3c', name: 'Naveen Kumar', role: 'CEO & Co-founder', description: 'The CEO and Founder of the organization brings their energy and innovative ideas to build Truxt.', delay: 0 },
+    { image: 'https://avatars.githubusercontent.com/u/57912157?v=4', name: 'Gourav Ghosal', role: 'Software Engineer', description: 'Gourav holds a Bachelor of Technology degree in Computer Science Engineering and has experience in frontend engineering and design.', delay: 150 },
+    { image: 'https://media.licdn.com/dms/image/v2/C4E03AQFI5FEwYwZBAw/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1659542006451?e=1736380800&v=beta&t=X9Gb1atM9hyXdmj9XyBkymYYBBBF0RMsL980GJrHrfI', name: 'Ravi Verma', role: 'Software Engineer', description: 'Ravi holds a B.Tech degree in Computer Science and has experience in machine learning.', delay: 300 },
+    { image: 'https://avatars.githubusercontent.com/u/94908262?v=4', name: 'Pratham Saxena', role: 'Software Engineer', description: 'Pratham is a final-year engineering student with experience in frontend development and customer user experience.', delay: 350 },
    ];
 
   return (
