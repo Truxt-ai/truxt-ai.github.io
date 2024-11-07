@@ -56,7 +56,6 @@ export default function ContactForm() {
             await new Promise((resolve) => setTimeout(resolve, 2000));
 
             // Simulating successful submission
-            console.log('Form submitted:', formData);
             setFormStatus('success');
             setFormData({
                 name: '',

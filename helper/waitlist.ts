@@ -18,7 +18,6 @@ export async function AddNewMemberInWaitList(name:string, email: string,): Promi
             throw new Error('Could not add member to waitlist');
         }
         const data = await response.json();
-        console.log(data);
         return data.message;
     } catch (error: unknown) {
         console.error('Error while adding member to waitlist:', (error as Error).message);
