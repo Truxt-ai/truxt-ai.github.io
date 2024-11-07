@@ -35,12 +35,18 @@ export default function Page() {
             });
             const response = await status.json();
             console.log(response);
+
+            if(response.error === 'Could not add member to waitlist')
+            {
+                setFormStatus('duplicate')
+                return;
+            }
             setFormData({ name: '', email: '' });
             setFormStatus('success');
         } catch (err) {
             console.error('Error creating session ID:', err);
             return null;
-            setFormStatus('idle');
+            setFormStatus('error');
         }
     };
 
