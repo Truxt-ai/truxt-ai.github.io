@@ -1,5 +1,4 @@
 import PageIllustration from '@/components/page-illustration';
-import { Button } from '@/components/ui/button';
 
 export default function HeroHome() {
     return (
@@ -19,9 +18,6 @@ export default function HeroHome() {
                                 Revolutionize your DevOps workflow with AI-powered assistance
                             </p>
                         </div>
-                        {/* <Button size='lg' onClick={() => document.getElementById('waitlist')?.scrollIntoView({ behavior: 'smooth' })}>
-                            Join the Waitlist
-                        </Button> */}
                     </div>
                 </div>
             </div>

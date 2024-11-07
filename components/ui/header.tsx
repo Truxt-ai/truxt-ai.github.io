@@ -32,6 +32,14 @@ const navigationData: NavItems = [
         title: 'Pricing',
         href: '/pricing'
     },
+    // {
+    //     title:'FAQ',
+    //     href:'/faq'
+    // },
+    // {
+    //     title:'Contact Us',
+    //     href:'/contact-us'
+    // },
     {
         title: 'Resources',
         items: [
