@@ -12,6 +12,7 @@ import Offerings from "@/components/offerings";
 
 import { Fingerprint, CheckCircle, BarChart, LucideIcon } from 'lucide-react'
 import WhyTruxt from "@/components/why-truxt";
+import Process from "@/components/process";
 
 interface Feature {
   title: string
