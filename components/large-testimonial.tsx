@@ -1,7 +1,7 @@
 export default function LargeTestimonial() {
     return (
         <section>
-            <div className='mx-auto max-w-7xl px-4 sm:px-6'>
+            <div className='mx-auto max-w-7xl px-4 sm:px-6' data-aos='zoom-y-out' data-aos-delay={350}>
                 <div className='py-3'>
                     <div className='space-y-1 text-center'>
                         <p className='text-2xl font-bold text-gray-900 py-4'>
