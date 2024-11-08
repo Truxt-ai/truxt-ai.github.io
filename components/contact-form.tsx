@@ -52,10 +52,11 @@ export default function ContactForm() {
         setFormStatus('loading');
 
         try {
-            // Simulate API call
-            await new Promise((resolve) => setTimeout(resolve, 2000));
-
-            // Simulating successful submission
+            const status = await fetch('/api/contact-us', {
+                method: 'POST',
+                body: JSON.stringify({ name: formData.name, email: formData.email, subject: formData.subject, comments: formData.message })
+            });
+            const response = await status.json();
             setFormStatus('success');
             setFormData({
                 name: '',
@@ -102,22 +103,22 @@ export default function ContactForm() {
                         <form onSubmit={handleSubmit} className='space-y-6'>
                             <div className='space-y-2'>
                                 <Label htmlFor='name'>Name *</Label>
-                                <Input id='name' name='name' value={formData.name} onChange={handleInputChange} placeholder='John Doe' required className={errors.name ? 'border-red-500' : ''} disabled={formStatus==='loading'}/>
+                                <Input id='name' name='name' value={formData.name} onChange={handleInputChange} placeholder='John Doe' required className={errors.name ? 'border-red-500' : ''} disabled={formStatus === 'loading'} />
                                 {errors.name && <p className='text-red-500 text-sm'>{errors.name}</p>}
                             </div>
                             <div className='space-y-2'>
                                 <Label htmlFor='email'>Business Email *</Label>
-                                <Input id='email' name='email' type='email' value={formData.email} onChange={handleInputChange} placeholder='john@company.com' required className={errors.email ? 'border-red-500' : ''} disabled={formStatus==='loading'}/>
+                                <Input id='email' name='email' type='email' value={formData.email} onChange={handleInputChange} placeholder='john@company.com' required className={errors.email ? 'border-red-500' : ''} disabled={formStatus === 'loading'} />
                                 {errors.email && <p className='text-red-500 text-sm'>{errors.email}</p>}
                             </div>
                             <div className='space-y-2'>
                                 <Label htmlFor='subject'>Subject *</Label>
-                                <Input id='subject' name='subject' value={formData.subject} onChange={handleInputChange} placeholder='Inquiry about your services' required className={errors.subject ? 'border-red-500' : ''} disabled={formStatus==='loading'}/>
+                                <Input id='subject' name='subject' value={formData.subject} onChange={handleInputChange} placeholder='Inquiry about your services' required className={errors.subject ? 'border-red-500' : ''} disabled={formStatus === 'loading'} />
                                 {errors.subject && <p className='text-red-500 text-sm'>{errors.subject}</p>}
                             </div>
                             <div className='space-y-2'>
                                 <Label htmlFor='message'>Detailed Contact Reason</Label>
-                                <Textarea id='message' name='message' value={formData.message} onChange={handleInputChange} placeholder='Please provide details about your inquiry...' rows={5} disabled={formStatus==='loading'} />
+                                <Textarea id='message' name='message' value={formData.message} onChange={handleInputChange} placeholder='Please provide details about your inquiry...' rows={5} disabled={formStatus === 'loading'} />
                             </div>
                             <Button type='submit' className='w-full bg-black text-white hover:bg-gray-800' disabled={formStatus === 'loading'}>
                                 {formStatus === 'loading' ? (
