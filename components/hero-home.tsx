@@ -1,7 +1,17 @@
+'use client';
 import PageIllustration from '@/components/page-illustration';
-import BoardingSteps from './boarding-steps';
+import { useState } from 'react';
+import { useRouter } from 'next/navigation'
+
 
 export default function HeroHome() {
+    const [email, setEmail] = useState('');
+    const navigate = useRouter();
+
+    const handleClick = () => {
+        navigate.push(`/playground?email=${encodeURIComponent(email)}`);
+    };
+
     return (
         <section className='relative'>
             <PageIllustration />
@@ -18,10 +28,10 @@ export default function HeroHome() {
                             </p>
                             <div className='relative before:absolute before:inset-0 before:border-y before:[border-image:linear-gradient(to_right,transparent,theme(colors.slate.300/.8),transparent)1]'>
                                 <div className='relative mx-auto max-w-xs sm:flex sm:max-w-none sm:justify-center gap-2' data-aos='zoom-y-out' data-aos-delay={450}>
-                                    <input type='email' placeholder='Business Email' className='w-1/2 rounded-lg' />
-                                    <a className='btn group mb-4 w-full bg-gradient-to-t from-blue-600 to-blue-500 bg-[length:100%_100%] bg-[bottom] text-white shadow hover:bg-[length:100%_150%] sm:mb-0 sm:w-auto' href='/playground'>
+                                    <input type='email' placeholder='Business Email' className='w-1/2 rounded-lg' value={email} onChange={(e)=>setEmail(e.target.value)}/>
+                                    <button className='btn group mb-4 w-full bg-gradient-to-t from-blue-600 to-blue-500 bg-[length:100%_100%] bg-[bottom] text-white shadow hover:bg-[length:100%_150%] sm:mb-0 sm:w-auto' onClick={handleClick}>
                                         <span className='relative inline-flex items-center'>Create my playground</span>
-                                    </a>
+                                    </button>
                                 </div>
                             </div>
                         </div>
