@@ -30,7 +30,10 @@ export default function IngestData() {
     email: '',
     docsUrl: '',
     subdomain: '',
+    otp: '',
   })
+  const [isEmailVerified, setIsEmailVerified] = useState(false)
+  const [isOtpSent, setIsOtpSent] = useState(false)
 
   const searchParams = useSearchParams()
 
@@ -42,6 +45,13 @@ export default function IngestData() {
     }
   }, [searchParams])
 
+  useEffect(() => {
+    if (formData.email) {
+      const domain = formData.email.split('@')[1]
+      setFormData((prevData) => ({ ...prevData, subdomain: domain }))
+    }
+  }, [formData.email])
+
   const formFields: FormField[] = [
     { id: 'name', name: 'name', label: 'Name', placeholder: 'John', required: true },
     {
@@ -50,6 +60,14 @@ export default function IngestData() {
       label: 'Business Email',
       type: 'email',
       placeholder: 'me@mycompany.com',
+      required: true,
+    },
+    {
+      id: 'otp',
+      name: 'otp',
+      label: 'OTP',
+      type: 'text',
+      placeholder: 'Enter OTP',
       required: true,
     },
     {
@@ -91,6 +109,22 @@ export default function IngestData() {
     })
   }
 
+  const handleSendOtp = async () => {
+    setIsLoading(true)
+    // Simulating OTP sending
+    await new Promise((resolve) => setTimeout(resolve, 1000))
+    setIsOtpSent(true)
+    setIsLoading(false)
+  }
+
+  const handleVerifyOtp = async () => {
+    setIsLoading(true)
+    // Simulating OTP verification
+    await new Promise((resolve) => setTimeout(resolve, 1000))
+    setIsEmailVerified(true)
+    setIsLoading(false)
+  }
+
   return (
     <div className="min-h-[70vh] bg-white p-8" data-aos="zoom-y-out" data-aos-delay={450}>
       <div className="mx-auto max-w-6xl">
@@ -122,10 +156,51 @@ export default function IngestData() {
                           placeholder={field.placeholder}
                           required={field.required}
                           className="rounded-none border-l-0 border-r-0"
+                          disabled={isEmailVerified}
                         />
                         <span className="rounded-r-md border border-l-0 border-gray-300 bg-gray-100 px-3 py-2 text-gray-500">
                           .truxt.xyz
                         </span>
+                      </div>
+                    ) : field.name === 'email' ? (
+                      <div className="flex items-center space-x-2">
+                        <Input
+                          id={field.id}
+                          name={field.name}
+                          type={field.type || 'text'}
+                          value={formData[field.name as keyof typeof formData]}
+                          onChange={handleInputChange}
+                          placeholder={field.placeholder}
+                          required={field.required}
+                          disabled={isEmailVerified}
+                        />
+                        <Button 
+                          type="button" 
+                          onClick={handleSendOtp}
+                          disabled={isEmailVerified || isOtpSent || !formData.email}
+                        >
+                          {isOtpSent ? 'Resend OTP' : 'Send OTP'}
+                        </Button>
+                      </div>
+                    ) : field.name === 'otp' ? (
+                      <div className="flex items-center space-x-2">
+                        <Input
+                          id={field.id}
+                          name={field.name}
+                          type={field.type || 'text'}
+                          value={formData[field.name as keyof typeof formData]}
+                          onChange={handleInputChange}
+                          placeholder={field.placeholder}
+                          required={field.required}
+                          disabled={!isOtpSent || isEmailVerified}
+                        />
+                        <Button 
+                          type="button" 
+                          onClick={handleVerifyOtp}
+                          disabled={isEmailVerified || !isOtpSent || !formData.otp}
+                        >
+                          Verify OTP
+                        </Button>
                       </div>
                     ) : (
                       <Input
@@ -136,11 +211,12 @@ export default function IngestData() {
                         onChange={handleInputChange}
                         placeholder={field.placeholder}
                         required={field.required}
+                        disabled={field.name === 'name' && isEmailVerified}
                       />
                     )}
                   </div>
                 ))}
-                <Button type="submit" className="w-full bg-black text-white hover:bg-gray-800">
+                <Button type="submit" className="w-full bg-black text-white hover:bg-gray-800" disabled={!isEmailVerified}>
                   Next →
                 </Button>
               </form>
