@@ -12,28 +12,14 @@ export default function Process() {
             {/* 1st item */}
             <div className="relative flex flex-col items-center p-6 bg-white rounded shadow-xl">
               <div className="flex justify-center items-center h-12 w-12 rounded-full bg-blue-600 text-white font-bold mb-3">1</div>
-              <h4 className="text-xl font-bold leading-snug tracking-tight mb-1">Apply</h4>
+              <h4 className="text-xl font-bold leading-snug tracking-tight mb-1">Ingest your data</h4>
               <p className="text-gray-600 text-center">Duis aute irure dolor in reprehenderitin volupta velit esse cillum sint occaecat cupidatat.</p>
             </div>
 
             {/* 2nd item */}
             <div className="relative flex flex-col items-center p-6 bg-white rounded shadow-xl">
               <div className="flex justify-center items-center h-12 w-12 rounded-full bg-blue-600 text-white font-bold mb-3">2</div>
-              <h4 className="text-xl font-bold leading-snug tracking-tight mb-1">Screening</h4>
-              <p className="text-gray-600 text-center">Duis aute irure dolor in reprehenderitin volupta velit esse cillum sint occaecat cupidatat.</p>
-            </div>
-
-            {/* 3rd item */}
-            <div className="relative flex flex-col items-center p-6 bg-white rounded shadow-xl">
-              <div className="flex justify-center items-center h-12 w-12 rounded-full bg-blue-600 text-white font-bold mb-3">3</div>
-              <h4 className="text-xl font-bold leading-snug tracking-tight mb-1">Interview</h4>
-              <p className="text-gray-600 text-center">Duis aute irure dolor in reprehenderitin volupta velit esse cillum sint occaecat cupidatat.</p>
-            </div>
-
-            {/* 4th item */}
-            <div className="relative flex flex-col items-center p-6 bg-white rounded shadow-xl">
-              <div className="flex justify-center items-center h-12 w-12 rounded-full bg-blue-600 text-white font-bold mb-3">4</div>
-              <h4 className="text-xl font-bold leading-snug tracking-tight mb-1">Job Offer</h4>
+              <h4 className="text-xl font-bold leading-snug tracking-tight mb-1">Start Query</h4>
               <p className="text-gray-600 text-center">Duis aute irure dolor in reprehenderitin volupta velit esse cillum sint occaecat cupidatat.</p>
             </div>
 
