@@ -1,5 +1,5 @@
 'use client';
-import { Database, Lock } from 'lucide-react';
+import { Brain, Database, Lock } from 'lucide-react';
 import React, { useState } from 'react';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from './ui/card';
 import { Button } from './ui/button';
@@ -29,6 +29,12 @@ function Offerings() {
             title: 'Devops GPT',
             description: 'Create your own secure knowledge base and leverage our AI platform',
             features: ['Automatic data collection from CRM and communication channels', 'Centralized knowledge hub creation', 'AI-powered response generation using collected data', 'Seamless integration with existing systems']
+        },
+        {
+            icon: <Brain className='h-12 w-12 text-primary' />,
+            title: 'Knowledge Hub',
+            description: 'Create your own secure knowledge base and leverage our AI platform',
+            features: ['Automatic data collection from CRM and communication channels', 'Centralized knowledge hub creation', 'AI-powered response generation using collected data', 'Seamless integration with existing systems']
         }
     ];
     return (
@@ -38,7 +44,7 @@ function Offerings() {
             <div className='mx-auto flex max-w-7xl justify-center gap-6 py-12'>
                 {offerings.map((offering, index) => (
                     <Card key={index} className='w-full overflow-hidden transition-all duration-300 ease-in-out hover:shadow-lg dark:hover:shadow-primary/20'>
-                        <CardHeader className='p-6'>
+                        <CardHeader className='p-6 pb-3'>
                             <div className='flex space-x-4'>
                                 {offering.icon}
                                 <div>
@@ -47,7 +53,7 @@ function Offerings() {
                                 </div>
                             </div>
                         </CardHeader>
-                        <CardContent className='p-6'>
+                        <CardContent className='p-6 pt-0'>
                             <ul className='mt-2 space-y-2 text-sm text-gray-500 dark:text-gray-400'>
                                 {offering.features.map((feature, featureIndex) => (
                                     <li key={featureIndex} className='flex items-center'>
