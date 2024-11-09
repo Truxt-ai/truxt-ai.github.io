@@ -35,16 +35,16 @@ const navigationData: NavItems = [
   {
     title: 'Resources',
     items: [
-      { title: 'Blogs', href: '/blogs' },
-      { title: 'Docs', href: '/docs' },
+      // { title: 'Blogs', href: '/blogs' },
+      // { title: 'Docs', href: '/docs' },
       { title: 'FAQ', href: '/faq' },
     ],
   },
   {
     title: 'Company',
     items: [
-      { title: 'About Truxt', href: '/about' },
-      { title: 'Team', href: '/team' },
+      // { title: 'About Truxt', href: '/about' },
+      // { title: 'Team', href: '/team' },
       { title: 'Contact Us', href: '/contact-us' },
     ],
   },
