@@ -153,17 +153,13 @@ export default function ContactForm() {
                         <div className='space-y-2'>
                             <h3 className='font-semibold'>Connect with us</h3>
                             <div className='flex space-x-4'>
-                                <a href='https://www.linkedin.com/company/truxt' target='_blank' rel='noopener noreferrer' className='text-blue-600 hover:text-blue-800'>
-                                    <Linkedin className='h-6 w-6' />
+                                <a href='https://www.linkedin.com/company/truxt-ai/' target='_blank' rel='noopener noreferrer' className='text-blue-600 hover:text-blue-800'>
+                                    <img src='/images/linkedin.png' alt='Error in loading' className='size-6'/>
                                     <span className='sr-only'>LinkedIn</span>
                                 </a>
-                                <a href='https://twitter.com/truxt' target='_blank' rel='noopener noreferrer' className='text-blue-400 hover:text-blue-600'>
-                                    <Twitter className='h-6 w-6' />
-                                    <span className='sr-only'>Twitter</span>
-                                </a>
-                                <a href='https://www.youtube.com/truxt' target='_blank' rel='noopener noreferrer' className='text-red-600 hover:text-red-800'>
-                                    <Youtube className='h-6 w-6' />
-                                    <span className='sr-only'>YouTube</span>
+                                <a href='https://x.com/truxtai' target='_blank' rel='noopener noreferrer' className='text-blue-400 hover:text-blue-600'>
+                                <img src='/images/twitter.png' alt='Error in loading' className='size-6'/>
+                                <span className='sr-only'>Twitter</span>
                                 </a>
                             </div>
                         </div>
