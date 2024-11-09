@@ -64,7 +64,7 @@ export default function Header() {
                 width={32}
                 height={32}
               />
-              <h2 className="text-2xl">Truxt</h2>
+              <h2 className="text-3xl">Truxt.AI</h2>
             </Link>
           </div>
 
