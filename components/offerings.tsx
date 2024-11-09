@@ -14,25 +14,19 @@ function Offerings() {
     const offerings = [
         {
             icon: <Database className='h-12 w-12 text-primary' />,
-            title: 'End-to-End Gen AI',
-            description: "Automatically collect and utilize all your organization's data",
-            features: ['Automatic data collection from CRM and communication channels', 'Centralized knowledge hub creation', 'AI-powered response generation using collected data', 'Seamless integration with existing systems']
+            title: 'Truxt GenAI Platform',
+            description: 'On-Premise GenAI Deployment available',
+            features: ['Pretrained GenAi model for higher accuracy', 'Org Private data remains private', 'Scales seamlessly with large datasets as well', 'Multi-Modal Capabilities']
         },
         {
             icon: <Lock className='h-12 w-12 text-primary' />,
-            title: ' Gen AI Platform',
-            description: 'Create your own secure knowledge base and leverage our AI platform',
-            features: ['Automatic data collection from CRM and communication channels', 'Centralized knowledge hub creation', 'AI-powered response generation using collected data', 'Seamless integration with existing systems']
+            title: 'End to End Gen AI Platform',
+            description: '360° GenAI Enablement',
+            features: ['Build a Robust Knowledge Hub', 'Enhanced Data Privacy and Security', 'Broader 3rd party, CRM, Ticketing Platform integration', 'Truxt GenAi Platform']
         },
         {
             icon: <Lock className='h-12 w-12 text-primary' />,
-            title: 'Devops GPT',
-            description: 'Create your own secure knowledge base and leverage our AI platform',
-            features: ['Automatic data collection from CRM and communication channels', 'Centralized knowledge hub creation', 'AI-powered response generation using collected data', 'Seamless integration with existing systems']
-        },
-        {
-            icon: <Brain className='h-12 w-12 text-primary' />,
-            title: 'Knowledge Hub',
+            title: 'DevOpsGPT',
             description: 'Create your own secure knowledge base and leverage our AI platform',
             features: ['Automatic data collection from CRM and communication channels', 'Centralized knowledge hub creation', 'AI-powered response generation using collected data', 'Seamless integration with existing systems']
         }

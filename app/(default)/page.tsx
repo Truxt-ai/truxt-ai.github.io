@@ -33,7 +33,7 @@ const featureData: Feature[] = [
   },
   {
     title: "Scalability",
-    description: "Truxt's AI workforce operates 24/7, eliminating wait times and staffing issues. Our highly scalable platform efficiently manages growing support volumes, maintaining quality while being cost-effective. This makes it an ideal choice for growing businesses seeking dependable, scalable customer support solutions.",
+    description: "Our highly scalable platform seamlessly adapts to larger Datasets & growing support volumes, delivering consistent quality while reducing operational costs—an ideal solution for businesses looking for reliable, scalable customer support.",
     icon: BarChart
   },
 ]
@@ -42,10 +42,10 @@ export default function Home() {
   return (
     <>
       <Hero />
-      <LargeTestimonial />
+      {/* <LargeTestimonial /> */}
       <BusinessCategories />
       <Offerings/>
-      <FeaturesPlanet title="Truxt helps your team to work efficiently" content={featureData}/>
+      <FeaturesPlanet title="Improving Your Team needs with greater Efficiency and Precision" content={featureData}/>
       <WhyTruxt/>
       {/* <Features /> */}
       <Cta />
