@@ -48,7 +48,7 @@ export default function Home() {
       <FeaturesPlanet title="Improving Your Team needs with greater Efficiency and Precision" content={featureData}/>
       <WhyTruxt/>
       {/* <Features /> */}
-      <Cta />
+      {/* <Cta /> */}
     </>
   );
 }

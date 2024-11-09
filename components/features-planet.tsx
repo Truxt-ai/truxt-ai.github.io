@@ -19,7 +19,8 @@ export default function FeaturesPlanet({ title, content }: FeaturesPlanetProps) 
             style={{
                 backgroundImage: 'url(https://app1.truxt.xyz/static/media/truxt_login_background.9aa7ff77db4693fd7dbe.jpg)',
                 backgroundSize: 'cover',
-                backgroundPosition: 'center',
+                backgroundPosition: 'center center',
+                backgroundRepeat:'no-repeat'
             }}
         >
             {/* Overlay with opacity */}
