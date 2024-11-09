@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import Image from 'next/image';
 
 interface LinkItem {
     label: string;
@@ -45,9 +46,16 @@ const Footer: React.FC<FooterProps> = ({ border = false }) => {
         <footer>
             <div className='mx-auto max-w-6xl px-4 sm:px-6'>
                 <div className={`grid gap-10 py-8 sm:grid-cols-12 md:py-12 ${border ? 'border-t [border-image:linear-gradient(to_right,transparent,theme(colors.slate.200),transparent)1]' : ''}`}>
-                    <div className='space-y-2 sm:col-span-1 lg:col-span-4'>
-                        <img src={'https://res.cloudinary.com/dqumxmkt7/image/upload/v1729240685/t2wtznrhjqi5yffsoacv.webp'} alt='Truxt' width={32} height={32} />
-                        <div className='text-sm text-gray-600'>&copy; Truxt.ai - All rights reserved.</div>
+                    <div className='sm:col-span-1 lg:col-span-4'>
+                        <div className='flex items-center space-x-2'>
+                            <Image 
+                                src='https://res.cloudinary.com/dqumxmkt7/image/upload/v1729240685/t2wtznrhjqi5yffsoacv.webp' 
+                                alt='Truxt' 
+                                width={32} 
+                                height={32} 
+                            />
+                            <div className='text-sm text-gray-600'>&copy; Truxt.ai - All rights reserved.</div>
+                        </div>
                     </div>
 
                     {footerLinks.map((section, index) => (
@@ -58,7 +66,7 @@ const Footer: React.FC<FooterProps> = ({ border = false }) => {
                                     <li key={linkIndex}>
                                         {section.title === 'Social' && link.iconPath ? (
                                             <Link className='flex items-center justify-center text-blue-500 transition hover:text-blue-600' href={link.href} aria-label={link.label} target='_blank'>
-                                                <img src={link.iconPath} alt='Error in loading' className='size-6' />
+                                                <Image src={link.iconPath} alt={link.label} width={24} height={24} />
                                             </Link>
                                         ) : (
                                             <Link className='text-gray-600 transition hover:text-gray-900' href={link.href}>
