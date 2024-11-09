@@ -179,7 +179,7 @@ export default function IngestData() {
                           onClick={handleSendOtp}
                           disabled={isEmailVerified || isOtpSent || !formData.email}
                         >
-                          {isOtpSent ? 'Resend OTP' : 'Send OTP'}
+                          {isOtpSent ? 'Resend Code' : 'Send Code'}
                         </Button>
                       </div>
                     ) : field.name === 'otp' ? (
@@ -199,7 +199,7 @@ export default function IngestData() {
                           onClick={handleVerifyOtp}
                           disabled={isEmailVerified || !isOtpSent || !formData.otp}
                         >
-                          Verify OTP
+                          Verify Code
                         </Button>
                       </div>
                     ) : (
