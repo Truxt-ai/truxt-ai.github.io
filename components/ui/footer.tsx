@@ -50,7 +50,7 @@ const Footer: React.FC<FooterProps> = ({ border = false }) => {
         <footer>
             <div className='mx-auto max-w-6xl px-4 sm:px-6'>
                 <div className={`grid gap-10 py-8 sm:grid-cols-12 md:py-12 ${border ? 'border-t [border-image:linear-gradient(to_right,transparent,theme(colors.slate.200),transparent)1]' : ''}`}>
-                    <div className='space-y-2 sm:col-span-12 lg:col-span-4'>
+                    <div className='space-y-2 sm:col-span-1 lg:col-span-4'>
                         <img src={'https://res.cloudinary.com/dqumxmkt7/image/upload/v1729240685/t2wtznrhjqi5yffsoacv.webp'} alt='Truxt' width={32} height={32} />
                         <div className='text-sm text-gray-600'>&copy; Truxt.ai - All rights reserved.</div>
                     </div>

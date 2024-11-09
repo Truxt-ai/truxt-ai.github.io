@@ -14,28 +14,22 @@ function Offerings() {
     const offerings = [
         {
             icon: <Database className='h-12 w-12 text-primary' />,
-            title: 'End-to-End Gen AI',
+            title: 'Truxt GenAI Platform',
             description: "Automatically collect and utilize all your organization's data",
+            features: ['Pretrained GenAi model for higher accuracy', 'Org Private data remains private', 'Scales seamlessly with large datasets as well', 'Multi-Modal Capabilities']
+        },
+        {
+            icon: <Lock className='h-12 w-12 text-primary' />,
+            title: 'End to End Gen AI Platform',
+            description: 'Create your own secure knowledge base and leverage our AI platform',
             features: ['Automatic data collection from CRM and communication channels', 'Centralized knowledge hub creation', 'AI-powered response generation using collected data', 'Seamless integration with existing systems']
         },
         {
             icon: <Lock className='h-12 w-12 text-primary' />,
-            title: ' Gen AI Platform',
+            title: 'DevOpsGPT',
             description: 'Create your own secure knowledge base and leverage our AI platform',
             features: ['Automatic data collection from CRM and communication channels', 'Centralized knowledge hub creation', 'AI-powered response generation using collected data', 'Seamless integration with existing systems']
         },
-        {
-            icon: <Lock className='h-12 w-12 text-primary' />,
-            title: 'Devops GPT',
-            description: 'Create your own secure knowledge base and leverage our AI platform',
-            features: ['Automatic data collection from CRM and communication channels', 'Centralized knowledge hub creation', 'AI-powered response generation using collected data', 'Seamless integration with existing systems']
-        },
-        {
-            icon: <Brain className='h-12 w-12 text-primary' />,
-            title: 'Knowledge Hub',
-            description: 'Create your own secure knowledge base and leverage our AI platform',
-            features: ['Automatic data collection from CRM and communication channels', 'Centralized knowledge hub creation', 'AI-powered response generation using collected data', 'Seamless integration with existing systems']
-        }
     ];
     return (
         <div className='bg-gradient-to-b from-gray-100 to-white border-t border-gray-200 p-6 flex flex-col justify-center items-center'>
