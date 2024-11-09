@@ -21,7 +21,7 @@ const navigationData: NavItems = [
     href: '/products',
   },
   {
-    title: 'DevOps GPT',
+    title: 'DevOpsGPT',
     href: '/devops-gpt',
   },
   {

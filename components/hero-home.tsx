@@ -24,7 +24,9 @@ export default function HeroHome() {
                         </h1>
                         <div className='mx-auto max-w-3xl'>
                             <p className='mb-8 text-lg text-gray-700' data-aos='zoom-y-out' data-aos-delay={300}>
-                                Transform your knowledge base into a GenAI-powered support engine for faster issue resolution.{' '}
+                                {/* Transform your knowledge base into a GenAI-powered support engine for faster issue resolution.{' '} */}
+                                Supercharge your product knowledge base into a GenAI-powered self-service support engine, for accurate and faster technical issue resolution.
+
                             </p>
                             <div className='relative before:absolute before:inset-0 before:border-y before:[border-image:linear-gradient(to_right,transparent,theme(colors.slate.300/.8),transparent)1]'>
                                 <div className='relative mx-auto max-w-xs sm:flex sm:max-w-none sm:justify-center gap-2' data-aos='zoom-y-out' data-aos-delay={450}>

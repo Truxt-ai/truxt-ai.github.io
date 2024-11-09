@@ -1,12 +1,12 @@
 import React from 'react'
 import Hero from './hero';
-import Offerings from '@/components/offerings';
+import ProductsPage from '@/components/products';
 
 function Page() {
   return (
     <div>
         <Hero/>
-        <Offerings/>
+        <ProductsPage/>
     </div>
 )
 }
