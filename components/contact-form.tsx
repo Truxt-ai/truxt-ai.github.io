@@ -135,7 +135,7 @@ export default function ContactForm() {
 
                     <div className='md:w-72 space-y-6'>
                         <div className='space-y-2'>
-                            <h2 className='text-xl font-semibold'>Truxt</h2>
+                            <h2 className='text-xl font-semibold'>Truxt.ai</h2>
                             <p className='text-gray-600'>
                                 New Jersey
                                 <br />

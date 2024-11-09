@@ -12,7 +12,7 @@ export default function HeroHome() {
                         </h1>
                         <div className='mx-auto max-w-3xl'>
                             <p className='mb-8 text-lg text-gray-700' data-aos='zoom-y-out' data-aos-delay={300}>
-                                Ready your own playground in three steps process.
+                                Ready your own playground in two steps process.
                             </p>
                         </div>
                     </div>
