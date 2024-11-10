@@ -1,15 +1,19 @@
 import PageIllustration from '@/components/page-illustration';
 
-export default function Hero() {
+export default function HeroHome() {
     return (
         <section className='relative'>
             <PageIllustration />
-            <div className='mx-auto max-w-6xl sm:px-6'>
-                <div className='mx-auto max-w-3xl pt-32 md:pt-40'>
-                    <div className='text-center'>
-                        <h1 className='mb-6 border-y text-5xl font-bold [border-image:linear-gradient(to_right,transparent,theme(colors.slate.300/.8),transparent)1] md:text-6xl'>Sandbox</h1>
+            <div className='mx-auto max-w-6xl px-4 sm:px-6'>
+                <div className='pb-6 pt-32 md:pb-20 md:pt-40'>
+                    <div className='pb-12 text-center md:pb-16'>
+                        <h1 className='mb-6 border-y text-5xl font-bold [border-image:linear-gradient(to_right,transparent,theme(colors.slate.300/.8),transparent)1] md:text-6xl' data-aos='zoom-y-out' data-aos-delay={150}>
+                            Create your own sandbox
+                        </h1>
                         <div className='mx-auto max-w-3xl'>
-                            <p className='text-lg text-gray-700'>The sandbox offers multiple functionalities beyond just chat. As an SaaS platform, it enables enterprise-level management, allowing you to control your instances directly through the sandbox. </p>
+                            <p className='mb-8 text-lg text-gray-700' data-aos='zoom-y-out' data-aos-delay={300}>
+                                Ready your own sandbox in two steps process.
+                            </p>
                         </div>
                     </div>
                 </div>
