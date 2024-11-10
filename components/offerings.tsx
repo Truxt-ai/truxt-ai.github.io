@@ -58,7 +58,7 @@ export default function Component() {
                   {offering.icon}
                   <div className="space-y-1">
                     <CardTitle className="text-xl">{offering.title}</CardTitle>
-                    <CardDescription className="text-sm">{offering.description}</CardDescription>
+                    {/* <CardDescription className="text-sm">{offering.description}</CardDescription> */}
                   </div>
                 </div>
               </CardHeader>

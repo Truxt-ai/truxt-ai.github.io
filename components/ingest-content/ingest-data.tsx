@@ -1,13 +1,14 @@
 'use client';
 
-import { useEffect, useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
-import { Check, Loader2, LucideIcon } from 'lucide-react';
+import { Check, Loader2, AlertCircle } from 'lucide-react';
 import { useSearchParams } from 'next/navigation';
 import Image from 'next/image';
-import { File , Gamepad2} from 'lucide-react';
+import { File, Gamepad2 } from 'lucide-react';
+import { Alert, AlertDescription, AlertTitle } from '@/components/ui/alert';
 
 interface FormField {
     id: string;
@@ -21,7 +22,14 @@ interface FormField {
 interface Step {
     step: number;
     title: string;
-    icon: LucideIcon;
+    icon: React.ElementType;
+}
+
+type MessageType = 'ValidationError' | 'NetworkError' | 'AuthError' | 'CustomError' | 'InternalError' | 'Success';
+
+interface MessageState {
+    type: MessageType;
+    message: string;
 }
 
 export default function Component() {
@@ -36,6 +44,9 @@ export default function Component() {
     });
     const [isEmailVerified, setIsEmailVerified] = useState(false);
     const [isOtpSent, setIsOtpSent] = useState(false);
+    const [message, setMessage] = useState<MessageState | null>(null);
+    const [isSendingOtp, setIsSendingOtp] = useState(false);
+    const [isVerifyingOtp, setIsVerifyingOtp] = useState(false);
 
     const searchParams = useSearchParams();
 
@@ -43,7 +54,6 @@ export default function Component() {
         const emailQuery = searchParams.get('email');
         if (emailQuery) {
             setFormData((prevData) => ({ ...prevData, email: emailQuery }));
-            console.log(emailQuery);
         }
     }, [searchParams]);
 
@@ -97,11 +107,30 @@ export default function Component() {
     const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
         setIsLoading(true);
-        await new Promise((resolve) => setTimeout(resolve, 2000));
-        setCurrentStep(2);
-        await new Promise((resolve) => setTimeout(resolve, 3000));
-        setCurrentStep(3);
-        setIsLoading(false);
+        setMessage(null);
+
+        try {
+            await new Promise((resolve) => setTimeout(resolve, 2000));
+
+            if (Math.random() > 0.7) {
+                throw new Error('Random error occurred');
+            }
+
+            setCurrentStep(2);
+            await new Promise((resolve) => setTimeout(resolve, 3000));
+            setCurrentStep(3);
+            setMessage({
+                type: 'Success',
+                message: 'Form submitted successfully!'
+            });
+        } catch (err) {
+            setMessage({
+                type: 'NetworkError',
+                message: 'Failed to submit form. Please try again.'
+            });
+        } finally {
+            setIsLoading(false);
+        }
     };
 
     const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -112,19 +141,77 @@ export default function Component() {
     };
 
     const handleSendOtp = async () => {
-        setIsLoading(true);
-        // Simulating OTP sending
-        await new Promise((resolve) => setTimeout(resolve, 1000));
-        setIsOtpSent(true);
-        setIsLoading(false);
+        if (!formData.name || !formData.email) {
+            setMessage({
+                type: 'ValidationError',
+                message: 'Please enter both name and email before requesting OTP.'
+            });
+            return;
+        }
+
+        setIsSendingOtp(true);
+        setMessage(null);
+
+        try {
+            const status = await fetch('/api/sandbox/send-otp', {
+                method: 'POST',
+                body: JSON.stringify({ email: formData.email })
+            });
+            const response = await status.json();
+
+            if (response.data.error) {
+                setMessage({
+                    type: 'InternalError',
+                    message: response.data.message
+                });
+            } else {
+                setMessage({
+                    type: 'Success',
+                    message: response.data.message
+                });
+                setIsOtpSent(true);
+            }
+        } catch (err) {
+            setMessage({
+                type: 'NetworkError',
+                message: 'An Internal error occurred while sending your OTP.'
+            });
+        } finally {
+            setIsSendingOtp(false);
+        }
     };
 
     const handleVerifyOtp = async () => {
-        setIsLoading(true);
-        // Simulating OTP verification
-        await new Promise((resolve) => setTimeout(resolve, 1000));
-        setIsEmailVerified(true);
-        setIsLoading(false);
+        setIsVerifyingOtp(true);
+        setMessage(null);
+
+        try {
+            const status = await fetch('/api/sandbox/verify-otp', {
+                method: 'POST',
+                body: JSON.stringify({ email: formData.email, code: formData.otp })
+            });
+            const response = await status.json();
+
+            if (response.data.error) {
+                setMessage({
+                    type: 'AuthError',
+                    message: response.data.message
+                });
+            } else {
+                setMessage({
+                    type: 'Success',
+                    message: response.data.message
+                });
+                setIsEmailVerified(true);
+            }
+        } catch (err) {
+            setMessage({
+                type: 'AuthError',
+                message: 'Invalid OTP. Please try again.'
+            });
+        } finally {
+            setIsVerifyingOtp(false);
+        }
     };
 
     return (
@@ -139,41 +226,63 @@ export default function Component() {
 
                         {currentStep === 1 && (
                             <form onSubmit={handleSubmit} className='space-y-6'>
+                                {message && (
+                                    <Alert variant={message.type === 'Success' ? 'default' : 'destructive'} className={`mb-4 ${message.type === 'Success' ? 'bg-green-50 text-green-700 border-green-200' : ''}`}>
+                                        {message.type === 'Success' ? (
+                                            <Check className='h-4 w-4 text-green-500' />
+                                        ) : (
+                                            <AlertCircle className='h-4 w-4' />
+                                        )}
+                                        <AlertTitle>{message.type}</AlertTitle>
+                                        <AlertDescription>{message.message}</AlertDescription>
+                                    </Alert>
+                                )}
                                 {formFields.map((field) => (
                                     <div key={field.id} className='space-y-2'>
                                         <Label htmlFor={field.id}>{field.label}</Label>
                                         {field.name === 'subdomain' ? (
                                             <div className='flex items-center'>
                                                 <span className='rounded-l-md border border-r-0 border-gray-300 bg-gray-100 px-3 py-2 text-gray-500'>https://</span>
-                                                <Input id={field.id} name={field.name} type={field.type || 'text'} value={formData[field.name as keyof typeof formData]} onChange={handleInputChange} placeholder={field.placeholder} required={field.required} className='rounded-none border-l-0 border-r-0' disabled={isEmailVerified} />
+                                                <Input id={field.id} name={field.name} type={field.type || 'text'} value={formData[field.name as keyof typeof formData]} onChange={handleInputChange} placeholder={field.placeholder} required={field.required} className='rounded-none border-l-0 border-r-0' disabled={!isEmailVerified} />
                                                 <span className='rounded-r-md border border-l-0 border-gray-300 bg-gray-100 px-3 py-2 text-gray-500'>.truxt.xyz</span>
                                             </div>
                                         ) : field.name === 'email' ? (
                                             <div className='flex items-center space-x-2'>
                                                 <Input id={field.id} name={field.name} type={field.type || 'text'} value={formData[field.name as keyof typeof formData]} onChange={handleInputChange} placeholder={field.placeholder} required={field.required} disabled={isEmailVerified} />
-                                                <Button type='button' onClick={handleSendOtp} disabled={isEmailVerified || isOtpSent || !formData.email}>
-                                                    {isOtpSent ? 'Resend Code' : 'Send Code'}
+                                                <Button type='button' onClick={handleSendOtp} disabled={isEmailVerified || isOtpSent || !formData.email || !formData.name || isSendingOtp}>
+                                                    {isSendingOtp ? <Loader2 className='h-4 w-4 animate-spin' /> : isOtpSent ? 'Sent' : 'Send Code'}
                                                 </Button>
                                             </div>
                                         ) : field.name === 'otp' ? (
                                             <div className='flex items-center space-x-2'>
                                                 <Input id={field.id} name={field.name} type={field.type || 'text'} value={formData[field.name as keyof typeof formData]} onChange={handleInputChange} placeholder={field.placeholder} required={field.required} disabled={!isOtpSent || isEmailVerified} />
-                                                <Button type='button' onClick={handleVerifyOtp} disabled={isEmailVerified || !isOtpSent || !formData.otp}>
-                                                    Verify Code
+                                                <Button type='button' onClick={handleVerifyOtp} disabled={isEmailVerified || !isOtpSent || !formData.otp || isVerifyingOtp}>
+                                                    {isVerifyingOtp ? <Loader2 className='h-4 w-4 animate-spin' /> : 'Verify Code'}
                                                 </Button>
                                             </div>
                                         ) : (
-                                            <Input id={field.id} name={field.name} type={field.type || 'text'} value={formData[field.name as keyof typeof formData]} onChange={handleInputChange} placeholder={field.placeholder} required={field.required} disabled={field.name === 'name' && isEmailVerified} />
+                                            <Input id={field.id} name={field.name} type={field.type || 'text'} value={formData[field.name as keyof typeof formData]} onChange={handleInputChange} placeholder={field.placeholder} required={field.required} disabled={field.name !== 'name' && !isEmailVerified} />
                                         )}
                                     </div>
                                 ))}
-                                <Button type='submit' className='w-full bg-black text-white hover:bg-gray-800' disabled={!isEmailVerified}>
+                                <Button type='submit' className='w-full bg-black text-white hover:bg-gray-800' disabled={!isEmailVerified || isLoading}>
+                                    {isLoading ? <Loader2 className='h-4 w-4 animate-spin mr-2' /> : null}
                                     Next →
                                 </Button>
                             </form>
                         )}
 
-                        {currentStep > 1 && <div className='flex h-64 items-center justify-center'>{isLoading ? <Loader2 className='h-8 w-8 animate-spin' /> : <div className='text-xl font-medium'>{currentStep === 3 ? 'Ready to start querying!' : 'Processing your content...'}</div>}</div>}
+                        {currentStep > 1 && (
+                            <div className='flex h-64 items-center justify-center'>
+                                {isLoading ? (
+                                    <Loader2 className='h-8 w-8 animate-spin' />
+                                ) : (
+                                    <div className='text-xl font-medium'>
+                                        {currentStep === 3 ? 'Ready to start querying!' : 'Processing your content...'}
+                                    </div>
+                                )}
+                            </div>
+                        )}
                     </div>
 
                     {/* Right side - Animated GIF and Progress Steps */}
@@ -186,22 +295,16 @@ export default function Component() {
                                     <div key={item.step} className='flex items-center mb-4 last:mb-0'>
                                         <div
                                             className={`
-                      flex h-8 w-8 items-center justify-center rounded-full z-10
-                      ${currentStep >= item.step ? 'bg-blue-500 text-white' : 'bg-gray-200 text-gray-400'}
-                    `}
+                                                flex h-8 w-8 items-center justify-center rounded-full z-10
+                                                ${currentStep >= item.step ? 'bg-blue-500 text-white' : 'bg-gray-200 text-gray-400'}
+                                            `}
                                         >
-                                            {currentStep > item.step ? <Check/> : <item.icon/>}
+                                            {currentStep > item.step ? <Check /> : <item.icon />}
                                         </div>
                                         <div className='ml-4 flex-grow'>
                                             <div className='text-sm font-medium'>{item.title}</div>
                                             <div className='text-xs text-gray-500'>Step {item.step}</div>
                                         </div>
-                                        {/* {index < steps.length - 1 && (
-                      <div className={`
-                        absolute left-4 h-full w-0.5 -translate-x-1/2
-                        ${currentStep > item.step ? 'bg-blue-500' : 'bg-gray-200'}
-                      `} style={{top: '2rem'}} />
-                    )} */}
                                     </div>
                                 ))}
                             </div>
