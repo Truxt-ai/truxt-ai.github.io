@@ -60,8 +60,11 @@ export default function Component() {
     useEffect(() => {
         if (formData.email) {
             const domain = formData.email.split('@')[1];
-            setFormData((prevData) => ({ ...prevData, subdomain: domain }));
-        }
+          if(domain)
+          {
+            setFormData((prevData) => ({ ...prevData, subdomain: domain.split('.')[0]}));
+          }
+          }
     }, [formData.email]);
 
     const formFields: FormField[] = [
@@ -110,19 +113,25 @@ export default function Component() {
         setMessage(null);
 
         try {
-            await new Promise((resolve) => setTimeout(resolve, 2000));
-
-            if (Math.random() > 0.7) {
-                throw new Error('Random error occurred');
-            }
-
-            setCurrentStep(2);
-            await new Promise((resolve) => setTimeout(resolve, 3000));
-            setCurrentStep(3);
-            setMessage({
-                type: 'Success',
-                message: 'Form submitted successfully!'
+            const status = await fetch('/api/sandbox/create-sandbox', {
+                method: 'POST',
+                body: JSON.stringify({ name: formData.name, email: formData.email, docsLink: formData.docsUrl, subdomain: formData.subdomain })
             });
+            const response = await status.json();
+            console.log(response);
+
+            if (response.data.error) {
+                setMessage({
+                    type: 'InternalError',
+                    message: response.data.message
+                });
+            } else {
+                setMessage({
+                    type: 'Success',
+                    message: response.data.message
+                });
+                setCurrentStep(2);
+            }
         } catch (err) {
             setMessage({
                 type: 'NetworkError',
@@ -228,11 +237,7 @@ export default function Component() {
                             <form onSubmit={handleSubmit} className='space-y-6'>
                                 {message && (
                                     <Alert variant={message.type === 'Success' ? 'default' : 'destructive'} className={`mb-4 ${message.type === 'Success' ? 'bg-green-50 text-green-700 border-green-200' : ''}`}>
-                                        {message.type === 'Success' ? (
-                                            <Check className='h-4 w-4 text-green-500' />
-                                        ) : (
-                                            <AlertCircle className='h-4 w-4' />
-                                        )}
+                                        {message.type === 'Success' ? <Check className='h-4 w-4 text-green-500' /> : <AlertCircle className='h-4 w-4' />}
                                         <AlertTitle>{message.type}</AlertTitle>
                                         <AlertDescription>{message.message}</AlertDescription>
                                     </Alert>
@@ -272,17 +277,7 @@ export default function Component() {
                             </form>
                         )}
 
-                        {currentStep > 1 && (
-                            <div className='flex h-64 items-center justify-center'>
-                                {isLoading ? (
-                                    <Loader2 className='h-8 w-8 animate-spin' />
-                                ) : (
-                                    <div className='text-xl font-medium'>
-                                        {currentStep === 3 ? 'Ready to start querying!' : 'Processing your content...'}
-                                    </div>
-                                )}
-                            </div>
-                        )}
+                        {currentStep > 1 && <div className='flex h-64 items-center justify-center'>{isLoading ? <Loader2 className='h-8 w-8 animate-spin' /> : <div className='text-xl font-medium'>{currentStep === 3 ? 'Ready to start querying!' : 'Processing your content...'}</div>}</div>}
                     </div>
 
                     {/* Right side - Animated GIF and Progress Steps */}

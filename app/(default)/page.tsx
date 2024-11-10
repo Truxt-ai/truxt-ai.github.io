@@ -5,14 +5,11 @@ export const metadata = {
 
 import Hero from "@/components/hero-home";
 import BusinessCategories from "@/components/business-categories";
-import LargeTestimonial from "@/components/large-testimonial";
 import FeaturesPlanet from "@/components/features-planet";
-import Cta from "@/components/cta";
 import Offerings from "@/components/offerings";
 
 import { Fingerprint, CheckCircle, BarChart, LucideIcon } from 'lucide-react'
 import WhyTruxt from "@/components/why-truxt";
-import Process from "@/components/process";
 
 interface Feature {
   title: string
