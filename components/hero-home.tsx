@@ -9,7 +9,7 @@ export default function HeroHome() {
     const navigate = useRouter();
 
     const handleClick = () => {
-        navigate.push(`/playground?email=${encodeURIComponent(email)}`);
+        navigate.push(`/sandbox`);
     };
 
     return (
@@ -19,7 +19,8 @@ export default function HeroHome() {
                 <div className='pb-6 pt-32 md:pb-6 md:pt-40'>
                     <div className='pb-6 text-center md:pb-16'>
                         <h1 className='mb-6 border-y text-5xl font-bold [border-image:linear-gradient(to_right,transparent,theme(colors.slate.300/.8),transparent)1] md:text-6xl' data-aos='zoom-y-out' data-aos-delay={150}>
-                            Empower Customer Support with <br className='max-lg:hidden' />
+                        Transform Product Support with
+                        <br className='max-lg:hidden' />
                             Generative AI
                         </h1>
                         <div className='mx-auto max-w-3xl'>
@@ -30,9 +31,9 @@ export default function HeroHome() {
                             </p>
                             <div className='relative before:absolute before:inset-0 before:border-y before:[border-image:linear-gradient(to_right,transparent,theme(colors.slate.300/.8),transparent)1]'>
                                 <div className='relative mx-auto max-w-xs sm:flex sm:max-w-none sm:justify-center gap-2' data-aos='zoom-y-out' data-aos-delay={450}>
-                                    <input type='email' placeholder='Business Email' className='w-1/2 rounded-lg' value={email} onChange={(e)=>setEmail(e.target.value)}/>
+                                    {/* <input type='email' placeholder='Business Email' className='w-1/2 rounded-lg' value={email} onChange={(e)=>setEmail(e.target.value)}/> */}
                                     <button className='btn group mb-4 w-full bg-gradient-to-t from-blue-600 to-blue-500 bg-[length:100%_100%] bg-[bottom] text-white shadow hover:bg-[length:100%_150%] sm:mb-0 sm:w-auto' onClick={handleClick}>
-                                        <span className='relative inline-flex items-center'>Try it for my content</span>
+                                        <span className='relative inline-flex items-center text-xl'>Experience Truxt on my contents for free</span>
                                     </button>
                                 </div>
                             </div>
