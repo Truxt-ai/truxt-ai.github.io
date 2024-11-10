@@ -26,7 +26,7 @@ export default function ContactForm() {
     useEffect(() => {
         const subjectQuery = searchParams.get('subject');
         if (subjectQuery) {
-            setFormData((prevData) => ({ ...prevData, subject: subjectQuery.replace('-',' ') }));
+            setFormData((prevData) => ({ ...prevData, subject: subjectQuery.replace('-', ' ') }));
         }
     }, [searchParams]);
 
@@ -143,7 +143,6 @@ export default function ContactForm() {
                     </div>
 
                     <div className='md:w-72 space-y-6'>
-                        
                         <div className='space-y-2'>
                             <h3 className='font-semibold'>Official Email</h3>
                             <a href='mailto:hello@truxt.ai' className='text-blue-600 hover:underline'>
@@ -154,11 +153,11 @@ export default function ContactForm() {
                             <h3 className='font-semibold'>Connect with us</h3>
                             <div className='flex space-x-4'>
                                 <a href='https://www.linkedin.com/company/truxt-ai/' target='_blank' rel='noopener noreferrer' className='text-blue-600 hover:text-blue-800'>
-                                    <img src='/images/linkedin.png' alt='LinkedIn' className='size-6'/>
+                                    <img src='/images/linkedin.png' alt='LinkedIn' className='size-6' />
                                     <span className='sr-only'>LinkedIn</span>
                                 </a>
                                 <a href='https://x.com/truxtai' target='_blank' rel='noopener noreferrer' className='text-blue-400 hover:text-blue-600'>
-                                    <img src='/images/twitter.png' alt='Twitter' className='size-6'/>
+                                    <img src='/images/twitter.png' alt='Twitter' className='size-6' />
                                     <span className='sr-only'>Twitter</span>
                                 </a>
                             </div>
@@ -166,21 +165,13 @@ export default function ContactForm() {
                         <Card className='overflow-hidden'>
                             <CardContent className='p-0'>
                                 <div className='relative'>
-                                    <iframe
-                                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3022.9663095343008!2d-74.0066351!3d40.7127431!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c25a197c06b7cb%3A0x40a06c78f79e5de6!2sNew%20York%2C%20NY%2C%20USA!5e0!3m2!1sen!2s!4v1650000000000!5m2!1sen!2s"
-                                        width="100%"
-                                        height="300"
-                                        style={{ border: 0 }}
-                                        allowFullScreen={false}
-                                        loading="lazy"
-                                        referrerPolicy="no-referrer-when-downgrade"
-                                        title="Truxt.ai Location"
-                                    ></iframe>
+                                    <iframe src='https://www.google.com/maps/embed?pb=!1m21!1m12!1m3!1d323073.31388438086!2d-74.0885938544205!3d40.77062649020647!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m6!3e0!4m0!4m3!3m2!1d40.83661955665882!2d-74.01689776914661!5e0!3m2!1sen!2sin!4v1731266149535!5m2!1sen!2sin' width='100%' height='300' style={{ border: 0 }} allowFullScreen={false} loading='lazy' referrerPolicy='no-referrer-when-downgrade' title='Truxt.ai Location'></iframe>
                                     <div className='absolute bottom-0 left-0 right-0 bg-white bg-opacity-90 p-2'>
                                         <h2 className='text-xl font-semibold'>Truxt.ai</h2>
                                         <p className='text-gray-600'>
-                                            New Jersey<br />
-                                            Innovation City, TC 12345<br />
+                                            Ridgefield Park <br />
+                                            New Jersey,
+                                            <br />
                                             United States
                                         </p>
                                     </div>
