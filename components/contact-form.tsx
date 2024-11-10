@@ -8,6 +8,7 @@ import { Textarea } from '@/components/ui/textarea';
 import { Loader2, CheckCircle, AlertCircle } from 'lucide-react';
 import { Alert, AlertDescription, AlertTitle } from '@/components/ui/alert';
 import { useSearchParams } from 'next/navigation';
+import { Card, CardContent } from '@/components/ui/card';
 
 type FormStatus = 'idle' | 'loading' | 'success' | 'error';
 
@@ -22,11 +23,9 @@ export default function ContactForm() {
     const [errors, setErrors] = useState<{ [key: string]: string }>({});
     const searchParams = useSearchParams();
 
-
     useEffect(() => {
         const subjectQuery = searchParams.get('subject');
         if (subjectQuery) {
-
             setFormData((prevData) => ({ ...prevData, subject: subjectQuery.replace('-',' ') }));
         }
     }, [searchParams]);
@@ -37,7 +36,6 @@ export default function ContactForm() {
             ...prevData,
             [name]: value
         }));
-        // Clear error when user starts typing
         if (errors[name]) {
             setErrors((prevErrors) => ({ ...prevErrors, [name]: '' }));
         }
@@ -105,7 +103,7 @@ export default function ContactForm() {
     };
 
     return (
-        <div className='min-h-screen bg-white p-8' data-aos='zoom-y-out' data-aos-delay={450}>
+        <div className=' bg-white p-8' data-aos='zoom-y-out' data-aos-delay={450}>
             <div className='max-w-6xl mx-auto'>
                 <h1 className='text-2xl font-bold mb-8'>Connect with Us</h1>
                 <div className='flex flex-col md:flex-row gap-12'>
@@ -145,16 +143,7 @@ export default function ContactForm() {
                     </div>
 
                     <div className='md:w-72 space-y-6'>
-                        <div className='space-y-2'>
-                            <h2 className='text-xl font-semibold'>Truxt.ai</h2>
-                            <p className='text-gray-600'>
-                                New Jersey
-                                <br />
-                                Innovation City, TC 12345
-                                <br />
-                                United States
-                            </p>
-                        </div>
+                        
                         <div className='space-y-2'>
                             <h3 className='font-semibold'>Official Email</h3>
                             <a href='mailto:hello@truxt.ai' className='text-blue-600 hover:underline'>
@@ -165,15 +154,39 @@ export default function ContactForm() {
                             <h3 className='font-semibold'>Connect with us</h3>
                             <div className='flex space-x-4'>
                                 <a href='https://www.linkedin.com/company/truxt-ai/' target='_blank' rel='noopener noreferrer' className='text-blue-600 hover:text-blue-800'>
-                                    <img src='/images/linkedin.png' alt='Error in loading' className='size-6'/>
+                                    <img src='/images/linkedin.png' alt='LinkedIn' className='size-6'/>
                                     <span className='sr-only'>LinkedIn</span>
                                 </a>
                                 <a href='https://x.com/truxtai' target='_blank' rel='noopener noreferrer' className='text-blue-400 hover:text-blue-600'>
-                                <img src='/images/twitter.png' alt='Error in loading' className='size-6'/>
-                                <span className='sr-only'>Twitter</span>
+                                    <img src='/images/twitter.png' alt='Twitter' className='size-6'/>
+                                    <span className='sr-only'>Twitter</span>
                                 </a>
                             </div>
                         </div>
+                        <Card className='overflow-hidden'>
+                            <CardContent className='p-0'>
+                                <div className='relative'>
+                                    <iframe
+                                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3022.9663095343008!2d-74.0066351!3d40.7127431!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c25a197c06b7cb%3A0x40a06c78f79e5de6!2sNew%20York%2C%20NY%2C%20USA!5e0!3m2!1sen!2s!4v1650000000000!5m2!1sen!2s"
+                                        width="100%"
+                                        height="300"
+                                        style={{ border: 0 }}
+                                        allowFullScreen={false}
+                                        loading="lazy"
+                                        referrerPolicy="no-referrer-when-downgrade"
+                                        title="Truxt.ai Location"
+                                    ></iframe>
+                                    <div className='absolute bottom-0 left-0 right-0 bg-white bg-opacity-90 p-2'>
+                                        <h2 className='text-xl font-semibold'>Truxt.ai</h2>
+                                        <p className='text-gray-600'>
+                                            New Jersey<br />
+                                            Innovation City, TC 12345<br />
+                                            United States
+                                        </p>
+                                    </div>
+                                </div>
+                            </CardContent>
+                        </Card>
                     </div>
                 </div>
             </div>
