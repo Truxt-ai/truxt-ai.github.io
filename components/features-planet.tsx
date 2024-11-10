@@ -15,12 +15,12 @@ interface FeaturesPlanetProps {
 export default function FeaturesPlanet({ title, content }: FeaturesPlanetProps) {
     return (
         <section
-            className="relative before:absolute before:inset-0 before:-z-20 before:bg-gray-900"
+            className="relative before:absolute before:inset-0 before:-z-20 before:bg-gray-900 border-none"
             style={{
                 backgroundImage: 'url(https://app1.truxt.xyz/static/media/truxt_login_background.9aa7ff77db4693fd7dbe.jpg)',
-                backgroundSize: 'cover',
+                backgroundSize: 'contain',
                 backgroundPosition: 'center center',
-                backgroundRepeat:'no-repeat'
+                backgroundRepeat:'repeat'
             }}
         >
             {/* Overlay with opacity */}
@@ -39,7 +39,7 @@ export default function FeaturesPlanet({ title, content }: FeaturesPlanetProps) 
                                     <feature.icon className="h-5 w-5" />
                                     <span>{feature.title}</span>
                                 </h3>
-                                <p className="text-[15px] text-gray-400">{feature.description}</p>
+                                <p className="text-[15px] text-gray-200">{feature.description}</p>
                             </article>
                         ))}
                     </div>
