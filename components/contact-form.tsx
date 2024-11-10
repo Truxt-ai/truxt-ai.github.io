@@ -1,12 +1,13 @@
 'use client';
 
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { Textarea } from '@/components/ui/textarea';
-import { Linkedin, Twitter, Youtube, Loader2, CheckCircle, AlertCircle } from 'lucide-react';
+import { Loader2, CheckCircle, AlertCircle } from 'lucide-react';
 import { Alert, AlertDescription, AlertTitle } from '@/components/ui/alert';
+import { useSearchParams } from 'next/navigation';
 
 type FormStatus = 'idle' | 'loading' | 'success' | 'error';
 
@@ -19,6 +20,16 @@ export default function ContactForm() {
     });
     const [formStatus, setFormStatus] = useState<FormStatus>('idle');
     const [errors, setErrors] = useState<{ [key: string]: string }>({});
+    const searchParams = useSearchParams();
+
+
+    useEffect(() => {
+        const subjectQuery = searchParams.get('subject');
+        if (subjectQuery) {
+
+            setFormData((prevData) => ({ ...prevData, subject: subjectQuery.replace('-',' ') }));
+        }
+    }, [searchParams]);
 
     const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
         const { name, value } = e.target;
