@@ -2,7 +2,7 @@ name: Deploy to GitHub Pages
 
 on:
   push:
-    branches: [ source ]
+    branches: [source]
 
 jobs:
   build-and-deploy:
@@ -17,13 +17,16 @@ jobs:
           
       - name: Install dependencies
         run: npm ci
-        
+
       - name: Build and Export
+        env:
+          CHAT_DB_URL_API: ${{ secrets.CHAT_DB_URL_API }}
+          CHAT_DB_TOKEN: ${{ secrets.CHAT_DB_TOKEN }}
         run: npm run build
-        
+
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./out
-          publish_branch: main 
+          publish_branch: main
