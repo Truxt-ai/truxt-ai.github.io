@@ -24,18 +24,18 @@ export async function SendOtpForSandbox(email: string): Promise<WaitListResponse
 
 async function VerifySentOTP(email: string, code: string): Promise<WaitListResponse> {
     try {
-        console.log(email,code);
-        const response = await fetch(`${process.env.CHAT_DB_URL_API}/api/playground/verify_otp`, {
+        const response = await fetch(`${process.env.NEXT_PUBLIC_CHAT_DB_URL_API}/api/playground/verify_otp`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
-                'x-token': `${process.env.CHAT_DB_TOKEN}`
+                'x-token': `${process.env.NEXT_PUBLIC_CHAT_DB_TOKEN}`
             },
             body: JSON.stringify({
                 email, code
             })
         });
         const data = await response.json();
+        console.log(data);
         return data;
     } catch (error: unknown) {
         console.error('Error while verify otp:', (error as Error).message);

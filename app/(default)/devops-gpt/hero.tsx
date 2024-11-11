@@ -25,23 +25,10 @@ export default function Component() {
                                 Upcoming
                             </Badge>
                         </div>
-                        {/* <div className='mx-auto max-w-3xl'>
-                            <p className='mb-8 text-lg text-slate-600 dark:text-slate-400'>
-                                Revolutionize your DevOps workflow with AI-powered assistance
-                            </p>
-                            <div className='flex justify-center gap-4'>
-                                <Button size='lg' className='bg-blue-600 hover:bg-blue-700'>
-                                    Join our waitlist
-                                </Button>
-                                <Button size='lg' variant='outline'>
-                                    Learn More
-                                </Button>
-                            </div>
-                        </div> */}
                     </div>
                     <div className='relative mx-auto max-w-5xl'  data-aos='zoom-y-out' data-aos-delay={150}>
                         <div className='aspect-video overflow-hidden rounded-xl bg-slate-900 shadow-2xl'>
-                            <video ref={videoRef} src='https://drive.google.com/file/d/1bwsmmKDbzPogN7bjuChZgoYxrfrjdqth/view?usp=sharing' controls loop muted playsInline className='h-full w-full'>
+                            <video ref={videoRef} src='https://bucket.v0.truxt.xyz/temp-cdn-dump/video?response-content-type=video%2Fmp4&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=3zt4iJKyJwswttMT%2F20241111%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20241111T134800Z&X-Amz-Expires=604800&X-Amz-SignedHeaders=host&X-Amz-Signature=a5c346e4f7522f1103578bba7c187ad069bd5300c448e83769da208a7de3a178' controls loop muted playsInline className='h-full w-full'>
                                 Your browser does not support the video tag.
                             </video>
                         </div>

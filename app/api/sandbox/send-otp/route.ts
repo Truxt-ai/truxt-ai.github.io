@@ -3,7 +3,7 @@ import { SendOtpForSandbox } from '@/helper/otp-verify';
 
 export async function POST(req: NextRequest) {
     try {
-        const {email } = await req.json();
+        const { email } = await req.json();
         if (!email) {
             throw new Error('Email are missing parameters');
         }

@@ -60,11 +60,10 @@ export default function Component() {
     useEffect(() => {
         if (formData.email) {
             const domain = formData.email.split('@')[1];
-          if(domain)
-          {
-            setFormData((prevData) => ({ ...prevData, subdomain: domain.split('.')[0]}));
-          }
-          }
+            if(domain) {
+                setFormData((prevData) => ({ ...prevData, subdomain: domain.split('.')[0]}));
+            }
+        }
     }, [formData.email]);
 
     const formFields: FormField[] = [
@@ -75,14 +74,6 @@ export default function Component() {
             label: 'Business Email',
             type: 'email',
             placeholder: 'me@mycompany.com',
-            required: true
-        },
-        {
-            id: 'otp',
-            name: 'otp',
-            label: 'OTP',
-            type: 'text',
-            placeholder: 'Enter OTP',
             required: true
         },
         {
@@ -167,7 +158,6 @@ export default function Component() {
                 body: JSON.stringify({ email: formData.email })
             });
             const response = await status.json();
-
             if (response.data.error) {
                 setMessage({
                     type: 'InternalError',
@@ -200,18 +190,22 @@ export default function Component() {
                 body: JSON.stringify({ email: formData.email, code: formData.otp })
             });
             const response = await status.json();
+            console.log(response);
 
             if (response.data.error) {
                 setMessage({
                     type: 'AuthError',
                     message: response.data.message
                 });
-            } else {
+
+            }
+             else {
                 setMessage({
                     type: 'Success',
                     message: response.data.message
                 });
                 setIsEmailVerified(true);
+                setIsOtpSent(false); // Hide OTP field after successful verification
             }
         } catch (err) {
             setMessage({
@@ -258,18 +252,30 @@ export default function Component() {
                                                     {isSendingOtp ? <Loader2 className='h-4 w-4 animate-spin' /> : isOtpSent ? 'Sent' : 'Send Code'}
                                                 </Button>
                                             </div>
-                                        ) : field.name === 'otp' ? (
-                                            <div className='flex items-center space-x-2'>
-                                                <Input id={field.id} name={field.name} type={field.type || 'text'} value={formData[field.name as keyof typeof formData]} onChange={handleInputChange} placeholder={field.placeholder} required={field.required} disabled={!isOtpSent || isEmailVerified} />
-                                                <Button type='button' onClick={handleVerifyOtp} disabled={isEmailVerified || !isOtpSent || !formData.otp || isVerifyingOtp}>
-                                                    {isVerifyingOtp ? <Loader2 className='h-4 w-4 animate-spin' /> : 'Verify Code'}
-                                                </Button>
-                                            </div>
                                         ) : (
                                             <Input id={field.id} name={field.name} type={field.type || 'text'} value={formData[field.name as keyof typeof formData]} onChange={handleInputChange} placeholder={field.placeholder} required={field.required} disabled={field.name !== 'name' && !isEmailVerified} />
                                         )}
                                     </div>
                                 ))}
+                                {isOtpSent && !isEmailVerified && (
+                                    <div className='space-y-2'>
+                                        <Label htmlFor='otp'>Verification Code</Label>
+                                        <div className='flex items-center space-x-2'>
+                                            <Input
+                                                id='otp'
+                                                name='otp'
+                                                type='text'
+                                                value={formData.otp}
+                                                onChange={handleInputChange}
+                                                placeholder='Enter OTP'
+                                                required
+                                            />
+                                            <Button type='button' onClick={handleVerifyOtp} disabled={!formData.otp || isVerifyingOtp}>
+                                                {isVerifyingOtp ? <Loader2 className='h-4 w-4 animate-spin' /> : 'Verify Code'}
+                                            </Button>
+                                        </div>
+                                    </div>
+                                )}
                                 <Button type='submit' className='w-full bg-black text-white hover:bg-gray-800' disabled={!isEmailVerified || isLoading}>
                                     {isLoading ? <Loader2 className='h-4 w-4 animate-spin mr-2' /> : null}
                                     Next →
@@ -306,7 +312,7 @@ export default function Component() {
                         </div>
 
                         <div className='relative h-[300px] rounded-xl overflow-hidden'>
-                            <Image src='/images/news-01.jpg' alt='Processing animation' width={400} height={300} className='object-cover' priority />
+                            <Image src='/placeholder.svg?height=300&width=400' alt='Processing animation' width={400} height={300} className='object-cover' priority />
                             <div className='absolute inset-0 bg-gradient-to-t from-black/20 to-transparent' />
                             <div className='absolute bottom-4 left-4 right-4'>
                                 <h3 className='text-lg font-semibold text-white'>Content Processing</h3>
