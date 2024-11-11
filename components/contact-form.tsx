@@ -165,7 +165,7 @@ export default function ContactForm() {
                         <Card className='overflow-hidden'>
                             <CardContent className='p-0'>
                                 <div className='relative'>
-                                    <iframe src='https://www.google.com/maps/embed?pb=!1m21!1m12!1m3!1d323073.31388438086!2d-74.0885938544205!3d40.77062649020647!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m6!3e0!4m0!4m3!3m2!1d40.83661955665882!2d-74.01689776914661!5e0!3m2!1sen!2sin!4v1731266149535!5m2!1sen!2sin' width='100%' height='300' style={{ border: 0 }} allowFullScreen={false} loading='lazy' referrerPolicy='no-referrer-when-downgrade' title='Truxt.ai Location'></iframe>
+                                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d12071.257707321425!2d-74.03050467981883!3d40.85399794004852!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c2f765d06b3ecb%3A0x1411e80500d8a29a!2sRidgefield%20Park%2C%20NJ%2C%20USA!5e0!3m2!1sen!2sin!4v1731353694987!5m2!1sen!2sin" width='100%' height='300' style={{ border: 0 }}  allowFullScreen={true} loading="lazy"></iframe>
                                     <div className='absolute bottom-0 left-0 right-0 bg-white bg-opacity-90 p-2'>
                                         <h2 className='text-xl font-semibold'>Truxt.ai</h2>
                                         <p className='text-gray-600'>
@@ -184,3 +184,5 @@ export default function ContactForm() {
         </div>
     );
 }
+
+
