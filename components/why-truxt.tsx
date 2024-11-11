@@ -23,8 +23,8 @@ const features: Feature[] = [
     },
     {
         Icon: Cpu,
-        title: 'Multi-LLM Technology',
-        description: 'Delivers faster, more accurate resolutions through an advanced multi-language model system'
+        title: 'Multi-LLM Agentic AI Technology',
+        description: 'Delivers faster, more accurate resolutions through advanced multi-LLM, multi-AI Agent system'
     },
     {
         Icon: Shield,
@@ -33,13 +33,13 @@ const features: Feature[] = [
     },
     {
         Icon: Hexagon,
-        title: 'Unified Ecosystem',
-        description: 'Integrates with your existing CRM and ticketing systems for streamlined workflows'
+        title: 'Customized Enterprise Solution',
+        description: 'Tailor made to a Org specific requirements including needed integrations with 3rd party software'
     },
     {
         Icon: BarChart3,
         title: 'Data-Driven Insights',
-        description: 'Provides actionable analytics on customer trends and team performance'
+        description: 'Provides actionable analytics on resolutions, Knowledge articles and customer trends'
     }
 ];
 
@@ -49,7 +49,7 @@ export default function WhyTruxtSection() {
             <div className='container max-w-7xl mx-auto px-4 sm:px-6 lg:px-8'>
                 <div className='text-center'>
                     <h2 className='text-3xl font-bold tracking-tight text-foreground sm:text-4xl'>Why Truxt?</h2>
-                    <p className='mt-6 text-lg leading-8 text-muted-foreground'>Transform your support operations with an enterprise-grade generative AI platform</p>
+                    <p className='mt-6 text-lg leading-8 text-muted-foreground'>Built for Enterprise grade adoption, with our advanced GenAI Technologies you get greater accuracy, security and scalability.</p>
                 </div>
                 <div className='mt-5 sm:mt-10 lg:mt-10'>
                     <div className='grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-3 lg:gap-x-8'>
@@ -61,7 +61,7 @@ export default function WhyTruxtSection() {
                 <div className='mt-16 flex justify-center'>
                     <Button asChild size='lg'>
                         <Link href='/contact-us' className='group flex items-center gap-2'>
-                            Transform Your Support Operations
+                            Experience Truxt for your Contents
                             <ArrowRight className='w-4 h-4 transition-transform group-hover:translate-x-1' />
                         </Link>
                     </Button>
@@ -76,7 +76,7 @@ function FeatureCard({ feature }: { feature: Feature }) {
         <Card className='flex flex-col h-full'>
             <CardHeader>
                 <CardTitle className='flex items-center gap-x-3 text-lg font-semibold leading-7'>
-                    <feature.Icon className='h-6 w-6 text-primary' />
+                    <feature.Icon className='h-6 w-6 text-primary' color='#60a5fa' />
                     {feature.title}
                 </CardTitle>
             </CardHeader>
