@@ -1,3 +1,8 @@
+export const metadata = {
+  title: 'Products - Truxt',
+  description: 'Page description'
+};
+
 import React from 'react'
 import Hero from './hero';
 import ProductsPage from '@/components/products';
