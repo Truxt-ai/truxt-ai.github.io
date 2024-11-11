@@ -312,12 +312,12 @@ export default function Component() {
                         </div>
 
                         <div className='relative h-[300px] rounded-xl overflow-hidden'>
-                            <Image src='/placeholder.svg?height=300&width=400' alt='Processing animation' width={400} height={300} className='object-cover' priority />
-                            <div className='absolute inset-0 bg-gradient-to-t from-black/20 to-transparent' />
-                            <div className='absolute bottom-4 left-4 right-4'>
+                            <Image src='/images/public-pages-ui.png' alt='Processing animation' width={400} height={300} className='object-cover' priority />
+                            {/* <div className='absolute inset-0 bg-gradient-to-t from-black/20 to-transparent' /> */}
+                            {/* <div className='absolute bottom-4 left-4 right-4'>
                                 <h3 className='text-lg font-semibold text-white'>Content Processing</h3>
                                 <p className='text-sm text-white/90'>Watch as we analyze and process your content in real-time</p>
-                            </div>
+                            </div> */}
                         </div>
                     </div>
                 </div>
