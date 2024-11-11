@@ -87,7 +87,7 @@ export default function Component() {
         {
             id: 'subdomain',
             name: 'subdomain',
-            label: 'Preferred Subdomain',
+            label: 'Your sandbox URL will be:',
             placeholder: 'mycompany',
             required: true
         }
