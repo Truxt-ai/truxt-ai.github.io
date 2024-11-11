@@ -10,6 +10,7 @@ type NavItem = {
 
 type DropdownItem = {
     title: string;
+    href?: string;
     items: NavItem[];
 };
 
@@ -18,9 +19,10 @@ type NavItems = (NavItem | DropdownItem)[];
 const navigationData: NavItems = [
     {
         title: 'Products',
+        href: '/products',
         items: [
             { title: 'DevOpsGPT (new)', href: '/devops-gpt' },
-            { title: 'Product Details', href: '/products' }
+            { title: '360° GEN AI Enablement', href: '/truxt-gen-ai' }
         ]
     },
     {
@@ -37,15 +39,11 @@ const navigationData: NavItems = [
     },
     {
         title: 'Resources',
-        items: [
-            { title: 'FAQ', href: '/faq' }
-        ]
+        items: [{ title: 'FAQ', href: '/faq' }]
     },
     {
         title: 'Company',
-        items: [
-            { title: 'Contact Us', href: '/contact-us' }
-        ]
+        items: [{ title: 'Contact Us', href: '/contact-us' }]
     }
 ];
 
@@ -66,20 +64,20 @@ export default function Header() {
                         <ul className='flex grow flex-wrap items-center justify-center gap-4 text-sm lg:gap-8'>
                             {navigationData.map((item, index) => (
                                 <li key={index} className='px-3 py-1'>
-                                    {'href' in item ? (
-                                        <Link href={item.href} className='flex items-center text-gray-700 transition hover:text-gray-900'>
-                                            {item.title}
-                                        </Link>
-                                    ) : (
-                                        <Dropdown title={item.title}>
+                                    {'items' in item ? (
+                                        <Dropdown title={item.title} href={item.href}>
                                             {item.items.map((subItem, subIndex) => (
-                                                <li key={subIndex} className=''>
+                                                <li key={subIndex}>
                                                     <Link href={subItem.href} className='flex rounded-lg px-2 py-1.5 text-sm text-gray-700 hover:bg-gray-100 whitespace-nowrap'>
                                                         {subItem.title}
                                                     </Link>
                                                 </li>
                                             ))}
                                         </Dropdown>
+                                    ) : (
+                                        <Link href={item.href} className='flex items-center text-gray-700 transition hover:text-gray-900'>
+                                            {item.title}
+                                        </Link>
                                     )}
                                 </li>
                             ))}
