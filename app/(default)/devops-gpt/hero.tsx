@@ -25,7 +25,7 @@ export default function Component() {
                                 Upcoming
                             </Badge>
                         </div>
-                        <div className='mx-auto max-w-3xl'>
+                        {/* <div className='mx-auto max-w-3xl'>
                             <p className='mb-8 text-lg text-slate-600 dark:text-slate-400'>
                                 Revolutionize your DevOps workflow with AI-powered assistance
                             </p>
@@ -37,7 +37,7 @@ export default function Component() {
                                     Learn More
                                 </Button>
                             </div>
-                        </div>
+                        </div> */}
                     </div>
                     <div className='relative mx-auto max-w-5xl'  data-aos='zoom-y-out' data-aos-delay={150}>
                         <div className='aspect-video overflow-hidden rounded-xl bg-slate-900 shadow-2xl'>

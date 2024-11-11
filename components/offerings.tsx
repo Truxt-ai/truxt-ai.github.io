@@ -3,6 +3,7 @@
 import { Database, Lock } from 'lucide-react';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
+import Link from 'next/link';
 
 export default function Component() {
     const offerings = [
@@ -56,9 +57,10 @@ export default function Component() {
                                         </li>
                                     ))}
                                 </ul>
-                                <Button className='w-full' variant='default'>
+                                <Link className='w-full bg-black text-white text-center p-1 rounded-md py-2' href={'/solutions'} >
+                                    {/* <Link href='/solutions'>Learn More</Link> */}
                                     Learn More
-                                </Button>
+                                </Link>
                             </CardContent>
                         </Card>
                     ))}
