@@ -19,7 +19,7 @@ const navigationData: NavItems = [
     {
         title: 'Products',
         items: [
-            { title: 'DevOpsGPT', href: '/devops-gpt' },
+            { title: 'DevOpsGPT (new)', href: '/devops-gpt' },
             { title: 'Product Details', href: '/blogs' }
         ]
     },
@@ -69,7 +69,6 @@ export default function Header() {
                                     {'href' in item ? (
                                         <Link href={item.href} className='flex items-center text-gray-700 transition hover:text-gray-900'>
                                             {item.title}
-                                            {item.title === 'DevOps GPT' ? <div className='relative left-1 bottom-2 bg-gradient-to-tr from-blue-600 to-blue-300 px-2 text-xs text-white'>New</div> : null}
                                         </Link>
                                     ) : (
                                         <Dropdown title={item.title}>
