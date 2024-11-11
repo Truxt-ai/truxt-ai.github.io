@@ -35,7 +35,6 @@ async function VerifySentOTP(email: string, code: string): Promise<WaitListRespo
             })
         });
         const data = await response.json();
-        console.log(data);
         return data;
     } catch (error: unknown) {
         console.error('Error while verify otp:', (error as Error).message);
