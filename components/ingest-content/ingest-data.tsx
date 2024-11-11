@@ -68,7 +68,7 @@ export default function Component() {
     }, [formData.email]);
 
     const formFields: FormField[] = [
-        { id: 'name', name: 'name', label: 'Name', placeholder: 'John', required: true },
+        { id: 'name', name: 'name', label: 'Full Name', placeholder: 'John', required: true },
         {
             id: 'email',
             name: 'email',

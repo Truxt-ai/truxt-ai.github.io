@@ -20,7 +20,7 @@ const navigationData: NavItems = [
         title: 'Products',
         items: [
             { title: 'DevOpsGPT (new)', href: '/devops-gpt' },
-            { title: 'Product Details', href: '/blogs' }
+            { title: 'Product Details', href: '/products' }
         ]
     },
     {
