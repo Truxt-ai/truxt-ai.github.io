@@ -18,11 +18,10 @@ type NavItems = (NavItem | DropdownItem)[];
 const navigationData: NavItems = [
     {
         title: 'Products',
-        href: '/products'
-    },
-    {
-        title: 'DevOpsGPT',
-        href: '/devops-gpt'
+        items: [
+            { title: 'DevOpsGPT', href: '/devops-gpt' },
+            { title: 'Product Details', href: '/blogs' }
+        ]
     },
     {
         title: 'Sandbox',
