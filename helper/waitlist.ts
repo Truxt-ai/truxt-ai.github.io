@@ -4,11 +4,11 @@ interface WaitListResponse {
 }
 export async function AddNewMemberInWaitList(name:string, email: string,): Promise<WaitListResponse> {
     try {
-        const response = await fetch(`${process.env.CHAT_DB_URL_API}/api/waitlist/`, {
+        const response = await fetch(`${process.env.NEXT_PUBLIC_CHAT_DB_URL_API}/api/waitlist/`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
-                'x-token': `${process.env.CHAT_DB_TOKEN}`
+                'x-token': `${process.env.NEXT_PUBLIC_CHAT_DB_TOKEN}`
             },
             body: JSON.stringify({
                name,email

@@ -4,11 +4,11 @@ interface WaitListResponse {
 }
 export async function SendOtpForSandbox(email: string): Promise<WaitListResponse> {
     try {
-        const response = await fetch(`${process.env.CHAT_DB_URL_API}/api/playground/send_otp`, {
+        const response = await fetch(`${process.env.NEXT_PUBLIC_CHAT_DB_URL_API}/api/playground/send_otp`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
-                'x-token': `${process.env.CHAT_DB_TOKEN}`
+                'x-token': `${process.env.NEXT_PUBLIC_CHAT_DB_TOKEN}`
             },
             body: JSON.stringify({
                 email
