@@ -9,17 +9,17 @@ export default function Component() {
         {
             icon: <Brain className='h-8 w-8' color="#60a5fa" />,
             title: '360° GenAI Enablement',
-            features: ['Build a Robust Knowledge Hub', 'Enhanced Data Privacy and Security', 'Broader 3rd party, CRM, Ticketing Platform integration', 'Truxt GenAi Platform']
+            features: ['Build a Robust Knowledge Hub', 'Enhanced Data Privacy and Security', 'Broader 3rd party, CRM, Ticketing Platform integration','Enable Enterprise with GEN AI']
         },
         {
             icon: <Shield className='h-8 w-8' color="#60a5fa" />,
             title: 'Truxt GenAI Platform',
-            features: ['Pretrained GenAi model for higher accuracy', 'Org Private data remains private', 'Scales seamlessly with large datasets as well', 'Multi-Modal Capabilities']
+            features: ['Pretrained GenAi model for higher accuracy', 'Org Private data remains private', 'Scales seamlessly with large datasets as well', 'Agentic AI and Multi-Modal Capabilities']
         },
         {
             icon: <Workflow className='h-8 w-8' color="#60a5fa" />,
             title: 'DevOpsGPT',
-            features: ['Built for Open Source DevOps Technical Support', 'DevOps trained/fine-tuned models', 'Instant Technical Issue Resolution', 'Agentic AI Troubleshooting, for Your Orgs Environment']
+            features: ['Troubleshoot DevOps issues instantly', 'Interactive resolution than just chat responses', 'DevOps trained/fine-tuned models', 'Muti-Agent AI for Org specific Environment']
         }
     ];
 
