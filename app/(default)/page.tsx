@@ -39,13 +39,10 @@ export default function Home() {
   return (
     <>
       <Hero />
-      {/* <LargeTestimonial /> */}
       <BusinessCategories />
       <Offerings/>
-      <FeaturesPlanet title="Improving Your Team needs with greater Efficiency and Precision" content={featureData}/>
+      {/* <FeaturesPlanet title="Improving Your Team needs with greater Efficiency and Precision" content={featureData}/> */}
       <WhyTruxt/>
-      {/* <Features /> */}
-      {/* <Cta /> */}
     </>
   );
 }

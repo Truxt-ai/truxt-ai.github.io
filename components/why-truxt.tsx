@@ -1,67 +1,89 @@
-import { Card, CardContent } from '@/components/ui/card';
-import { Shield, Zap, Database, Cog } from 'lucide-react';
+import React from 'react'
+import { ArrowRight, Building2, Network, Cpu, Shield, Hexagon, BarChart3 } from 'lucide-react'
+import { Button } from "@/components/ui/button"
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 
-export default function Component() {
-    return (
-        <section className='max-w-7xl m-auto py-12 md:py-24 lg:py-32'>
-            <div className='container px-4 md:px-6'>
-                <div className='flex items-center gap-2 mb-8'>
-                    <span className='text-xl font-bold text-center bold uppercase tracking-wide text-gray-900'>WHY CHOOSE US</span>
-                </div>
+interface Feature {
+  Icon: React.ElementType
+  title: string
+  description: string
+}
 
-                <div className='grid lg:grid-cols-2 gap-12 items-center'>
-                    <div className='space-y-8'>
-                        <h2 className='text-3xl font-bold tracking-tighter text-navy-900 md:text-4xl/tight'>High Accuracy & Performance</h2>
-                        <p className='text-gray-500 md:text-lg'>Our multi-LLM system and real-time updates ensure higher accuracy and relevance than standard models.</p>
+const features: Feature[] = [
+  {
+    Icon: Building2,
+    title: "Enterprise-Ready",
+    description: "Purpose-built to handle high volumes of complex technical inquiries with precision and efficiency"
+  },
+  {
+    Icon: Network,
+    title: "Scalable Architecture",
+    description: "Adapts seamlessly to growing support demands while maintaining consistent service quality"
+  },
+  {
+    Icon: Cpu,
+    title: "Multi-LLM Technology",
+    description: "Delivers faster, more accurate resolutions through an advanced multi-language model system"
+  },
+  {
+    Icon: Shield,
+    title: "Enterprise Security",
+    description: "Ensures data privacy with on-premise deployment options and robust security controls"
+  },
+  {
+    Icon: Hexagon,
+    title: "Unified Ecosystem",
+    description: "Integrates with your existing CRM and ticketing systems for streamlined workflows"
+  },
+  {
+    Icon: BarChart3,
+    title: "Data-Driven Insights",
+    description: "Provides actionable analytics on customer trends and team performance"
+  }
+]
 
-                        <div className='grid sm:grid-cols-2 gap-6'>
-                            <Card className='border-none shadow-none'>
-                                <CardContent className='p-6 text-center'>
-                                    <div className='mb-4 flex justify-center'>
-                                        <div className='rounded-lg p-3 bg-blue-50'>
-                                            <Zap className='h-6 w-6 text-blue-900' />
-                                        </div>
-                                    </div>
-                                    <h3 className='text-lg font-semibold mb-2'>Multi-LLM System</h3>
-                                    <p className='text-sm'>Uses multiple language models for higher accuracy than standard models.</p>
-                                </CardContent>
-                            </Card>
+export default function WhyTruxtSection() {
+  return (
+    <section className="bg-background py-24 sm:py-32">
+      <div className="container max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="text-center">
+          <h2 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl">Why Truxt?</h2>
+          <p className="mt-6 text-lg leading-8 text-muted-foreground">
+            Transform your support operations with an enterprise-grade generative AI platform
+          </p>
+        </div>
+        <div className="mt-10 sm:mt-20 lg:mt-24">
+          <div className="grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-3 lg:gap-x-8">
+            {features.map((feature) => (
+              <FeatureCard key={feature.title} feature={feature} />
+            ))}
+          </div>
+        </div>
+        <div className="mt-16 flex justify-center">
+          <Button asChild size="lg">
+            <a href="/href" className="group flex items-center gap-2">
+              Transform Your Support Operations
+              <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
+            </a>
+          </Button>
+        </div>
+      </div>
+    </section>
+  )
+}
 
-                            <Card className='border-none shadow-none'>
-                                <CardContent className='p-6 text-center'>
-                                    <div className='mb-4 flex justify-center'>
-                                        <div className='rounded-lg p-3 bg-blue-50'>
-                                            <Database className='h-6 w-6 text-blue-900' />
-                                        </div>
-                                    </div>
-                                    <h3 className='text-lg font-semibold mb-2 text-navy-900'>Multimodal Data Support</h3>
-                                    <p className='text-sm text-gray-500'>Include video and YouTube content in the Knowledge Hub.</p>
-                                </CardContent>
-                            </Card>
-                        </div>
-
-                        <div className='space-y-4'>
-                            <h3 className='text-xl font-semibold text-navy-900'>Security</h3>
-                            <ul className='space-y-2 text-gray-500'>
-                                <li className='flex items-center gap-2'>
-                                    <Shield className='h-5 w-5 text-blue-900' />
-                                    <span>Data Security: Keeps all enterprise data within organizational boundaries.</span>
-                                </li>
-                                <li className='flex items-center gap-2'>
-                                    <Cog className='h-5 w-5 text-blue-900' />
-                                    <span>On-Premises Option: Available for clients needing full control over data.</span>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-
-                    <div className='relative'>
-                        <div className='relative h-[600px] w-full overflow-hidden rounded-2xl'>
-                            <img alt='AI-powered system visualization' className='object-cover w-full h-full' src='https://static.wixstatic.com/media/cf9793_1dcf5895e918419a86fc88c21eea797f~mv2.jpeg/v1/fill/w_2940,h_1558,al_c,q_90,usm_0.66_1.00_0.01,enc_auto/cf9793_1dcf5895e918419a86fc88c21eea797f~mv2.jpeg' />
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-    );
+function FeatureCard({ feature }: { feature: Feature }) {
+  return (
+    <Card className="flex flex-col h-full">
+      <CardHeader>
+        <CardTitle className="flex items-center gap-x-3 text-lg font-semibold leading-7">
+          <feature.Icon className="h-6 w-6 text-primary" />
+          {feature.title}
+        </CardTitle>
+      </CardHeader>
+      <CardContent>
+        <p className="text-muted-foreground">{feature.description}</p>
+      </CardContent>
+    </Card>
+  )
 }
