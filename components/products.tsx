@@ -32,7 +32,7 @@ const products: Product[] = [
             'Specialized DevOps Expertise: DevOpsGPT, trained on domain-specific data, delivers precise, context-aware answers for both routine and complex inquiries.',
             'Real-Time Data & Continuous Learning: Uses live data streaming for proactive issue resolution, improving over time with ongoing fine-tuning based on user interactions.'
         ],
-        imageSrc: '/images/truxt-arch.png',
+        imageSrc: '/images/devops-page.png',
         ctaText: 'Learn More',
         ctaLink: '/devops-gpt'
     },
@@ -71,18 +71,18 @@ export default function ProductComparison() {
                     <div key={product.id} className={`mb-16 ${index !== 0 ? 'mt-32' : ''}`} data-aos={index % 2 === 0 ? 'fade-right' : 'fade-left'}>
                         <Card className="overflow-hidden bg-white/80 shadow-2xl backdrop-blur-sm transition-all duration-300 hover:shadow-primary/20">
                             <CardContent className="p-0">
-                                <div className={`flex flex-col gap-8 lg:flex-row ${index % 2 === 0 ? '' : 'lg:flex-row-reverse'}`}>
-                                    <div className="relative w-full lg:w-1/2 flex justify-center items-center overflow-hidden">
+                                <div className={`flex flex-col gap-8 lg:flex-col ${index % 2 === 0 ? '' : 'lg:flex-row-reverse'}`}>
+                                    <div className="relative w-full lg:w-full flex justify-center items-center overflow-hidden">
                                         <div className="absolute inset-0 bg-gradient-to-br from-primary/20 to-secondary/20 opacity-75"></div>
                                         <Image 
                                             src={product.imageSrc} 
                                             alt={product.title} 
                                             width={600} 
                                             height={400} 
-                                            className="w-2/3 object-cover transition-transform duration-300 hover:scale-105" 
+                                            className="w-full object-cover transition-transform duration-300 hover:scale-105" 
                                         />
                                     </div>
-                                    <div className="w-full p-8 lg:p-12 lg:w-1/2">
+                                    <div className="w-full p-8 lg:p-12 lg:w-full">
                                         <h2 className="mb-2 text-3xl font-bold tracking-tight text-gray-900 lg:text-4xl">{product.title}</h2>
                                         <h3 className="mb-4 text-xl font-semibold text-gray-700">{product.subtitle}</h3>
                                         <p className="mb-6 text-lg leading-relaxed text-gray-600">{product.description}</p>

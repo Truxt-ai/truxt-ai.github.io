@@ -20,8 +20,8 @@ jobs:
 
       - name: Build and Export
         env:
-          CHAT_DB_URL_API: ${{ secrets.CHAT_DB_URL_API }}
-          CHAT_DB_TOKEN: ${{ secrets.CHAT_DB_TOKEN }}
+          NEXT_PUBLIC_CHAT_DB_URL_API: ${{ secrets.CHAT_DB_URL_API }}
+          NEXT_PUBLIC_CHAT_DB_TOKEN: ${{ secrets.CHAT_DB_TOKEN }}
         run: npm run build
 
       - name: Deploy

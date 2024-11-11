@@ -1,5 +1,5 @@
 import PageIllustration from '@/components/page-illustration';
-import Search from './search';
+// import Search from './search';
 
 export default function Hero() {
     return (
@@ -16,7 +16,7 @@ export default function Hero() {
                         </div>
                     </div>
                     {/* Search */}
-                    <Search />
+                    {/* <Search /> */}
                 </div>
             </div>
         </section>

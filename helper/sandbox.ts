@@ -4,11 +4,11 @@ interface APIResponse {
 }
 export async function SandBoxCreation(name:string,email: string,docs_link:string,subdomain:string): Promise<APIResponse> {
     try {
-        const response = await fetch(`${process.env.CHAT_DB_URL_API}/api/playground`, {
+        const response = await fetch(`${process.env.NEXT_PUBLIC_CHAT_DB_URL_API}/api/playground`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
-                'x-token': `${process.env.CHAT_DB_TOKEN}`
+                'x-token': `${process.env.NEXT_PUBLIC_CHAT_DB_TOKEN}`
             },
             body: JSON.stringify({
                 name,
