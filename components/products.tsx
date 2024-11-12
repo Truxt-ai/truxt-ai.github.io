@@ -1,4 +1,3 @@
-import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
 import { ArrowRight } from 'lucide-react';
 import Image from 'next/image';
@@ -32,7 +31,7 @@ export default function Component() {
         <div className='bg-gray-100 py-10'>
             <div className='grid gap-6 p-6 md:grid-cols-2 max-w-7xl mx-auto'>
                 {cardData.map((card, index) => (
-                    <Card key={index} className='bg-white border-gray-200'>
+                    <Card key={index} className='bg-white border-gray-200' data-aos='zoom-y-out' data-aos-delay={450}>
                         <CardHeader className='space-y-4'>
                             <div className='rounded-lg overflow-hidden border border-gray-200 h-1/2'>
                                 <Image src={card.previewImage} alt={card.previewAlt} className='h-full mx-auto rounded-md w-full aspect-video' width={400} height={300} />
