@@ -67,7 +67,7 @@ export default function Component() {
     }, [formData.email]);
 
     const formFields: FormField[] = [
-        { id: 'name', name: 'name', label: 'Full Name', placeholder: 'John', required: true },
+        { id: 'name', name: 'name', label: 'Full Name', placeholder: '', required: true },
         {
             id: 'email',
             name: 'email',
@@ -94,8 +94,8 @@ export default function Component() {
     ];
 
     const steps: Step[] = [
-        { step: 1, title: 'Data Ingesting', icon: File },
-        { step: 2, title: 'Start query with your playground', icon: Gamepad2 }
+        { step: 1, title: 'Enter details', icon: File },
+        { step: 2, title: 'Get instance ready', icon: Gamepad2 }
     ];
 
     const handleSubmit = async (e: React.FormEvent) => {
@@ -220,12 +220,12 @@ export default function Component() {
     return (
         <div className='bg-white p-8' data-aos='zoom-y-out' data-aos-delay={450}>
             <div className='mx-auto max-w-6xl'>
-                <h1 className='mb-8 text-4xl font-bold'>See it for your content</h1>
+                <h1 className='mb-8 text-4xl font-bold'>Try it for your content</h1>
 
                 <div className='flex flex-col gap-8 lg:flex-row lg:gap-16'>
                     {/* Left side - Form */}
                     <div className='flex-1'>
-                        <p className='mb-8 text-gray-600'>Share a link to your content and we'll create a personalized sandbox for you to preview</p>
+                        {/* <p className='mb-8 text-gray-600'>Share a link to your content and we'll create a personalized sandbox for you to preview</p> */}
 
                         {currentStep === 1 && (
                             <form onSubmit={handleSubmit} className='space-y-6'>
@@ -290,7 +290,7 @@ export default function Component() {
                     <div className='w-full lg:w-[400px] space-y-8'>
                         {/* Progress Steps */}
                         <div className='bg-gray-50 p-6 rounded-xl'>
-                            <h3 className='text-lg font-semibold mb-4'>Progress</h3>
+                            <h3 className='text-lg font-semibold mb-4'>Two Step Setup</h3>
                             <div className='relative'>
                                 {steps.map((item, index) => (
                                     <div key={item.step} className='flex items-center mb-4 last:mb-0'>
@@ -311,14 +311,14 @@ export default function Component() {
                             </div>
                         </div>
 
-                        <div className='relative h-[300px] rounded-xl overflow-hidden'>
-                            <Image src='/images/public-pages-ui.png' alt='Processing animation' width={400} height={300} className='object-cover' priority />
+                        {/* <div className='relative h-[300px] rounded-xl overflow-hidden'> */}
+                            {/* <Image src='/images/public-pages-ui.png' alt='Processing animation' width={400} height={300} className='object-cover' priority /> */}
                             {/* <div className='absolute inset-0 bg-gradient-to-t from-black/20 to-transparent' /> */}
                             {/* <div className='absolute bottom-4 left-4 right-4'>
                                 <h3 className='text-lg font-semibold text-white'>Content Processing</h3>
                                 <p className='text-sm text-white/90'>Watch as we analyze and process your content in real-time</p>
                             </div> */}
-                        </div>
+                        {/* </div> */}
                     </div>
                 </div>
             </div>

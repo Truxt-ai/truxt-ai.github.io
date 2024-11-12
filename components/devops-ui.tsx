@@ -97,7 +97,7 @@ function DevOpsUI() {
 
                             <div className='space-y-6'>
                                 <div className='flex gap-3'>
-                                    <CheckCircle2 className='h-6 w-6 text-primary flex-shrink-0' />
+                                    <CheckCircle2 className='h-6 w-6 text-primary flex-shrink-0' color='#60a5fa' />
                                     <div>
                                         <h3 className='font-semibold text-gray-900'>AI-Powered DevOps Assistance</h3>
                                         <p className='text-gray-500'>Quickly diagnose and resolve infrastructure issues, reducing downtime with fast, intelligent troubleshooting.</p>
@@ -105,7 +105,7 @@ function DevOpsUI() {
                                 </div>
 
                                 <div className='flex gap-3'>
-                                    <CheckCircle2 className='h-6 w-6 text-primary flex-shrink-0' />
+                                    <CheckCircle2 className='h-6 w-6 text-primary flex-shrink-0' color='#60a5fa' />
                                     <div>
                                         <h3 className='font-semibold text-gray-900'>Integration with DevOps Tools</h3>
                                         <p className='text-gray-500'>Works smoothly with DevOps tools like Kubernetes, ArgoCD, and Jenkins, optimizing monitoring and issue response.</p>
@@ -113,7 +113,7 @@ function DevOpsUI() {
                                 </div>
 
                                 <div className='flex gap-3'>
-                                    <CheckCircle2 className='h-6 w-6 text-primary flex-shrink-0' />
+                                    <CheckCircle2 className='h-6 w-6 text-primary flex-shrink-0' color='#60a5fa' />
                                     <div>
                                         <h3 className='font-semibold text-gray-900'>Faster Incident Resolution</h3>
                                         <p className='text-gray-500'>Use Truxt's GenAI capabilities to identify root causes and remediate both simple and complex infrastructure issues efficiently.</p>
@@ -143,7 +143,7 @@ function DevOpsUI() {
                                     <form onSubmit={handleSubmit} className='space-y-4'>
                                         <div>
                                             <label htmlFor='name' className='block text-sm font-medium text-gray-700 mb-1'>
-                                                Name
+                                               Full Name
                                             </label>
                                             <Input id='name' placeholder='Enter your name' value={formData.name} onChange={(e) => setFormData((prev) => ({ ...prev, name: e.target.value }))} required disabled={formStatus === 'loading'} />
                                         </div>
@@ -165,9 +165,9 @@ function DevOpsUI() {
                                         </Button>
                                     </form>
 
-                                    <p className='text-xs text-gray-500 text-center'>
+                                    {/* <p className='text-xs text-gray-500 text-center'>
                                         Don't worry Truxt keeps your infromation secure always.
-                                    </p>
+                                    </p> */}
                                 </CardContent>
                             </Card>
                         </div>

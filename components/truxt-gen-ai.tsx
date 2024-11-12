@@ -10,37 +10,21 @@ import PageIllustration from '@/components/page-illustration'
 const features = [
   {
     title: 'Knowledge Hub',
-    description: 'Supercharge every bit of product information, including Knowledge base, community solutions, recorded videos, coupled with surrounding technologies.'
+    description: 'Centralizes product information, community solutions, and resources.'
   },
   {
-    title: 'An Enterprise LLM',
-    description: 'Provision to restrict responses only on internal data, enterprise data remains private and does not go to LLM.'
+    title: 'Data Privacy',
+    description: 'Keeps enterprise data secure with on-premise deployment options.'
   },
   {
-    title: 'AI-Powered Automation',
-    description: 'Automate support queries, and troubleshooting, freeing up resources for complex issues.'
+    title: 'Automated Support',
+    description: 'Uses AI to automate support and improve through interactions.'
   },
   {
-    title: 'Scalability',
-    description: "Whether you're a growing startup or a large enterprise, Truxt scales with your needs, handling increasing demands effortlessly."
-  },
-  {
-    title: 'Seamless Integration',
-    description: 'Easily integrate Truxt with existing enterprise systems, tools, and workflows, ensuring a smooth transition and minimal disruption.'
-  },
-  {
-    title: 'Real-Time Insights',
-    description: 'Access actionable analytics and performance metrics that help optimize support strategies and identify operational improvements.'
-  },
-  {
-    title: 'Continuous Learning',
-    description: "Truxt's AI learns from every interaction, improving accuracy and providing smarter, more context-aware responses over time."
-  },
-  {
-    title: 'Security & Compliance',
-    description: 'Ensure data protection with enterprise-grade security and regulatory compliance, with options for on-premise deployment.'
+    title: 'Scalable Integration',
+    description: 'Adapts to growth, integrating with systems and offering real-time insights.'
   }
-]
+];
 
 export default function TruxtGenAIPage() {
   return (
@@ -76,7 +60,7 @@ export default function TruxtGenAIPage() {
                 <div className="space-y-6">
                   {features.map((feature, index) => (
                     <div key={index} className="flex gap-3">
-                      <CheckCircle2 className="h-6 w-6 text-primary flex-shrink-0" />
+                      <CheckCircle2 className="h-6 w-6 text-primary flex-shrink-0" color='#60a5fa' />
                       <div>
                         <h3 className="font-semibold text-gray-900">{feature.title}</h3>
                         <p className="text-gray-500">{feature.description}</p>
@@ -88,7 +72,7 @@ export default function TruxtGenAIPage() {
             </Card>
 
             <div className="space-y-8" data-aos='zoom-y-out' data-aos-delay={450}>
-              <Card className="p-6">
+              {/* <Card className="p-6">
                 <CardContent>
                   <h2 className="text-2xl font-semibold text-gray-900 mb-4">Why Choose Truxt?</h2>
                   <p className="text-gray-500 mb-6">
@@ -103,7 +87,7 @@ export default function TruxtGenAIPage() {
                     <li>Analytics on resolutions and trends.</li>
                   </ul>
                 </CardContent>
-              </Card>
+              </Card> */}
 
               <Card className="p-6 bg-gradient-to-t from-blue-600 to-blue-500">
                 <CardContent>
@@ -115,7 +99,7 @@ export default function TruxtGenAIPage() {
                     href="/contact-us"
                     className="inline-block bg-white text-primary font-semibold py-2 px-4 rounded-md hover:bg-gray-100 transition-colors"
                   >
-                    Contact Truxt
+                    Request demo
                   </Link>
                 </CardContent>
               </Card>

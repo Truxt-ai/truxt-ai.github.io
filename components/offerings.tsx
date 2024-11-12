@@ -1,25 +1,34 @@
 'use client';
 
-import { Brain, Shield, Workflow } from 'lucide-react';
+import { ArrowRightLeft, Brain, BrainCog, Shield, Workflow, Infinity } from 'lucide-react';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import Link from 'next/link';
 
 export default function Component() {
     const offerings = [
         {
-            icon: <Brain className='h-8 w-8' color="#60a5fa" />,
-            title: '360° GenAI Enablement',
-            features: ['Build a Robust Knowledge Hub', 'Enhanced Data Privacy and Security', 'Broader 3rd party, CRM, Ticketing Platform integration','Enable Enterprise with GEN AI']
+            icon: <ArrowRightLeft className='h-8 w-8' color="#60a5fa" />,
+            title: '360° GenAI Enterprise',
+            features: [ "Build an Enterprise Knowledge Hub",
+                "Enhanced Data Privacy and Security",
+                "Internal and Third-Party Integrations",
+                "Customized Solutions"]
         },
         {
-            icon: <Shield className='h-8 w-8' color="#60a5fa" />,
+            icon: <BrainCog className='h-8 w-8' color="#60a5fa" />,
             title: 'Truxt GenAI Platform',
-            features: ['Pretrained GenAi model for higher accuracy', 'Org Private data remains private', 'Scales seamlessly with large datasets as well', 'Agentic AI and Multi-Modal Capabilities']
+            features:  ["Pre-trained GenAI model for higher accuracy",
+            "Private data remains secure",
+            "Scales seamlessly with large datasets",
+            "Agentic AI & Multi-Modal capabilities"]
         },
         {
-            icon: <Workflow className='h-8 w-8' color="#60a5fa" />,
+            icon: <Infinity className='h-8 w-8' color="#60a5fa" />,
             title: 'DevOpsGPT',
-            features: ['Troubleshoot DevOps issues instantly', 'Interactive resolution than just chat responses', 'DevOps trained/fine-tuned models', 'Muti-Agent AI for Org specific Environment']
+            features: [ "Instant DevOps troubleshooting",
+                "Interactive resolutions beyond standard chat responses",
+                "DevOps-trained, fine-tuned models",
+                "Multi-Agent AI for org's specific environments"]
         }
     ];
 
