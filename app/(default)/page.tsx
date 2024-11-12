@@ -5,7 +5,6 @@ export const metadata = {
 
 import Hero from "@/components/hero-home";
 import BusinessCategories from "@/components/business-categories";
-import FeaturesPlanet from "@/components/features-planet";
 import Offerings from "@/components/offerings";
 
 import { Fingerprint, CheckCircle, BarChart, LucideIcon } from 'lucide-react'
@@ -41,7 +40,6 @@ export default function Home() {
       <Hero />
       <BusinessCategories />
       <Offerings/>
-      {/* <FeaturesPlanet title="Improving Your Team needs with greater Efficiency and Precision" content={featureData}/> */}
       <WhyTruxt/>
     </>
   );
