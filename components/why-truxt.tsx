@@ -45,7 +45,7 @@ const features: Feature[] = [
 
 export default function WhyTruxtSection() {
     return (
-        <section className='bg-background py-12 sm:py-16 px-4'>
+        <section className='bg-background py-12 sm:py-16 px-4 ' data-aos='zoom-y-out' data-aos-delay={150}>
             <div className='container max-w-7xl mx-auto'>
                 <div className='text-center'>
                     <h2 className='text-3xl font-bold tracking-tight text-foreground sm:text-4xl'>Why Truxt?</h2>
