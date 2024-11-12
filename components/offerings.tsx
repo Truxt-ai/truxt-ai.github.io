@@ -52,7 +52,7 @@ export default function Component() {
                                         </li>
                                     ))}
                                 </ul>
-                                <Link className='w-full bg-black text-white text-center p-1 rounded-md py-2' href={'/solutions'}>
+                                <Link className='w-full bg-black text-center p-1 rounded-md py-2 bg-gradient-to-t from-blue-600 to-blue-500 bg-[length:100%_100%] bg-[bottom] text-white shadow hover:bg-[length:100%_150%]'  href={'/solutions'}>
                                     Learn More
                                 </Link>
                             </CardContent>

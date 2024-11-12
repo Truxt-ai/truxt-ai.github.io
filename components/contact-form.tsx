@@ -129,7 +129,7 @@ export default function ContactForm() {
                                 <Label htmlFor='message'>Detailed Contact Reason</Label>
                                 <Textarea id='message' name='message' value={formData.message} onChange={handleInputChange} placeholder='Please provide details about your inquiry...' rows={5} disabled={formStatus === 'loading'} />
                             </div>
-                            <Button type='submit' className='w-full bg-black text-white hover:bg-gray-800' disabled={formStatus === 'loading'}>
+                            <Button type='submit' className='w-full bg-black hover:bg-gray-800 bg-gradient-to-t from-blue-600 to-blue-500 bg-[length:100%_100%] bg-[bottom] text-white shadow hover:bg-[length:100%_150%] '  disabled={formStatus === 'loading'}>
                                 {formStatus === 'loading' ? (
                                     <>
                                         <Loader2 className='mr-2 h-4 w-4 animate-spin' />
