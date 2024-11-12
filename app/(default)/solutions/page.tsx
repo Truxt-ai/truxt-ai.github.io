@@ -2,7 +2,7 @@ import React from 'react'
 import HeroHome from './hero'
 import Solutions from '@/components/solution'
 export const metadata = {
-    title: "AI Solutions by Truxt",
+    title: "Solutions | Truxt",
     description: "Page description",
   };
 

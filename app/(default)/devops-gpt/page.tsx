@@ -1,5 +1,5 @@
 export const metadata = {
-    title: 'DevOpsGPT - Truxt',
+    title: 'DevOpsGPT | Truxt',
     description: 'Page description'
 };
 

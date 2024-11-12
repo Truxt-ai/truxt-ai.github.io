@@ -2,6 +2,7 @@ import React from 'react';
 import Link from 'next/link';
 import MobileMenu from './mobile-menu';
 import Dropdown from '../dropdown';
+import { Badge } from '@/components/ui/badge';
 
 type NavItem = {
     title: string;
@@ -21,8 +22,8 @@ const navigationData: NavItems = [
         title: 'Products',
         href: '/products',
         items: [
-            { title: 'DevOpsGPT (new)', href: '/devops-gpt' },
-            { title: '360° GEN AI Enablement', href: '/truxt-gen-ai' }
+            { title: 'DevOpsGPT', href: '/devops-gpt' },
+            { title: 'Truxt GEN AI Platform', href: '/truxt-gen-ai' }
         ]
     },
     {
@@ -47,7 +48,7 @@ const navigationData: NavItems = [
     }
 ];
 
-export default function Header() {
+export default function Component() {
     return (
         <header className='fixed top-2 z-30 w-full md:top-6'>
             <div className='mx-auto max-w-6xl px-4 sm:px-6'>
@@ -56,7 +57,7 @@ export default function Header() {
                     <div className='flex flex-1 items-center'>
                         <Link href='/' className='flex items-center gap-2'>
                             <img src='https://res.cloudinary.com/dqumxmkt7/image/upload/v1729240685/t2wtznrhjqi5yffsoacv.webp' alt='Truxt' width={32} height={32} />
-                            <h2 className='text-2xl '>Truxt.ai</h2>
+                            <h2 className='text-2xl font-bold'>Truxt.ai</h2>
                         </Link>
                     </div>
 
@@ -69,7 +70,13 @@ export default function Header() {
                                             {item.items.map((subItem, subIndex) => (
                                                 <li key={subIndex}>
                                                     <Link href={subItem.href} className='flex rounded-lg px-2 py-1.5 text-sm text-gray-700 hover:bg-gray-100 whitespace-nowrap'>
-                                                        {subItem.title}
+                                                        {subItem.title === 'DevOpsGPT' ? (
+                                                            <>
+                                                                DevOpsGPT <sup className="text-xs font-normal ml-1 px-2 py-1 text-blue-600 bg-blue-50 rounded-sm">New</sup>
+                                                            </>
+                                                        ) : (
+                                                            subItem.title
+                                                        )}
                                                     </Link>
                                                 </li>
                                             ))}
