@@ -160,6 +160,10 @@ export default function ContactForm() {
                                     <img src='/images/twitter.png' alt='Twitter' className='size-6' />
                                     <span className='sr-only'>Twitter</span>
                                 </a>
+                                <a href='https://www.youtube.com/@truxt-ai' target='_blank' rel='noopener noreferrer' className='text-blue-400 hover:text-blue-600'>
+                                    <img src='/images/youtube.png' alt='Twitter' className='size-6' />
+                                    <span className='sr-only'>Youtube</span>
+                                </a>
                             </div>
                         </div>
                         <Card className='overflow-hidden'>
