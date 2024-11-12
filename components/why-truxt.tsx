@@ -1,5 +1,5 @@
 import React from 'react';
-import { ArrowRight, Building2, Network, Cpu, Shield, Hexagon, BarChart3 } from 'lucide-react';
+import { ArrowRight, Building2, Network, Cpu, Shield, BarChart3, SlidersHorizontal } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import Link from 'next/link';
@@ -32,7 +32,7 @@ const features: Feature[] = [
         description: 'Ensures data privacy with on-premise deployment options and robust security controls'
     },
     {
-        Icon: Hexagon,
+        Icon: SlidersHorizontal,
         title: 'Customized Enterprise Solution',
         description: 'Tailor made to a Org specific requirements including needed integrations with 3rd party software'
     },
@@ -45,7 +45,7 @@ const features: Feature[] = [
 
 export default function WhyTruxtSection() {
     return (
-        <section className='bg-background py-24 sm:py-32'>
+        <section className='bg-background py-12 sm:py-20'>
             <div className='container max-w-7xl mx-auto px-4 sm:px-6 lg:px-8'>
                 <div className='text-center'>
                     <h2 className='text-3xl font-bold tracking-tight text-foreground sm:text-4xl'>Why Truxt?</h2>
