@@ -114,7 +114,7 @@ export default function AISolutionsPage() {
                       </li>
                     ))}
                   </ul>
-                  <Button className="mt-6">Learn More</Button>
+                  {/* <Button className="mt-6">Learn More</Button> */}
                 </CardContent>
               </Card>
             </div>

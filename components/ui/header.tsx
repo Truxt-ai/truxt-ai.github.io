@@ -23,7 +23,7 @@ const navigationData: NavItems = [
         href: '/products',
         items: [
             { title: 'DevOpsGPT', href: '/devops-gpt' },
-            { title: 'Truxt GEN AI Platform', href: '/truxt-gen-ai' }
+            { title: 'Truxt GenAI Platform', href: '/truxt-gen-ai' }
         ]
     },
     {
@@ -38,14 +38,18 @@ const navigationData: NavItems = [
     //     title: 'Pricing',
     //     href: '/pricing'
     // },
+    // {
+    //     title: 'Resources',
+    //     items: [{ title: 'FAQ', href: '/faq' }]
+    // },
     {
-        title: 'Resources',
-        items: [{ title: 'FAQ', href: '/faq' }]
+        title:"Contact Us",
+        href:"/contact-us",
     },
-    {
-        title: 'Company',
-        items: [{ title: 'Contact Us', href: '/contact-us' }]
-    }
+    // {
+    //     title: 'Company',
+    //     items: [{ title: 'Contact Us', href: '/contact-us' }]
+    // }
 ];
 
 export default function Component() {
@@ -57,7 +61,7 @@ export default function Component() {
                     <div className='flex flex-1 items-center'>
                         <Link href='/' className='flex items-center gap-2'>
                             <img src='https://res.cloudinary.com/dqumxmkt7/image/upload/v1729240685/t2wtznrhjqi5yffsoacv.webp' alt='Truxt' width={32} height={32} />
-                            <h2 className='text-2xl font-bold'>Truxt.ai</h2>
+                            <h2 className='text-2xl font-bold'>Truxt</h2>
                         </Link>
                     </div>
 

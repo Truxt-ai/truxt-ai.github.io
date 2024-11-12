@@ -17,6 +17,7 @@ export default function Component() {
                                 Upcoming
                             </Badge>
                         </div>
+                        <p className='text-2xl font-bold'>Your Dedicated DevOps Technical Support</p>
                     </div>
                     <div className='relative mx-auto max-w-5xl' data-aos='zoom-y-out' data-aos-delay={150}>
                         <div className='aspect-video overflow-hidden rounded-xl bg-slate-900 shadow-2xl'>

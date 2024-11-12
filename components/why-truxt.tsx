@@ -1,5 +1,5 @@
 import React from 'react';
-import { ArrowRight, Building2, Network, Cpu, Shield, BarChart3, SlidersHorizontal } from 'lucide-react';
+import { ArrowRight, Building2, Network, Cpu, Shield, BarChart3, SlidersHorizontal, ShieldCheck } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import Link from 'next/link';
@@ -27,14 +27,14 @@ const features: Feature[] = [
         description: 'Delivers faster, more accurate resolutions through advanced multi-LLM, multi-AI Agent system'
     },
     {
-        Icon: Shield,
+        Icon: ShieldCheck,
         title: 'Enterprise Security',
         description: 'Ensures data privacy with on-premise deployment options and robust security controls'
     },
     {
         Icon: SlidersHorizontal,
         title: 'Customized Enterprise Solution',
-        description: 'Tailor made to a Org specific requirements including needed integrations with 3rd party software'
+        description: "Tailor made to a Org's specific requirements including needed integrations with 3rd party software"
     },
     {
         Icon: BarChart3,
@@ -60,7 +60,7 @@ export default function WhyTruxtSection() {
                 </div>
                 <div className='mt-16 flex justify-center'>
                     <Button asChild size='lg'>
-                        <Link href='/contact-us' className='group flex items-center gap-2 bg-gradient-to-t from-blue-600 to-blue-500 bg-[length:100%_100%] bg-[bottom] text-white shadow hover:bg-[length:100%_150%]'>
+                        <Link href='/sandbox' className='group flex items-center gap-2 bg-gradient-to-t from-blue-600 to-blue-500 bg-[length:100%_100%] bg-[bottom] text-white shadow hover:bg-[length:100%_150%]'>
                             Experience Truxt for your Contents
                             <ArrowRight className='w-4 h-4 transition-transform group-hover:translate-x-1' />
                         </Link>

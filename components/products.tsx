@@ -8,7 +8,7 @@ const cardData = [
         iconBg: 'bg-purple-600',
         title: 'DevOpsGPT',
         subtitle: 'Technical Support',
-        description: 'Truxt’s DevOpsGPT delivers instant AI-powered troubleshooting, reducing downtime and accelerating resolution. It integrates with tools like Kubernetes and ArgoCD, providing precise support through DevOps-trained LLMs.',
+        description: "DevOpsGPT is your DevOps technical support. It enables instant AI-powered troubleshooting, reducing downtime and accelerating resolution. It uses multiple open-source technologies to provide precise support through DevOps-trained large language models (LLMs).",
         previewImage: '/images/truxt.png',
         previewAlt: 'DevOps GPT preview',
         buttonText: 'Learn More',
