@@ -8,7 +8,7 @@ import { Cpu, HeadphonesIcon, Users, ArrowRight, Lock } from "lucide-react"
 
 const solutions = [
   {
-    title: 'End to End GenAI Enablement',
+    title: 'Enterprise 360° GenAI Enablement',
     description: '360° GenAI Enablement for comprehensive AI integration across your organization.',
     icon: <Lock className="h-8 w-8" />,
     features: [
