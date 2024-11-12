@@ -49,7 +49,7 @@ export default function TruxtGenAIPage() {
         <div className="mx-auto max-w-6xl px-4 sm:px-4">
           <div className="relative rounded-lg overflow-hidden shadow-xl">
             <Image
-              src="/images/truxt-arch.png"
+              src="/images/truxt-gen-ai.png"
               alt="Truxt Gen AI Enablement"
               width={800}
               height={400}
