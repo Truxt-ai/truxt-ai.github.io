@@ -144,8 +144,8 @@ export default function ContactForm() {
 
                     <div className='md:w-72 space-y-6'>
                         <div className='space-y-2'>
-                            <h3 className='font-semibold'>Official Email</h3>
-                            <a href='mailto:hello@truxt.ai' className='text-blue-600 hover:underline'>
+                            <h3 className='font-semibold'>Email</h3>
+                            <a href='mailto:hello@truxt.ai' className='text-blue-600 hover:underline text-xl'>
                                 hello@truxt.ai
                             </a>
                         </div>

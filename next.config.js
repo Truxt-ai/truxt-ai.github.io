@@ -17,6 +17,7 @@ const nextConfig = {
   images: {
     unoptimized: true, // To support images for GitHub Pages
   },
+  output: 'export',
 }
 
 module.exports = nextConfig

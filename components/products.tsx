@@ -6,6 +6,16 @@ import Link from 'next/link';
 const cardData = [
     {
         iconBg: 'bg-purple-600',
+        title: 'DevOpsGPT',
+        subtitle: 'Technical Support',
+        description: 'Truxt’s DevOpsGPT delivers instant AI-powered troubleshooting, reducing downtime and accelerating resolution. It integrates with tools like Kubernetes and ArgoCD, providing precise support through DevOps-trained LLMs.',
+        previewImage: '/images/truxt.png',
+        previewAlt: 'DevOps GPT preview',
+        buttonText: 'Learn More',
+        buttonLink:"/devops-gpt"
+    },
+    {
+        iconBg: 'bg-purple-600',
         title: 'Truxt Gen AI',
         subtitle: 'Platform',
         description: 'Truxt GenAI Platform enhances self-service support with an AI-powered Knowledge Hub, automation, and secure LLM, offering seamless scaling and real-time insights for improved efficiency and customer satisfaction.',
@@ -14,16 +24,7 @@ const cardData = [
         buttonText: 'Request a demo',
         buttonLink:"/sandbox"
     },
-    {
-        iconBg: 'bg-purple-600',
-        title: 'DevOpsGPT',
-        subtitle: 'Technical Support',
-        description: 'Truxt’s DevOpsGPT delivers instant AI-powered troubleshooting, reducing downtime and accelerating resolution. It integrates with tools like Kubernetes and ArgoCD, providing precise support through DevOps-trained LLMs.',
-        previewImage: '/images/truxt.png',
-        previewAlt: 'DevOps GPT preview',
-        buttonText: 'Learn More',
-        buttonLink:"/devops-gpt"
-    }
+  
 ];
 
 export default function Component() {
