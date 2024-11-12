@@ -17,7 +17,7 @@ const solutions = [
       'Broader 3rd party, CRM, Ticketing Platform integration',
       'Truxt GenAi Platform'
     ],
-    image: '/images/truxt-arch.png'
+    image: '/images/truxt-gen-ai.png'
   },
   {
     title: 'Superior Customer Support',
@@ -39,7 +39,7 @@ const solutions = [
       'Smart Knowledge Base: Quick access to relevant information',
       'Analytics: Real-time customer insights for strategic decision-making'
     ],
-    image: '/images/truxt-arch.png'
+    image: '/images/cx-img.png'
   },
   {
     title: 'DevOps Technical Support',
