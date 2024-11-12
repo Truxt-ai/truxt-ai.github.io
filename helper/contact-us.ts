@@ -4,11 +4,11 @@ interface ContactSupportTicket {
 }
 export async function AddNewContactSupportTicket(name: string, email: string, subject: string, comments: string): Promise<ContactSupportTicket> {
     try {
-        const response = await fetch(`${process.env.NEXT_PUBLIC_CHAT_DB_URL_API}/api/contact/`, {
+        const response = await fetch(`${process.env.CHAT_DB_URL_API}/api/contact/`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
-                'x-token': `${process.env.NEXT_PUBLIC_CHAT_DB_TOKEN}`
+                'x-token': `${process.env.CHAT_DB_TOKEN}`
             },
             body: JSON.stringify({
                 name,
