@@ -1,7 +1,12 @@
 'use client';
-import { Badge } from '@/components/ui/badge';
 import { useEffect, useRef } from 'react';
 import Image from 'next/image';
+
+export const metadata = {
+    title: 'Truxt Gen AI | Truxt',
+    description: 'Page description'
+};
+
 
 export default function Component() {
     const videoRef = useRef<HTMLVideoElement>(null);
@@ -19,7 +24,7 @@ export default function Component() {
                 <div className='pb-12 pt-24 md:pb-20 md:pt-32'>
                     <div className='pb-12 text-center md:pb-16'>
                         <div className='relative inline-flex'>
-                            <h1 className='mb-8 bg-gradient-to-r from-slate-800 to-slate-600 bg-clip-text text-5xl font-bold tracking-tighter text-transparent dark:from-slate-200 dark:to-slate-400 md:text-6xl lg:text-7xl'>360 Gen AI Enablement</h1>
+                            <h1 className='mb-8 bg-gradient-to-r from-slate-800 to-slate-600 bg-clip-text text-5xl font-bold tracking-tighter text-transparent dark:from-slate-200 dark:to-slate-400 md:text-6xl lg:text-7xl'>Truxt GEN AI Platform</h1>
                         </div>
                     </div>
                     <div className='relative mx-auto' data-aos='zoom-y-out' data-aos-delay={150}>

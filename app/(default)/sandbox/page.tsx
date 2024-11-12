@@ -1,3 +1,9 @@
+export const metadata = {
+    title: 'Sandbox | Truxt',
+    description: 'Page description'
+};
+
+
 import React from 'react';
 import Hero from './hero';
 import IngestData from '@/components/ingest-content/ingest-data';
