@@ -21,10 +21,10 @@ const menuItems: MenuItem[] = [
         name: 'Sandbox',
         href: '/sandbox'
     },
-    {
-        name: 'Pricing',
-        href: '/pricing'
-    },
+    // {
+    //     name: 'Pricing',
+    //     href: '/pricing'
+    // },
 
     { name: 'FAQ', href: '/faq' },
 

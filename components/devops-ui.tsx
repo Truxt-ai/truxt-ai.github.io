@@ -154,7 +154,7 @@ function DevOpsUI() {
                                             </label>
                                             <Input id='email' type='email' placeholder='you@example.com' value={formData.email} onChange={(e) => setFormData((prev) => ({ ...prev, email: e.target.value }))} required disabled={formStatus === 'loading'} />
                                         </div>
-                                        <Button type='submit' className='w-full' disabled={formStatus === 'loading'}>
+                                        <Button type='submit' className='w-full bg-gradient-to-t from-blue-600 to-blue-500 bg-[length:100%_100%] bg-[bottom] text-white shadow hover:bg-[length:100%_150%] ' disabled={formStatus === 'loading'}>
                                             {formStatus === 'loading' ? (
                                                 <>
                                                     <Loader2 className='mr-2 h-4 w-4 animate-spin' />

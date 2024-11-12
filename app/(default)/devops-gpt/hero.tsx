@@ -5,12 +5,6 @@ import { useEffect, useRef } from 'react';
 export default function Component() {
     const videoRef = useRef<HTMLVideoElement>(null);
 
-    useEffect(() => {
-        if (videoRef.current) {
-            videoRef.current.play().catch(() => {});
-        }
-    }, []);
-
     return (
         <section className='relative overflow-hidden bg-gradient-to-b from-slate-50 to-slate-100/20 dark:from-slate-950 dark:to-slate-900/20'>
             <div className='absolute inset-0 bg-grid-slate-100 [mask-image:linear-gradient(0deg,white,rgba(255,255,255,0.6))] dark:bg-grid-slate-700/25 dark:[mask-image:linear-gradient(0deg,rgba(255,255,255,0.1),rgba(255,255,255,0.5))]' />
@@ -26,7 +20,7 @@ export default function Component() {
                     </div>
                     <div className='relative mx-auto max-w-5xl' data-aos='zoom-y-out' data-aos-delay={150}>
                         <div className='aspect-video overflow-hidden rounded-xl bg-slate-900 shadow-2xl'>
-                            <video ref={videoRef} src='https://bucket.v0.truxt.xyz/temp-cdn-dump/video?response-content-type=video%2Fmp4&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=3zt4iJKyJwswttMT%2F20241111%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20241111T134800Z&X-Amz-Expires=604800&X-Amz-SignedHeaders=host&X-Amz-Signature=a5c346e4f7522f1103578bba7c187ad069bd5300c448e83769da208a7de3a178' controls loop playsInline className='h-full w-full object-cover' poster='/images/poster-devops.png'>
+                            <video ref={videoRef} src='https://bucket.v0.truxt.xyz/temp-cdn-dump/video?response-content-type=video%2Fmp4&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=3zt4iJKyJwswttMT%2F20241111%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20241111T134800Z&X-Amz-Expires=604800&X-Amz-SignedHeaders=host&X-Amz-Signature=a5c346e4f7522f1103578bba7c187ad069bd5300c448e83769da208a7de3a178' controls  playsInline className='h-full w-full object-cover' poster='/images/poster-devops.png'>
                                 Your browser does not support the video tag.
                             </video>
                         </div>

@@ -84,13 +84,13 @@ export default function Component() {
             placeholder: 'https://docs.example.com',
             required: true
         },
-        {
-            id: 'subdomain',
-            name: 'subdomain',
-            label: 'Your sandbox URL will be:',
-            placeholder: 'mycompany',
-            required: true
-        }
+        // {
+        //     id: 'subdomain',
+        //     name: 'subdomain',
+        //     label: 'Your sandbox URL will be:',
+        //     placeholder: 'mycompany',
+        //     required: true
+        // }
     ];
 
     const steps: Step[] = [
@@ -267,7 +267,7 @@ export default function Component() {
                                                 type='text'
                                                 value={formData.otp}
                                                 onChange={handleInputChange}
-                                                placeholder='Enter OTP'
+                                                placeholder='Enter Verification Code'
                                                 required
                                             />
                                             <Button type='button' onClick={handleVerifyOtp} disabled={!formData.otp || isVerifyingOtp}>
@@ -276,7 +276,7 @@ export default function Component() {
                                         </div>
                                     </div>
                                 )}
-                                <Button type='submit' className='w-full bg-black text-white hover:bg-gray-800' disabled={!isEmailVerified || isLoading}>
+                                <Button type='submit' className='w-full bg-black hover:bg-gray-800 bg-gradient-to-t from-blue-600 to-blue-500 bg-[length:100%_100%] bg-[bottom] text-white shadow hover:bg-[length:100%_150%] ' disabled={!isEmailVerified || isLoading}>
                                     {isLoading ? <Loader2 className='h-4 w-4 animate-spin mr-2' /> : null}
                                     Next →
                                 </Button>

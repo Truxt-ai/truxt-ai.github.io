@@ -33,10 +33,10 @@ const navigationData: NavItems = [
         title: 'Sandbox',
         href: '/sandbox'
     },
-    {
-        title: 'Pricing',
-        href: '/pricing'
-    },
+    // {
+    //     title: 'Pricing',
+    //     href: '/pricing'
+    // },
     {
         title: 'Resources',
         items: [{ title: 'FAQ', href: '/faq' }]
