@@ -86,42 +86,41 @@ function DevOpsUI() {
 
     return (
         <>
-            <div className='min-h-[70vh] bg-gradient-to-b from-gray-50 to-white py-12 px-4 sm:px-6 lg:px-8' data-aos='zoom-y-out' data-aos-delay={300}>
+            <div className=' bg-gradient-to-b from-gray-50 to-white py-12 px-4 sm:px-6 lg:px-8' data-aos='zoom-y-out' data-aos-delay={300}>
                 <div className='max-w-7xl mx-auto'>
                     <div className='grid lg:grid-cols-2 gap-12 items-center'>
                         <div className='space-y-8'>
                             <div>
-                                <h1 className='text-4xl font-bold tracking-tight text-gray-900 sm:text-5xl mb-4'>DevOps GPT by Truxt</h1>
-                                <p className='text-lg text-gray-500'>Revolutionize your DevOps workflow with AI-powered assistance</p>
+                                <h1 className='text-4xl font-bold tracking-tight text-gray-900 sm:text-5xl mb-4'>DevOps Technical Support</h1>
+                                <p className='text-lg text-gray-500'>Truxt's DevOpsGPT brings AI-driven automation and troubleshooting to DevOps teams, speeding up incident resolution and minimizing downtime with seamless integration into existing workflows.</p>
                             </div>
 
                             <div className='space-y-6'>
                                 <div className='flex gap-3'>
                                     <CheckCircle2 className='h-6 w-6 text-primary flex-shrink-0' />
                                     <div>
-                                        <h3 className='font-semibold text-gray-900'>Intelligent Code Analysis</h3>
-                                        <p className='text-gray-500'>DevOps GPT analyzes your codebase and provides insights for optimization and best practices.</p>
+                                        <h3 className='font-semibold text-gray-900'>AI-Powered DevOps Assistance</h3>
+                                        <p className='text-gray-500'>Quickly diagnose and resolve infrastructure issues, reducing downtime with fast, intelligent troubleshooting.</p>
                                     </div>
                                 </div>
 
                                 <div className='flex gap-3'>
                                     <CheckCircle2 className='h-6 w-6 text-primary flex-shrink-0' />
                                     <div>
-                                        <h3 className='font-semibold text-gray-900'>Automated CI/CD Pipelines</h3>
-                                        <p className='text-gray-500'>Streamline your development process with AI-generated CI/CD pipelines tailored to your project.</p>
+                                        <h3 className='font-semibold text-gray-900'>Integration with DevOps Tools</h3>
+                                        <p className='text-gray-500'>Works smoothly with DevOps tools like Kubernetes, ArgoCD, and Jenkins, optimizing monitoring and issue response.</p>
                                     </div>
                                 </div>
 
                                 <div className='flex gap-3'>
                                     <CheckCircle2 className='h-6 w-6 text-primary flex-shrink-0' />
                                     <div>
-                                        <h3 className='font-semibold text-gray-900'>Natural Language DevOps</h3>
-                                        <p className='text-gray-500'>Interact with your DevOps tools using natural language, making complex tasks simple and accessible.</p>
+                                        <h3 className='font-semibold text-gray-900'>Faster Incident Resolution</h3>
+                                        <p className='text-gray-500'>Use Truxt's GenAI capabilities to identify root causes and remediate both simple and complex infrastructure issues efficiently.</p>
                                     </div>
                                 </div>
                             </div>
                         </div>
-
                         {/* Right Column - Waitlist Form */}
                         <div>
                             <Card className='p-6'>
@@ -167,14 +166,7 @@ function DevOpsUI() {
                                     </form>
 
                                     <p className='text-xs text-gray-500 text-center'>
-                                        By clicking "Join Waitlist" you agree to our{' '}
-                                        <a href='#' className='underline'>
-                                            Terms of Service
-                                        </a>{' '}
-                                        and{' '}
-                                        <a href='#' className='underline'>
-                                            Privacy Policy
-                                        </a>
+                                        Don't worry Truxt keeps your infromation secure always.
                                     </p>
                                 </CardContent>
                             </Card>

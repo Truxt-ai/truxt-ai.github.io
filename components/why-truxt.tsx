@@ -45,8 +45,8 @@ const features: Feature[] = [
 
 export default function WhyTruxtSection() {
     return (
-        <section className='bg-background py-12 sm:py-20'>
-            <div className='container max-w-7xl mx-auto px-4 sm:px-6 lg:px-8'>
+        <section className='bg-background py-12 sm:py-16 px-4'>
+            <div className='container max-w-7xl mx-auto'>
                 <div className='text-center'>
                     <h2 className='text-3xl font-bold tracking-tight text-foreground sm:text-4xl'>Why Truxt?</h2>
                     <p className='mt-6 text-lg leading-8 text-muted-foreground'>Built for Enterprise grade adoption, with our advanced GenAI Technologies you get greater accuracy, security and scalability.</p>
