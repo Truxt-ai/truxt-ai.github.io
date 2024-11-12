@@ -19,9 +19,9 @@ const cardData = [
         title: 'Truxt Gen AI',
         subtitle: 'Platform',
         description: 'Truxt GenAI Platform enhances self-service support with an AI-powered Knowledge Hub, automation, and secure LLM, offering seamless scaling and real-time insights for improved efficiency and customer satisfaction.',
-        previewImage: '/images/truxt-arch.png',
+        previewImage: '/images/truxt-gen-ai.png',
         previewAlt: 'Truxt Gen AI preview',
-        buttonText: 'Request a demo',
+        buttonText: 'Request demo',
         buttonLink:"/sandbox"
     },
   
