@@ -10,25 +10,13 @@ type MenuItem = {
 };
 
 const menuItems: MenuItem[] = [
-    { name: 'DevOpsGPT (new)', href: '/devops-gpt' },
-    { name: 'Product Details', href: '/products' },
-
-    {
-        name: 'Solutions',
-        href: '/solutions'
-    },
-    {
-        name: 'Sandbox',
-        href: '/sandbox'
-    },
-    // {
-    //     name: 'Pricing',
-    //     href: '/pricing'
-    // },
-
-    { name: 'FAQ', href: '/faq' },
-
-    { name: 'Contact Us', href: '/contact-us' }
+   
+  { name: 'Products', href: '/products' },
+  { name: 'DevOpsGPT', href: '/devops-gpt' },
+  { name: 'Truxt Gen AI', href: '/truxt-gen-ai' },
+  { name: 'Contact Us', href: '/contact-us' },
+  { name: 'Solutions', href: '/solutions' },
+  { name: 'Sandbox', href: '/sandbox' },
 ];
 
 export default function MobileMenu() {
