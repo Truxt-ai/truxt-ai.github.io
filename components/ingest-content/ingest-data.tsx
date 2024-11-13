@@ -279,7 +279,7 @@ export default function Component() {
                                             <Alert className='bg-green-50 text-green-700 border-green-200'>
                                                 <Check className='h-4 w-4 text-green-500' />
                                                 <AlertTitle>Congratulations!</AlertTitle>
-                                                <AlertDescription>You have successfully added your details. We are retrieving your details and your instance will be shared over your email very soon. Then you can start asking queries.</AlertDescription>
+                                                <AlertDescription>You have successfully added your details. We are retrieving your details and your instance will be shared over your email very soon.</AlertDescription>
                                             </Alert>
                                         ) : null}
                                     </div>
