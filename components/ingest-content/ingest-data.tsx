@@ -6,7 +6,6 @@ import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { Check, Loader2, AlertCircle } from 'lucide-react';
 import { useSearchParams } from 'next/navigation';
-import Image from 'next/image';
 import { File, Gamepad2 } from 'lucide-react';
 import { Alert, AlertDescription, AlertTitle } from '@/components/ui/alert';
 
@@ -60,8 +59,8 @@ export default function Component() {
     useEffect(() => {
         if (formData.email) {
             const domain = formData.email.split('@')[1];
-            if(domain) {
-                setFormData((prevData) => ({ ...prevData, subdomain: domain.split('.')[0]}));
+            if (domain) {
+                setFormData((prevData) => ({ ...prevData, subdomain: domain.split('.')[0] }));
             }
         }
     }, [formData.email]);
@@ -83,7 +82,7 @@ export default function Component() {
             type: 'url',
             placeholder: 'https://docs.example.com',
             required: true
-        },
+        }
         // {
         //     id: 'subdomain',
         //     name: 'subdomain',
@@ -95,7 +94,7 @@ export default function Component() {
 
     const steps: Step[] = [
         { step: 1, title: 'Enter details', icon: File },
-        { step: 2, title: 'Get instance ready', icon: Gamepad2 }
+        { step: 2, title: 'Get Instance instance ready', icon: Gamepad2 }
     ];
 
     const handleSubmit = async (e: React.FormEvent) => {
@@ -197,9 +196,7 @@ export default function Component() {
                     type: 'AuthError',
                     message: response.data.message
                 });
-
-            }
-             else {
+            } else {
                 setMessage({
                     type: 'Success',
                     message: response.data.message
@@ -223,10 +220,7 @@ export default function Component() {
                 <h1 className='mb-8 text-4xl font-bold'>Try it for your content</h1>
 
                 <div className='flex flex-col gap-8 lg:flex-row lg:gap-16'>
-                    {/* Left side - Form */}
                     <div className='flex-1'>
-                        {/* <p className='mb-8 text-gray-600'>Share a link to your content and we'll create a personalized sandbox for you to preview</p> */}
-
                         {currentStep === 1 && (
                             <form onSubmit={handleSubmit} className='space-y-6'>
                                 {message && (
@@ -261,15 +255,7 @@ export default function Component() {
                                     <div className='space-y-2'>
                                         <Label htmlFor='otp'>Verification Code</Label>
                                         <div className='flex items-center space-x-2'>
-                                            <Input
-                                                id='otp'
-                                                name='otp'
-                                                type='text'
-                                                value={formData.otp}
-                                                onChange={handleInputChange}
-                                                placeholder='Enter Verification Code'
-                                                required
-                                            />
+                                            <Input id='otp' name='otp' type='text' value={formData.otp} onChange={handleInputChange} placeholder='Enter Verification Code' required />
                                             <Button type='button' onClick={handleVerifyOtp} disabled={!formData.otp || isVerifyingOtp}>
                                                 {isVerifyingOtp ? <Loader2 className='h-4 w-4 animate-spin' /> : 'Verify Code'}
                                             </Button>
@@ -283,7 +269,23 @@ export default function Component() {
                             </form>
                         )}
 
-                        {currentStep > 1 && <div className='flex h-64 items-center justify-center'>{isLoading ? <Loader2 className='h-8 w-8 animate-spin' /> : <div className='text-xl font-medium'>{currentStep === 3 ? 'Ready to start querying!' : 'Processing your content...'}</div>}</div>}
+                        {currentStep > 1 && (
+                            <div className={`flex h-64 items-center justify-center ${currentStep === 2 ? 'h-max':'h-64'}`}>
+                                {isLoading ? (
+                                    <Loader2 className='h-8 w-8 animate-spin' />
+                                ) : (
+                                    <div className='text-xl font-medium'>
+                                        {currentStep === 2 ? (
+                                            <Alert className='bg-green-50 text-green-700 border-green-200'>
+                                                <Check className='h-4 w-4 text-green-500' />
+                                                <AlertTitle>Congratulations!</AlertTitle>
+                                                <AlertDescription>You have successfully added your details. We are retrieving your details and your instance will be shared over your email very soon.</AlertDescription>
+                                            </Alert>
+                                        ) : null}
+                                    </div>
+                                )}
+                            </div>
+                        )}
                     </div>
 
                     {/* Right side - Animated GIF and Progress Steps */}
@@ -310,15 +312,6 @@ export default function Component() {
                                 ))}
                             </div>
                         </div>
-
-                        {/* <div className='relative h-[300px] rounded-xl overflow-hidden'> */}
-                            {/* <Image src='/images/public-pages-ui.png' alt='Processing animation' width={400} height={300} className='object-cover' priority /> */}
-                            {/* <div className='absolute inset-0 bg-gradient-to-t from-black/20 to-transparent' /> */}
-                            {/* <div className='absolute bottom-4 left-4 right-4'>
-                                <h3 className='text-lg font-semibold text-white'>Content Processing</h3>
-                                <p className='text-sm text-white/90'>Watch as we analyze and process your content in real-time</p>
-                            </div> */}
-                        {/* </div> */}
                     </div>
                 </div>
             </div>
