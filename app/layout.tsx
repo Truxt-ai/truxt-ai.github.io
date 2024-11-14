@@ -2,6 +2,7 @@ import './css/style.css';
 
 import { Inter } from 'next/font/google';
 import { GoogleTagManager } from '@next/third-parties/google';
+import CookieBanner from '@/components/cookies';
 
 const inter = Inter({
     subsets: ['latin'],
@@ -22,7 +23,9 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <html lang='en' className='scroll-smooth'>
             <body className={`${inter.variable} bg-gray-50 font-inter tracking-tight text-gray-900 antialiased`}>
                 <GoogleTagManager gtmId='GTM-536FWR9L' />
-                <div className='flex min-h-screen flex-col overflow-hidden supports-[overflow:clip]:overflow-clip'>{children}</div>
+                <div className='flex min-h-screen flex-col overflow-hidden supports-[overflow:clip]:overflow-clip'>
+                <CookieBanner/>
+                {children}</div>
             </body>
         </html>
     );
