@@ -96,7 +96,7 @@ export default function Component() {
                     </nav>
 
                     {/* Desktop sign in link */}
-                    <ul className='flex flex-1 items-center justify-end gap-3'>
+                    <ul className='md:flex flex-1 items-center justify-end gap-3 hidden'>
                         <li>
                             <Link href='https://app.truxt.xyz' className='btn-sm bg-white text-gray-800 shadow hover:bg-gray-50'>
                                 Login

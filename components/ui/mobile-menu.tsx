@@ -17,6 +17,7 @@ const menuItems: MenuItem[] = [
   { name: 'Contact Us', href: '/contact-us' },
   { name: 'Solutions', href: '/solutions' },
   { name: 'Sandbox', href: '/sandbox' },
+  { name: 'Login', href: 'https://app.truxt.xyz/' },
 ];
 
 export default function MobileMenu() {
