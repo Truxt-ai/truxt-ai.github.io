@@ -1,6 +1,6 @@
 export const metadata = {
-  title: 'Products | Truxt',
-  description: 'Page description'
+  title: 'Products',
+  description: 'Explore innovative solutions with DevOpsGPT and Truxt Gen AI. DevOpsGPT provides instant AI-powered DevOps troubleshooting, while Truxt Gen AI Platform enhances self-service support with secure LLM, automation, and real-time insights for improved efficiency'
 };
 
 import React from 'react'
