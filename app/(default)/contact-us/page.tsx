@@ -1,6 +1,6 @@
 export const metadata = {
     title: 'Contact Us',
-    description: 'Page description'
+    description: 'Contact Truxt.ai to connect with our team for inquiries about our services. Fill out the contact form, explore our locations, or reach us at hello@truxt.ai. Stay connected through LinkedIn, Twitter, and YouTube for updates and insights.'
 };
 
 import React from 'react';

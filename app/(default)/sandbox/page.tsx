@@ -1,8 +1,7 @@
 export const metadata = {
-    title: 'Sandbox',
+    title: 'Streamline your onboarding with our intuitive two-step form process. Verify your email, input business details, and effortlessly set up your instance. Powered by dynamic validations, OTP verification, and responsive design, our platform ensures a seamless experience. Get started now!',
     description: 'Page description'
 };
-
 
 import React from 'react';
 import Hero from './hero';
@@ -14,7 +13,7 @@ function Page() {
     return (
         <div>
             <Hero />
-            <Suspense fallback={<LoadingPage/>}>
+            <Suspense fallback={<LoadingPage />}>
                 <IngestData />
             </Suspense>
         </div>

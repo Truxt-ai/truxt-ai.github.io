@@ -1,6 +1,6 @@
 export const metadata = {
     title: 'DevOpsGPT',
-    description: 'Page description'
+    description: 'Join Truxt DevOpsGPT for AI-driven automation and troubleshooting in DevOps workflows. Optimize monitoring, reduce downtime, and resolve incidents faster with seamless integration into tools like Kubernetes, ArgoCD, and Jenkins. Get early access by joining the waitlist today.'
 };
 
 import HeroHome from './hero';
