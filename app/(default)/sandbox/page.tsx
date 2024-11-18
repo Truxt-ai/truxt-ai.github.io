@@ -1,6 +1,9 @@
 export const metadata = {
-    title: 'Streamline your onboarding with our intuitive two-step form process. Verify your email, input business details, and effortlessly set up your instance. Powered by dynamic validations, OTP verification, and responsive design, our platform ensures a seamless experience. Get started now!',
-    description: 'Page description'
+    title: 'Sandbox',
+    description: 'Streamline your onboarding with our intuitive two-step form process. Verify your email, input business details, and effortlessly set up your instance. Powered by dynamic validations, OTP verification, and responsive design, our platform ensures a seamless experience. Get started now!',
+    alternates: {
+        canonical: '/sandbox'
+    },
 };
 
 import React from 'react';
