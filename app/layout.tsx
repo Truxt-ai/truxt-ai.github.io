@@ -22,6 +22,13 @@ export const metadata = {
     },
     icons: {
         icon: 'https://res.cloudinary.com/dqumxmkt7/image/upload/v1729240685/t2wtznrhjqi5yffsoacv.webp'
+    },
+    openGraph: {
+        title: 'Truxt AI',
+        description: 'Truxt offers organizations an end-to-end generative AI solution enabled by our platform. We provide comprehensive generative AI products for our clients, allowing them to enable customer support and CX with generative AI using our products. We are an ecosystem of knowledge hubs that seamlessly integrates with your infrastructure in a single step."',
+        url: 'https://truxt.xyz',
+        image: 'https://res.cloudinary.com/dqumxmkt7/image/upload/v1731927401/drdyy9fsp5aryuiu408o.png',
+        type: 'website'
     }
 };
 
@@ -29,7 +36,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     return (
         <html lang='en' className='scroll-smooth'>
             <Head>
-                <meta property='og:image' content='app/opengraph-image.png' />
+                <meta property='og:image' content='https://res.cloudinary.com/dqumxmkt7/image/upload/v1731927401/drdyy9fsp5aryuiu408o.png' />
             </Head>
             <body className={`${inter.variable} bg-gray-50 font-inter tracking-tight text-gray-900 antialiased`}>
                 <GoogleTagManager gtmId='GTM-536FWR9L' />
