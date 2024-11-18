@@ -36,6 +36,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     return (
         <html lang='en' className='scroll-smooth'>
             <Head>
+                <link rel='canonical' href='https://www.truxt.ai/' key='canonical' />
                 <meta property='og:image' content='https://res.cloudinary.com/dqumxmkt7/image/upload/v1731927401/drdyy9fsp5aryuiu408o.png' />
             </Head>
             <body className={`${inter.variable} bg-gray-50 font-inter tracking-tight text-gray-900 antialiased`}>

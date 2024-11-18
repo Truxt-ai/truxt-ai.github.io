@@ -37,6 +37,7 @@ const featureData: Feature[] = [
 export default function Home() {
     return (
         <>
+
             <Hero />
             <BusinessCategories />
             <Offerings />
