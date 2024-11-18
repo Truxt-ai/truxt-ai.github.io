@@ -1,5 +1,5 @@
 export const metadata = {
-    title: 'Sandbox | Truxt',
+    title: 'Sandbox',
     description: 'Page description'
 };
 

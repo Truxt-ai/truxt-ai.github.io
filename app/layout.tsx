@@ -14,7 +14,10 @@ const inter = Inter({
 });
 
 export const metadata = {
-    title: 'Truxt',
+    title: {
+        default:"Truxt AI",
+        template:"%s | Truxt AI"
+    },
     description: '',
     icons: {
         icon: 'https://res.cloudinary.com/dqumxmkt7/image/upload/v1729240685/t2wtznrhjqi5yffsoacv.webp'

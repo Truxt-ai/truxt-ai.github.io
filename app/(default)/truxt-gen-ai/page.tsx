@@ -1,5 +1,5 @@
 export const metadata = {
-    title: '360 GEN AI Enablement - Truxt',
+    title: '360 GEN AI Enablement',
     description: 'Page description'
 };
 
