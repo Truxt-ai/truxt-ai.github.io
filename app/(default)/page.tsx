@@ -1,5 +1,5 @@
 export const metadata = {
-    title: 'Home',
+    title: { default: '360 GEN AI Enablement' },
     description: 'Truxt offers advanced generative AI solutions focusing on Accuracy, Security, and Scalability. Our platform combines deep expertise in Customer Experience with cutting-edge GenAI technology to deliver precise responses, ensuring customer satisfaction. We prioritize data security with stringent protection measures, keeping your data confidential and under control. With seamless scalability, our platform adapts to larger datasets and growing support volumes, providing reliable, cost-effective customer support solutions.'
 };
 
