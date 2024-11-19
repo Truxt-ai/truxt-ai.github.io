@@ -42,6 +42,9 @@ export const metadata: Metadata = {
         title: 'Truxt AI',
         description: 'Truxt offers organizations an end-to-end generative AI solution enabled by our platform.',
         images: ['/images/opengraph-image.png']
+    },
+    icons:{
+        icon:'/images/favicon.ico',
     }
 };
 
