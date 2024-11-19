@@ -42,7 +42,23 @@ export const metadata: Metadata = {
         title: 'Truxt AI',
         description: 'Truxt offers organizations an end-to-end generative AI solution enabled by our platform.',
         images: ['/images/opengraph-image.png']
-    }
+    },
+    icons: {
+        icon: [
+            { url: '/icons/favicon.ico', sizes: '32x32 16x16', type: 'image/x-icon' },
+            { url: '/icons/favicon.ico', sizes: '16x16', type: 'image/png' },
+            { url: '/icons/favicon.ico', sizes: '32x32', type: 'image/png' },
+            { url: '/icons/favicon.ico', sizes: '32x32', type: 'image/png', media: '(prefers-color-scheme: dark)' },
+          ],
+          apple: [
+            { url: '/icons/apple-touch-icon.png', sizes: '180x180', type: 'image/png' },
+          ],
+          other: [
+            { rel: '/icons/mask-icon', url: '/safari-pinned-tab.svg', color: '#5bbad5' },
+            { rel: '/icons/msapplication-TileImage', url: '/mstile-144x144.png' },
+          ],
+        },
+        manifest: '/site.webmanifest',
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
