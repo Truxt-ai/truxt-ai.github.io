@@ -38,14 +38,17 @@ const navigationData: NavItems = [
     //     title: 'Pricing',
     //     href: '/pricing'
     // },
-    // {
-    //     title: 'Resources',
-    //     items: [{ title: 'FAQ', href: '/faq' }]
-    // },
     {
-        title:"Contact Us",
-        href:"/contact-us",
+        title: 'Resources',
+        items: [
+            { title: 'Blogs', href: '/blogs' },
+            { title: 'FAQ', href: '/faq' }
+        ]
     },
+    {
+        title: 'Contact Us',
+        href: '/contact-us'
+    }
     // {
     //     title: 'Company',
     //     items: [{ title: 'Contact Us', href: '/contact-us' }]
@@ -76,7 +79,7 @@ export default function Component() {
                                                     <Link href={subItem.href} className='flex rounded-lg px-2 py-1.5 text-sm text-gray-700 hover:bg-gray-100 whitespace-nowrap'>
                                                         {subItem.title === 'DevOpsGPT' ? (
                                                             <>
-                                                                DevOpsGPT <sup className="text-xs font-normal ml-1 px-2 py-1 text-blue-600 bg-blue-50 rounded-sm">New</sup>
+                                                                DevOpsGPT <sup className='text-xs font-normal ml-1 px-2 py-1 text-blue-600 bg-blue-50 rounded-sm'>New</sup>
                                                             </>
                                                         ) : (
                                                             subItem.title
