@@ -4,6 +4,18 @@ import PostDate from '@/components/post-date';
 import { getBlogBySlug } from '@/lib/api/blogs/api';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
+import { Metadata } from 'next';
+
+
+export async function generateMetadata({ params }: { params: { slug: string } }):Promise<Metadata>{
+    const post = await getBlogBySlug(params.slug);
+    return(
+        {
+            title:post.title,
+            description:post.brief,
+        }
+    )
+}
 
 export default async function SinglePost({ params }: { params: { slug: string } }) {
     const post = await getBlogBySlug(params.slug);
