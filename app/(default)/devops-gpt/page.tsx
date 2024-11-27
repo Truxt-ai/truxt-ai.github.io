@@ -1,6 +1,6 @@
 export const metadata = {
     title: 'DevOpsGPT',
-    description: 'Join Truxt DevOpsGPT for AI-driven automation and troubleshooting in DevOps workflows. Optimize monitoring, reduce downtime, and resolve incidents faster with seamless integration into tools like Kubernetes, ArgoCD, and Jenkins. Get early access by joining the waitlist today.',
+    description: "Optimize DevOps with Truxt.ai's DevOpsGPT. AI-powered automation ensures fast incident resolution and seamless tool integration",
     alternates: {
         canonical: '/devops-gpt'
     },

@@ -2,6 +2,11 @@ import PageIllustration from '@/components/page-illustration';
 import PostItem from '@/components/post-item';
 import { getAllBlogs } from '@/lib/api/blogs/api';
 
+export const metadata = {
+    title: "Blogs",
+    description: "Stay updated with Truxt.ai blogs. Explore insights, case studies, and AI trends shaping the future of enterprise automation and customer experience.",
+  };
+
 export default async function Page() {
     const allBlogs = await getAllBlogs();
     return (
