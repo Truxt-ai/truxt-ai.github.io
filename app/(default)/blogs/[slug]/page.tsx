@@ -13,6 +13,9 @@ export async function generateMetadata({ params }: { params: { slug: string } })
         {
             title:post.title,
             description:post.brief,
+            alternates: {
+                canonical: `/${post.slug}`
+            }
         }
     )
 }
