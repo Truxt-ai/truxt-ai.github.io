@@ -1,6 +1,6 @@
 export const metadata = {
     title: '360 GEN AI Enablement',
-    description: 'Explore Truxt GenAI and DevOpsGPT, revolutionary AI solutions for enterprises. Enhance operations with knowledge hubs, secure data privacy, automated support, scalable integrations, and real-time insights. Schedule a personalized demo today!',
+    description: 'Truxt GenAI Platform delivers scalable AI solutions with enterprise-grade integration, advanced analytics, and multi-agent technology for growth',
     alternates: {
         canonical: '/truxt-gen-ai'
     },

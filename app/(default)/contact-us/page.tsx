@@ -1,6 +1,6 @@
 export const metadata = {
     title: 'Contact Us',
-    description: 'Contact Truxt.ai to connect with our team for inquiries about our services. Fill out the contact form, explore our locations, or reach us at hello@truxt.ai. Stay connected through LinkedIn, Twitter, and YouTube for updates and insights.',
+    description: 'Connect with Truxt.ai. Reach out for inquiries, demo requests, and support for our enterprise GenAI solutions and services.',
     alternates: {
         canonical: '/contact-us'
     },
