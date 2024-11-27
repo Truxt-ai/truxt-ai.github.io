@@ -1,10 +1,10 @@
- type Author = {
-  name: string;
-  username: string;
-  profilePicture: string;
+type Author = {
+    name: string;
+    username: string;
+    profilePicture: string;
 };
 
- type Post = {
+type Blog = {
     id: string;
     slug: string;
     brief: string;
@@ -14,42 +14,45 @@
     publishedAt: string;
     author: Author;
     coverImage?: {
-      url: string;
+        url: string;
     };
     content?: {
-      html: string;
-      },
-  seo: {
-      title: string;
-      description: string;
-    }
+        html: string;
+    };
+    seo: {
+        title: string;
+        description: string;
+    };
 };
 
-const HASHNODE_API_URL = process.env.HASHNODE_API_URL || "https://gql.hashnode.com"
+const HASHNODE_API_URL = process.env.HASHNODE_API_URL || 'https://gql.hashnode.com';
 
 async function fetchGraphQL(query: string, variables?: Record<string, any>) {
-  const response = await fetch(HASHNODE_API_URL, {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json',
-    },
-    body: JSON.stringify({
-      query,
-      variables,
-    }),
-  });
+    const response = await fetch(HASHNODE_API_URL, {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+            'Cache-Control': 'no-cache, no-store, must-revalidate', // Ensure no caching at any level
+            Pragma: 'no-cache',
+            Expires: '0'
+        },
+        body: JSON.stringify({
+            query,
+            variables
+        })
+    });
 
-  // @ts-ignore
+    // @ts-ignore
     const { data, errors } = await response.json();
-  if (errors) {
-    console.error(errors);
-    throw new Error('Failed to fetch API');
-  }
-  return data;
+    if (errors) {
+        console.error(errors);
+        throw new Error('Failed to fetch API');
+    }
+    return data;
 }
 
-export async function getPostBySlug(slug: string): Promise<Post> {
-  const query = `
+export async function getBlogBySlug(slug: string): Promise<Blog> {
+    const query = `
     query GetPostBySlug($host: String!, $slug: String!) {
       publication(host: $host) {
         post(slug: $slug) {
@@ -84,13 +87,13 @@ export async function getPostBySlug(slug: string): Promise<Post> {
     }
   `;
 
-  const variables = { host: process.env.HASHNODE_BLOG_URL, slug: slug };
-  const data = await fetchGraphQL(query, variables);
-  return data.publication.post;
+    const variables = { host: process.env.HASHNODE_BLOG_URL, slug: slug };
+    const data = await fetchGraphQL(query, variables);
+    return data.publication.post;
 }
 
-export async function getAllPosts(): Promise<Post[]> {
-  const query = `
+export async function getAllBlogs(): Promise<Blog[]> {
+    const query = `
     query GetAllPosts($host: String!) {
       publication(host: $host) {
         isTeam
@@ -131,7 +134,7 @@ export async function getAllPosts(): Promise<Post[]> {
     }
   `;
 
-  const variables = { host: process.env.HASHNODE_BLOG_URL };
-  const data = await fetchGraphQL(query, variables);
-  return data.publication.posts.edges.map((edge: any) => edge.node);
+    const variables = { host: process.env.HASHNODE_BLOG_URL };
+    const data = await fetchGraphQL(query, variables);
+    return data.publication.posts.edges.map((edge: any) => edge.node);
 }

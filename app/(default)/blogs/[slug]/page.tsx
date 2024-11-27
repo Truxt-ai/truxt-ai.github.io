@@ -1,12 +1,12 @@
 import PostNav from './post-nav';
 import PageIllustration from '@/components/page-illustration';
 import PostDate from '@/components/post-date';
-import { getPostBySlug } from '@/lib/api/api';
+import { getBlogBySlug } from '@/lib/api/blogs/api';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
 
 export default async function SinglePost({ params }: { params: { slug: string } }) {
-    const post = await getPostBySlug(params.slug);
+    const post = await getBlogBySlug(params.slug);
     if (!post) {
         notFound();
     }

@@ -1,9 +1,9 @@
 import PageIllustration from '@/components/page-illustration';
 import PostItem from '@/components/post-item';
-import { getAllPosts } from '@/lib/api/api';
+import { getAllBlogs } from '@/lib/api/blogs/api';
 
 export default async function Page() {
-    const allBlogs = await getAllPosts();
+    const allBlogs = await getAllBlogs();
     return (
         <section className='relative'>
             <PageIllustration />
