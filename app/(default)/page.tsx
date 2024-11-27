@@ -6,15 +6,7 @@ export const metadata = {
 import Hero from '@/components/hero-home';
 import BusinessCategories from '@/components/business-categories';
 import Offerings from '@/components/offerings';
-
-import { Fingerprint, CheckCircle, BarChart, LucideIcon } from 'lucide-react';
 import WhyTruxt from '@/components/why-truxt';
-
-interface Feature {
-    title: string;
-    description: string;
-    icon: LucideIcon;
-}
 
 export default function Home() {
     return (
