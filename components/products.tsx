@@ -35,9 +35,7 @@ export default function Component() {
                         <CardHeader className='space-y-4'>
                             <div className='rounded-lg overflow-hidden border border-gray-200 h-1/2'>
                                 {card.previewVideo ? (
-                                    <video src='https://bucket.v0.truxt.xyz/temp-cdn-dump/video?response-content-type=video%2Fmp4&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=3zt4iJKyJwswttMT%2F20241111%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20241111T134800Z&X-Amz-Expires=604800&X-Amz-SignedHeaders=host&X-Amz-Signature=a5c346e4f7522f1103578bba7c187ad069bd5300c448e83769da208a7de3a178' controls playsInline className='h-full w-full object-cover aspect-video' poster='/images/poster-devops.png'>
-                                        Your browser does not support the video tag.
-                                    </video>
+                                    <iframe className='w-full h-full object-cover aspect-video' src='https://www.youtube.com/embed/Z28zvZEglKQ' title='Introducing Truxt.ai DevOpsGPT: Your dedicated DevOps Technical Support' frameBorder='0' allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share' allowFullScreen></iframe>
                                 ) : card.previewImage ? (
                                     <Image src={card.previewImage} alt={card.previewAlt} className='h-full mx-auto rounded-md w-full aspect-video' width={400} height={300} />
                                 ) : (

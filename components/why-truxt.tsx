@@ -58,14 +58,7 @@ export default function WhyTruxtSection() {
                         ))}
                     </div>
                 </div>
-                <div className='mt-16 flex justify-center'>
-                    <Button asChild size='lg'>
-                        <Link href='/sandbox' className='group flex items-center gap-2 bg-gradient-to-t from-blue-600 to-blue-500 bg-[length:100%_100%] bg-[bottom] text-white shadow hover:bg-[length:100%_150%]'>
-                            Experience Truxt for your Contents
-                            <ArrowRight className='w-4 h-4 transition-transform group-hover:translate-x-1' />
-                        </Link>
-                    </Button>
-                </div>
+              
             </div>
         </section>
     );
