@@ -2,7 +2,6 @@ import React from 'react';
 import Link from 'next/link';
 import MobileMenu from './mobile-menu';
 import Dropdown from '../dropdown';
-import { Badge } from '@/components/ui/badge';
 
 type NavItem = {
     title: string;

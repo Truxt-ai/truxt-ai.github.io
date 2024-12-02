@@ -103,7 +103,7 @@ export default function ContactForm() {
     };
 
     return (
-        <div className=' bg-white p-8' data-aos='zoom-y-out' data-aos-delay={450}>
+        <div className=' p-8' data-aos='zoom-y-out' data-aos-delay={450}>
             <div className='max-w-6xl mx-auto'>
                 <h1 className='text-2xl font-bold mb-8'>Connect with Us</h1>
                 <div className='flex flex-col md:flex-row gap-12'>

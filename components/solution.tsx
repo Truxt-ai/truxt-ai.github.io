@@ -133,7 +133,7 @@ export default function SolutionsPage() {
         }
     ];
     return (
-        <div className='bg-background '>
+        <div className=' '>
             <main className='container max-w-6xl mx-auto py-16' data-aos='zoom-y-out' data-aos-delay={400}>
                 <div className='grid gap-12 md:grid-cols-2 lg:grid-cols-2'>
                     {solutions.map((solution, index) => (

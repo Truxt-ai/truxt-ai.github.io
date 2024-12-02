@@ -14,7 +14,7 @@ import LoadingPage from '@/components/loading';
 
 function Page() {
     return (
-        <div>
+        <div className='max-w-6xl mx-auto px-4 sm:px-6'>
             <Hero />
             <Suspense fallback={<LoadingPage />}>
                 <IngestData />

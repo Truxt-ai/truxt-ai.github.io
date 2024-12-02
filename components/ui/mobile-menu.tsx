@@ -16,6 +16,8 @@ const menuItems: MenuItem[] = [
   { name: 'Truxt Gen AI', href: '/truxt-gen-ai' },
   { name: 'Contact Us', href: '/contact-us' },
   { name: 'Solutions', href: '/solutions' },
+  { name: 'Blogs', href: '/blogs' },
+  { name: 'FAQ', href: '/faq' },
   { name: 'Sandbox', href: '/sandbox' },
   { name: 'Login', href: 'https://app.truxt.xyz/' },
 ];
