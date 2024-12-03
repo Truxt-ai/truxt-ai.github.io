@@ -21,9 +21,7 @@ export default function Component() {
                     </div>
                     <div className='relative mx-auto max-w-5xl' data-aos='zoom-y-out' data-aos-delay={150}>
                         <div className='aspect-video overflow-hidden rounded-xl bg-slate-900 shadow-2xl'>
-                            <video ref={videoRef} src='https://bucket.v0.truxt.xyz/temp-cdn-dump/video?response-content-type=video%2Fmp4&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=3zt4iJKyJwswttMT%2F20241111%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20241111T134800Z&X-Amz-Expires=604800&X-Amz-SignedHeaders=host&X-Amz-Signature=a5c346e4f7522f1103578bba7c187ad069bd5300c448e83769da208a7de3a178' controls  playsInline className='h-full w-full object-cover' poster='/images/poster-devops.png'>
-                                Your browser does not support the video tag.
-                            </video>
+                        <iframe className='w-full h-full' src="https://www.youtube.com/embed/Z28zvZEglKQ" title="Introducing Truxt.ai DevOpsGPT: Your dedicated DevOps Technical Support" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowFullScreen></iframe>
                         </div>
                         <div className='absolute -inset-x-2 -top-16 -bottom-16 -z-10 bg-gradient-to-b from-blue-500/20 via-transparent to-transparent blur-3xl' />
                     </div>
