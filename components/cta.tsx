@@ -18,7 +18,7 @@ export default function Cta() {
                         <Image className='max-w-none' src={Stripes} alt='Stripes' />
                     </div>
                     <div className='px-4 py-12 md:px-12 md:py-20'>
-                        <h2 className='mb-6 border-y text-3xl font-bold [border-image:linear-gradient(to_right,transparent,theme(colors.slate.700/.7),transparent)1] md:mb-12 md:text-4xl text-gray-900'>Explore our Sandbox to experience Truxt AI in action and see how it transforms your data handling.</h2>
+                        <h2 className='mb-6 border-y text-3xl font-bold [border-image:linear-gradient(to_right,transparent,theme(colors.slate.700/.7),transparent)1] md:mb-12 md:text-4xl text-gray-900 md:text-white'>Explore our Sandbox to experience Truxt AI in action and see how it transforms your data handling.</h2>
                         <div className='mt-16 flex justify-center'>
                     <Button asChild size='lg'>
                         <Link href='/sandbox' className='group flex items-center gap-2 bg-gradient-to-t from-blue-600 to-blue-500 bg-[length:100%_100%] bg-[bottom] text-white shadow hover:bg-[length:100%_150%]'>
