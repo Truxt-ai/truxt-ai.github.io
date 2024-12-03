@@ -33,10 +33,10 @@ export default function Component() {
     ];
 
     return (
-        <section className='w-full bg-gradient-to-b from-gray-100 to-white border-t border-gray-200 py-16 px-4' data-aos='zoom-y-out' data-aos-delay={150}>
+        <section className='w-full  border-t border-gray-200 py-16 px-4' data-aos='zoom-y-out' data-aos-delay={150}>
             <div className='container mx-auto max-w-7xl'>
                 <div className='text-center mb-12'>
-                    <h2 className='text-3xl font-bold tracking-tight mb-3'>OUR SOLUTIONS</h2>
+                    <h2 className='text-3xl font-bold tracking-tight mb-3'>Our Solutions</h2>
                     <p className='text-lg text-muted-foreground'>Discover how Truxt can transform your organization's Knowledge management, Support for Customers and Internal teams.</p>
                 </div>
                 <div className='grid grid-cols-1 md:grid-cols-3 gap-6'>

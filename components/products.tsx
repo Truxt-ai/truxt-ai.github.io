@@ -28,7 +28,7 @@ const cardData = [
 
 export default function Component() {
     return (
-        <div className='bg-gray-100 py-10'>
+        <div className=' py-10'>
             <div className='grid gap-6 p-6 md:grid-cols-2 max-w-7xl mx-auto'>
                 {cardData.map((card, index) => (
                     <Card key={index} className='bg-white border-gray-200' data-aos='zoom-y-out' data-aos-delay={450}>

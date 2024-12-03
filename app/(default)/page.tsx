@@ -1,5 +1,5 @@
 export const metadata = {
-    title: { default: '360 GEN AI Enablement' },
+    title: { default: '360° GenAI Enablement' },
     description: 'Truxt.ai: Enterprise GenAI solutions for scalable customer support and seamless AI integration, ensuring security, accuracy, and efficiency.'
 };
 
@@ -11,12 +11,12 @@ import Cta from '@/components/cta';
 
 export default function Home() {
     return (
-        <>
+        <div className='max-w-6xl mx-auto px-4 sm:px-6 '>
             <Hero />
             <BusinessCategories />
             <Offerings />
             <WhyTruxt />
             <Cta/>
-        </>
+        </div>
     );
 }

@@ -23,10 +23,10 @@ export default function DefaultLayout({
   });
 
   return (
-    <>
+    <div className="bg-gradient-to-b from-gray-100 to-white">
       <Header />
       <main className="grow">{children}</main>
       <Footer border={true} />
-    </>
+    </div>
   );
 }

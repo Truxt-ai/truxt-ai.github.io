@@ -215,7 +215,7 @@ export default function Component() {
     };
 
     return (
-        <div className='bg-white p-8' data-aos='zoom-y-out' data-aos-delay={450}>
+        <div className='bg-transparent p-8' data-aos='zoom-y-out' data-aos-delay={450}>
             <div className='mx-auto max-w-6xl'>
                 <h1 className='mb-8 text-4xl font-bold'>Try it for your content</h1>
 
