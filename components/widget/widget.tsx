@@ -12,7 +12,7 @@ function Widget() {
     const searchParams = useSearchParams();
 
     useEffect(() => {
-        setDomain(`${searchParams.get('email')}`);
+        setDomain(`${searchParams.get('org')}`);
     }, [searchParams]);
 
     return (

@@ -2,6 +2,7 @@ import React from 'react';
 import { DropdownMenu, DropdownMenuContent, DropdownMenuLabel, DropdownMenuRadioGroup, DropdownMenuRadioItem, DropdownMenuSeparator, DropdownMenuTrigger } from '@/components/ui/dropdown-menu';
 import { ArrowRight, Database, Globe, Layers, Square } from 'lucide-react';
 import { cn } from '@/lib/utils';
+import { Button } from '../ui/button';
 
 const searchOptions = [
     {
@@ -47,30 +48,31 @@ function SearchContainer({ searchType, setSearchType, inputDisabled, sendMessage
     return (
         <div className='p-4 border-t border-gray-200'>
             <div className='flex items-center gap-2'>
-                <DropdownMenu>
-                    <DropdownMenuTrigger asChild>
-                        <button className='outline-none border-none'>
-                            {searchOptions.map((option) =>
-                                searchType === option.value ? (
-                                    <div key={option.value} className='flex p-2 hover:bg-lightGray rounded-md dark:hover:bg-gray-700'>
-                                        <option.icon className='dark:text-white cursor-pointer' />
-                                    </div>
-                                ) : null
-                            )}
-                        </button>
-                    </DropdownMenuTrigger>
-                    <DropdownMenuContent className='w-56'>
-                        <DropdownMenuLabel>Search Context</DropdownMenuLabel>
-                        <DropdownMenuSeparator />
-                        <DropdownMenuRadioGroup value={searchType} onValueChange={setSearchType}>
-                            {searchOptions.map((option) => (
-                                <DropdownMenuRadioItem key={option.value} value={option.value}>
-                                    {option.label}
-                                </DropdownMenuRadioItem>
-                            ))}
-                        </DropdownMenuRadioGroup>
-                    </DropdownMenuContent>
-                </DropdownMenu>
+            <DropdownMenu>
+                        <DropdownMenuTrigger asChild>
+                            <Button className='outline-none border-none px-1 focus:outline-none focus:ring-0' variant={'ghost'}>
+                                {searchOptions.map((option) =>
+                                    searchType === option.value ? (
+                                        <div key={option.value} className='flex p-1 hover:bg-lightGray rounded-md dark:hover:bg-gray-700'>
+                                            <Globe className={cn('cursor-pointer', searchType == 'all' || searchType == 'web' ? 'text-blue-500' : 'text-muted-foreground')} />
+                                            <Database className={cn('cursor-pointer ml-1', searchType == 'all' || searchType == 'internal' ? 'text-blue-500' : 'text-muted-foreground')} />
+                                        </div>
+                                    ) : null
+                                )}
+                            </Button>
+                        </DropdownMenuTrigger>
+                        <DropdownMenuContent className='w-56'>
+                            <DropdownMenuLabel>Search Context</DropdownMenuLabel>
+                            <DropdownMenuSeparator />
+                            <DropdownMenuRadioGroup value={searchType} onValueChange={setSearchType}>
+                                {searchOptions.map((option) => (
+                                    <DropdownMenuRadioItem key={option.value} value={option.value} className='font-semibold'>
+                                        {option.label}
+                                    </DropdownMenuRadioItem>
+                                ))}
+                            </DropdownMenuRadioGroup>
+                        </DropdownMenuContent>
+                    </DropdownMenu>
 
                 <textarea placeholder='Ask a query' className={cn(`w-full rounded-lg resize-none outline-none placholder:text-xl text-sm bg-transparent `, 'max-h-[200px] pt-3', 'max-h-[50px] min-h-[10px]')} onChange={(event) => setTextAreaInputValue(event.target.value)} onKeyDown={(event) => handleKeyDownFunction(event, textAreaInputValue)} value={textAreaInputValue}></textarea>
                 <button
