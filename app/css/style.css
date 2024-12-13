@@ -7,6 +7,8 @@
 @import "additional-styles/theme.css";
 
 @import "tailwindcss/utilities";
+
+@import url('../markdown.css');
 @layer base {
   :root {
     --background: 0 0% 100%;
