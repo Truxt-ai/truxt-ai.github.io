@@ -1,6 +1,9 @@
 export const metadata = {
-    title: 'DevOpsGPT | Truxt',
-    description: 'Page description'
+    title: 'DevOpsGPT',
+    description: "Optimize DevOps with Truxt.ai's DevOpsGPT. AI-powered automation ensures fast incident resolution and seamless tool integration",
+    alternates: {
+        canonical: '/devops-gpt'
+    },
 };
 
 import HeroHome from './hero';

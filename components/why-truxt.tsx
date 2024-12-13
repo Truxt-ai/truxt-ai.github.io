@@ -45,7 +45,7 @@ const features: Feature[] = [
 
 export default function WhyTruxtSection() {
     return (
-        <section className='bg-background py-12 sm:py-16 px-4 ' data-aos='zoom-y-out' data-aos-delay={150}>
+        <section className=' py-12 sm:py-16 px-4 ' data-aos='zoom-y-out' data-aos-delay={150}>
             <div className='container max-w-7xl mx-auto'>
                 <div className='text-center'>
                     <h2 className='text-3xl font-bold tracking-tight text-foreground sm:text-4xl'>Why Truxt?</h2>
@@ -58,14 +58,7 @@ export default function WhyTruxtSection() {
                         ))}
                     </div>
                 </div>
-                <div className='mt-16 flex justify-center'>
-                    <Button asChild size='lg'>
-                        <Link href='/sandbox' className='group flex items-center gap-2 bg-gradient-to-t from-blue-600 to-blue-500 bg-[length:100%_100%] bg-[bottom] text-white shadow hover:bg-[length:100%_150%]'>
-                            Experience Truxt for your Contents
-                            <ArrowRight className='w-4 h-4 transition-transform group-hover:translate-x-1' />
-                        </Link>
-                    </Button>
-                </div>
+              
             </div>
         </section>
     );

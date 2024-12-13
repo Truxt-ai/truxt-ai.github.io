@@ -1,8 +1,10 @@
 export const metadata = {
-    title: 'Sandbox | Truxt',
-    description: 'Page description'
+    title: 'Sandbox',
+    description: 'Truxt.ai Sandbox ensures secure GenAI testing with isolated environments for data processing, vectorization, and model optimization.',
+    alternates: {
+        canonical: '/sandbox'
+    },
 };
-
 
 import React from 'react';
 import Hero from './hero';
@@ -12,9 +14,9 @@ import LoadingPage from '@/components/loading';
 
 function Page() {
     return (
-        <div>
+        <div className='max-w-6xl mx-auto px-4 sm:px-6'>
             <Hero />
-            <Suspense fallback={<LoadingPage/>}>
+            <Suspense fallback={<LoadingPage />}>
                 <IngestData />
             </Suspense>
         </div>
