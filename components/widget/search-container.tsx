@@ -22,11 +22,6 @@ const searchOptions = [
     }
 ];
 
-interface Message {
-    user: string;
-    ai: string;
-    stream: boolean;
-}
 
 interface SearchContainerProps {
     searchType: string;
