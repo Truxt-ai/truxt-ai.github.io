@@ -43,7 +43,7 @@ const WidgetMessageContainer = ({ messages, inputDisabled, sendMessage }: Messag
     }, [messages.length]);
 
     return (
-        <div className='message-container mx-auto w-full   h-full mt-[5px] mb-[5px] overflow-y-auto p-4' ref={messageContainerRef}>
+        <div className='message-container mx-auto w-full h-full mt-[5px] mb-[5px] overflow-y-scroll p-4 pt-1' ref={messageContainerRef}>
             {messages.map((item, index) => (
                 <ChatCard data={item} key={index} inputDisabled={inputDisabled} sendMessage={sendMessage} />
             ))}

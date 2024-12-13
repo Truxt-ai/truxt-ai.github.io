@@ -6,18 +6,12 @@ import SearchContainer from './search-container';
 import WidgetMessageContainer from './widget-message-container';
 import WidgetHeader from './widget-header';
 
-export function ChatWidget({ displayModal }: { displayModal: boolean; setDisplayModal: (value: boolean) => void }) {
+export function ChatWidget({ displayModal, setDisplayModal, domain }: { displayModal: boolean; setDisplayModal: (value: boolean) => void; domain: string }) {
     const [isMaximized, setIsMaximized] = useState(false);
     const [dialogSize, setDialogSize] = useState({ width: '500px', height: '600px' });
     const [textAreaInputValue, setTextAreaInputValue] = useState<string>('');
     const [searchType, setSearchType] = useState<string>('all');
-    const [messages, setMessages] = useState<Message[]>([
-        {
-            user: 'string',
-            ai: 'string',
-            stream: false,
-        }
-    ]);
+    const [messages, setMessages] = useState<Message[]>([]);
     const [inputDisabled, setInputDisabled] = useState<boolean>(false);
 
     useEffect(() => {
@@ -52,7 +46,7 @@ export function ChatWidget({ displayModal }: { displayModal: boolean; setDisplay
             const res = await fetch('/api/chat/chat-llm', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({ query, searchType, org:'argo' }),
+                body: JSON.stringify({ query, searchType, org: domain }),
                 signal: controller.signal
             });
 
@@ -76,7 +70,6 @@ export function ChatWidget({ displayModal }: { displayModal: boolean; setDisplay
                 }
             }
 
-
             setMessages((prev) => prev.map((msg, idx) => (idx === prev.length - 1 ? { ...msg, stream: false } : msg)));
             setInputDisabled(false);
         } catch (err: unknown) {
@@ -89,7 +82,7 @@ export function ChatWidget({ displayModal }: { displayModal: boolean; setDisplay
                             ? {
                                   ...msg,
                                   ai: err instanceof Error ? JSON.parse(err.message).error : 'Something went wrong!',
-                                  stream: false,
+                                  stream: false
                               }
                             : msg
                     )
@@ -101,7 +94,7 @@ export function ChatWidget({ displayModal }: { displayModal: boolean; setDisplay
         }
     };
     return (
-        <Dialog open={displayModal}>
+        <Dialog open={displayModal} onOpenChange={setDisplayModal}>
             <DialogContent
                 className='p-0 bg-white text-gray-800 border-gray-200 overflow-hidden'
                 style={{

@@ -69,7 +69,12 @@ function ChatCardAI({ content, inputDisabled, stream, sendMessage }: ChatCardAIP
                                     }
                                 }}
                             >
-                                {content.split('[LINKS]')[0]?.trim()}
+                                {content
+                                    .replace('Analyzing query...', '')
+                                    .replace(/smalltalk/, (match) => `${match}\n data:`)
+                                    .replace(/error_rate: (\d+)%/, (match) => `${match}\n data:`)
+                                    .replace(/Analyzing system performance.../, (match) => `\n${match}\n`)
+                                    .split('data:')[1] || content.replace('Analyzing query...', '')}
                             </Markdown>
                         </div>
                         {/* {Array.isArray(sources) && sources.length > 0 && <SourceCard sources={sources} />}
