@@ -37,13 +37,13 @@ const navigationData: NavItems = [
     //     title: 'Pricing',
     //     href: '/pricing'
     // },
-    {
-        title: 'Resources',
-        items: [
-            { title: 'Blogs', href: '/blogs' },
-            { title: 'FAQ', href: '/faq' }
-        ]
-    },
+    // {
+    //     title: 'Resources',
+    //     items: [
+    //         { title: 'Blogs', href: '/blogs' },
+    //         { title: 'FAQ', href: '/faq' }
+    //     ]
+    // },
     {
         title: 'Contact Us',
         href: '/contact-us'
