@@ -28,14 +28,14 @@ const cardData = [
 
 export default function Component() {
     return (
-        <div className=' py-10'>
+        <div className='bg-gray-100 py-10'>
             <div className='grid gap-6 p-6 md:grid-cols-2 max-w-7xl mx-auto'>
                 {cardData.map((card, index) => (
                     <Card key={index} className='bg-white border-gray-200' data-aos='zoom-y-out' data-aos-delay={450}>
                         <CardHeader className='space-y-4'>
                             <div className='rounded-lg overflow-hidden border border-gray-200 h-1/2'>
                                 {card.previewVideo ? (
-                                    <iframe className='w-full h-full object-cover aspect-video' src='https://www.youtube.com/embed/Z28zvZEglKQ' title='Introducing Truxt.ai DevOpsGPT: Your dedicated DevOps Technical Support' frameBorder='0' allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share' allowFullScreen></iframe>
+                                 <iframe className='w-full h-full object-cover aspect-video' src='https://www.youtube.com/embed/Z28zvZEglKQ' title='Introducing Truxt.ai DevOpsGPT: Your dedicated DevOps Technical Support' frameBorder='0' allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share' allowFullScreen></iframe>
                                 ) : card.previewImage ? (
                                     <Image src={card.previewImage} alt={card.previewAlt} className='h-full mx-auto rounded-md w-full aspect-video' width={400} height={300} />
                                 ) : (
