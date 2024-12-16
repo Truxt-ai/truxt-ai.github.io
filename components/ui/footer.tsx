@@ -45,7 +45,7 @@ const Footer: React.FC<FooterProps> = ({ border = false }) => {
               />
               <div className="text-sm text-gray-600">&copy; Truxt.ai - All rights reserved.</div>
             </div>
-            <div className="flex space-x-4">
+            <div className="flex space-x-4 ">
               {socialLinks.map((link, index) => (
                 <Link
                   key={index}
@@ -61,11 +61,11 @@ const Footer: React.FC<FooterProps> = ({ border = false }) => {
             </div>
           </div>
 
-          <div className="grid gap-4 sm:grid-cols-2 md:grid-cols-3">
+          <div className="grid gap-4 grid-cols-2 sm:grid-cols-2 md:grid-cols-3">
             {footerLinks.map((link, index) => (
               <Link
                 key={index}
-                className="text-sm text-gray-600 transition hover:text-gray-900"
+                className="text-sm text-gray-600 transition hover:text-gray-900 flex items-center justify-center"
                 href={link.href}
               >
                 {link.label}

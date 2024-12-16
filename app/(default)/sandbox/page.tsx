@@ -1,6 +1,6 @@
 export const metadata = {
     title: 'Sandbox',
-    description: 'Streamline your onboarding with our intuitive two-step form process. Verify your email, input business details, and effortlessly set up your instance. Powered by dynamic validations, OTP verification, and responsive design, our platform ensures a seamless experience. Get started now!',
+    description: 'Truxt.ai Sandbox ensures secure GenAI testing with isolated environments for data processing, vectorization, and model optimization.',
     alternates: {
         canonical: '/sandbox'
     },
@@ -14,7 +14,7 @@ import LoadingPage from '@/components/loading';
 
 function Page() {
     return (
-        <div>
+        <div className='max-w-6xl mx-auto px-4 sm:px-6'>
             <Hero />
             <Suspense fallback={<LoadingPage />}>
                 <IngestData />

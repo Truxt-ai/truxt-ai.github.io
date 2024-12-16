@@ -1,6 +1,6 @@
 'use client';
 import { Badge } from '@/components/ui/badge';
-import { useEffect, useRef } from 'react';
+import { useRef } from 'react';
 
 export default function Component() {
     const videoRef = useRef<HTMLVideoElement>(null);
