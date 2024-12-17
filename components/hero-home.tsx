@@ -13,7 +13,7 @@ export default function HeroHome() {
                 <div className='pb-6 pt-32 md:pb-6 md:pt-40'>
                     <div className='pb-6 text-center md:pb-16'>
                         <h1 className='mb-6 border-y text-2xl sm:text-5xl font-bold [border-image:linear-gradient(to_right,transparent,theme(colors.slate.300/.8),transparent)1] md:text-6xl' data-aos='zoom-y-out' data-aos-delay={150}>
-                            Transform Product Support with
+                            Transform Product Support with 
                             <br className='max-lg:hidden' />
                             Generative AI
                         </h1>
