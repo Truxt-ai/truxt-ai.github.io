@@ -1,7 +1,10 @@
-import React from 'react';
+'use client'
+
+import React, { useRef } from 'react';
 import Link from 'next/link';
 import MobileMenu from './mobile-menu';
 import Dropdown from '../dropdown';
+import { scrollToDemo } from '@/utils/scroll-to-demo';
 
 type NavItem = {
     title: string;
@@ -33,28 +36,20 @@ const navigationData: NavItems = [
         title: 'Sandbox',
         href: '/sandbox'
     },
-    // {
-    //     title: 'Pricing',
-    //     href: '/pricing'
-    // },
-    // {
-    //     title: 'Resources',
-    //     items: [
-    //         { title: 'Blogs', href: '/blogs' },
-    //         { title: 'FAQ', href: '/faq' }
-    //     ]
-    // },
     {
         title: 'Contact Us',
         href: '/contact-us'
     }
-    // {
-    //     title: 'Company',
-    //     items: [{ title: 'Contact Us', href: '/contact-us' }]
-    // }
 ];
 
-export default function Component() {
+export default function Header() {
+    const calendarRef = useRef<HTMLDivElement>(null);
+
+    const handleDemoClick = (e: React.MouseEvent) => {
+        e.preventDefault();
+        scrollToDemo(calendarRef);
+    };
+
     return (
         <header className='fixed top-2 z-30 w-full md:top-6'>
             <div className='mx-auto max-w-6xl px-4 sm:px-6'>
@@ -105,9 +100,9 @@ export default function Component() {
                             </Link>
                         </li>
                         <li>
-                            <Link href='/contact-us?subject=Request-Demo' className='btn-sm bg-gray-800 text-gray-200 shadow hover:bg-gray-900'>
+                            <a href='/?path=demo' className='btn-sm bg-gray-800 text-gray-200 shadow hover:bg-gray-900' onClick={handleDemoClick}>
                                 Request Demo
-                            </Link>
+                            </a>
                         </li>
                     </ul>
 
@@ -117,3 +112,4 @@ export default function Component() {
         </header>
     );
 }
+
