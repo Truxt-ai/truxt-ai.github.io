@@ -1,4 +1,4 @@
-'use client'
+'use client';
 
 import { useEffect, useRef } from 'react';
 import Hero from '@/components/hero-home';
@@ -32,4 +32,3 @@ export default function Home() {
         </div>
     );
 }
-
