@@ -35,7 +35,7 @@ function ChatCardAI({ content, inputDisabled, stream, sendMessage }: ChatCardAIP
     //     }
     // }, [id]);
     return (
-        <div className='content mt-[10px] items-center w-full lg:w-11/12 grid grid-cols-1 lg:grid-cols-12 text-justify text-sm gap-1 dark:bg-transparent'>
+        <div className='content mt-[10px] items-start w-full lg:w-11/12 grid grid-cols-1 lg:grid-cols-12 text-justify text-sm gap-1 dark:bg-transparent'>
             <div className='col-span-1 flex items-center gap-2'>
                 <div className='size-8 lg:col-span-1 rounded-full bg-primaryWhite border p-1 flex items-center justify-center dark:bg-darkBlue'>
                     <img src={'https://res.cloudinary.com/dqumxmkt7/image/upload/v1729240685/t2wtznrhjqi5yffsoacv.webp'} width={512} height={512} alt='Truxt' className='w-full inline-block dark:invert' />

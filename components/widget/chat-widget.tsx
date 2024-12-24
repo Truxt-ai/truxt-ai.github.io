@@ -1,4 +1,5 @@
 'use client';
+
 import { useState, useEffect } from 'react';
 import { Dialog, DialogContent } from '@/components/ui/dialog';
 import { Message } from '@/types/chat';
@@ -10,7 +11,7 @@ export function ChatWidget({ displayModal, setDisplayModal, domain }: { displayM
     const [isMaximized, setIsMaximized] = useState(false);
     const [dialogSize, setDialogSize] = useState({ width: '500px', height: '600px' });
     const [textAreaInputValue, setTextAreaInputValue] = useState<string>('');
-    const [searchType, setSearchType] = useState<string>('all');
+    const [searchType, setSearchType] = useState<string>('web');
     const [messages, setMessages] = useState<Message[]>([]);
     const [inputDisabled, setInputDisabled] = useState<boolean>(false);
 
@@ -31,6 +32,7 @@ export function ChatWidget({ displayModal, setDisplayModal, domain }: { displayM
     const toggleMaximize = () => {
         setIsMaximized(!isMaximized);
     };
+
     const sendMessage = async (query: string) => {
         if (query.trim() && !inputDisabled) {
             setInputDisabled(true);
@@ -93,10 +95,11 @@ export function ChatWidget({ displayModal, setDisplayModal, domain }: { displayM
             setInputDisabled(false);
         }
     };
+
     return (
         <Dialog open={displayModal} onOpenChange={setDisplayModal}>
             <DialogContent
-                className='p-0 bg-white text-gray-800 border-gray-200 overflow-hidden'
+                className='p-0 bg-white text-gray-800 border-gray-200 overflow-hidden flex flex-col'
                 style={{
                     maxWidth: dialogSize.width,
                     width: dialogSize.width,
@@ -104,12 +107,20 @@ export function ChatWidget({ displayModal, setDisplayModal, domain }: { displayM
                     transition: 'all 0.3s ease-in-out'
                 }}
             >
-                <div className='flex flex-col h-full'>
-                    <WidgetHeader isMaximized={isMaximized} toggleMaximize={toggleMaximize} />
-                    <WidgetMessageContainer messages={messages} inputDisabled={inputDisabled} sendMessage={sendMessage} />
-                    <SearchContainer searchType={searchType} setSearchType={setSearchType} textAreaInputValue={textAreaInputValue} setTextAreaInputValue={setTextAreaInputValue} inputDisabled={inputDisabled} sendMessage={sendMessage} />
+                <WidgetHeader isMaximized={isMaximized} toggleMaximize={toggleMaximize} />
+                <div className="flex-grow overflow-hidden flex flex-col">
+                    <WidgetMessageContainer messages={messages} inputDisabled={inputDisabled} sendMessage={sendMessage}/>
                 </div>
+                <SearchContainer 
+                    searchType={searchType} 
+                    setSearchType={setSearchType} 
+                    textAreaInputValue={textAreaInputValue} 
+                    setTextAreaInputValue={setTextAreaInputValue} 
+                    inputDisabled={inputDisabled} 
+                    sendMessage={sendMessage} 
+                />
             </DialogContent>
         </Dialog>
     );
 }
+
