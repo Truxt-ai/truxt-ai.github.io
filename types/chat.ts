@@ -2,6 +2,7 @@ export interface Message {
     user: string;
     ai: string;
     stream: boolean;
+    id: string | null;
 }
 
 export interface MessageContainerProps {
@@ -17,8 +18,10 @@ export interface ChatCardProps {
 }
 
 export interface ChatCardAIProps {
+    id: string | null;
     content: string;
     inputDisabled: boolean;
     stream: boolean;
     sendMessage: (text: string, searchType: string) => void;
 }
+

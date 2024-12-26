@@ -1,8 +1,6 @@
 import './css/style.css';
 
 import { Inter } from 'next/font/google';
-import { GoogleTagManager, GoogleAnalytics } from '@next/third-parties/google';
-import CookieBanner from '@/components/cookies';
 
 const inter = Inter({
     subsets: ['latin'],
@@ -11,6 +9,7 @@ const inter = Inter({
 });
 
 import { Metadata } from 'next';
+import { GoogleAnalytics, GoogleTagManager } from '@next/third-parties/google';
 
 export const metadata: Metadata = {
     title: {
@@ -48,29 +47,29 @@ export const metadata: Metadata = {
             { url: '/icons/favicon.ico', sizes: '32x32 16x16', type: 'image/x-icon' },
             { url: '/icons/favicon.ico', sizes: '16x16', type: 'image/png' },
             { url: '/icons/favicon.ico', sizes: '32x32', type: 'image/png' },
-            { url: '/icons/favicon.ico', sizes: '32x32', type: 'image/png', media: '(prefers-color-scheme: dark)' },
-          ],
-          apple: [
-            { url: '/icons/apple-touch-icon.png', sizes: '180x180', type: 'image/png' },
-          ],
-          other: [
+            { url: '/icons/favicon.ico', sizes: '32x32', type: 'image/png', media: '(prefers-color-scheme: dark)' }
+        ],
+        apple: [{ url: '/icons/apple-touch-icon.png', sizes: '180x180', type: 'image/png' }],
+        other: [
             { rel: '/icons/mask-icon', url: '/safari-pinned-tab.svg', color: '#5bbad5' },
-            { rel: '/icons/msapplication-TileImage', url: '/mstile-144x144.png' },
-          ],
-        },
-        manifest: '/site.webmanifest',
+            { rel: '/icons/msapplication-TileImage', url: '/mstile-144x144.png' }
+        ]
+    },
+    manifest: '/site.webmanifest'
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
+    const isProduction = process.env.NEXT_PUBLIC_NODE_ENV === 'production';
     return (
         <html lang='en' className='scroll-smooth'>
             <body className={`${inter.variable} bg-gray-50 font-inter tracking-tight text-gray-900 antialiased`}>
-                <GoogleTagManager gtmId='GTM-536FWR9L' />
-                <GoogleAnalytics gaId='G-QGPK6CL4RC'/>
-                <div className='flex min-h-screen flex-col overflow-hidden supports-[overflow:clip]:overflow-clip'>
-                    <CookieBanner />
-                    {children}
-                </div>
+            {isProduction && (
+                    <>
+                        <GoogleTagManager gtmId='GTM-536FWR9L' />
+                        <GoogleAnalytics gaId='G-QGPK6CL4RC' />
+                    </>
+                )}
+                <div className='flex min-h-screen flex-col overflow-hidden supports-[overflow:clip]:overflow-clip'>{children}</div>
             </body>
         </html>
     );
