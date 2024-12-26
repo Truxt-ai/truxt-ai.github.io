@@ -14,6 +14,7 @@ export function ChatWidget({ displayModal, setDisplayModal, domain }: { displayM
     const [searchType, setSearchType] = useState<string>('web');
     const [messages, setMessages] = useState<Message[]>([]);
     const [inputDisabled, setInputDisabled] = useState<boolean>(false);
+    const [abortController, setAbortController] = useState<AbortController | null>(null);
 
     useEffect(() => {
         if (isMaximized) {
@@ -33,22 +34,104 @@ export function ChatWidget({ displayModal, setDisplayModal, domain }: { displayM
         setIsMaximized(!isMaximized);
     };
 
+    const verifyUser = async () => {
+        if (localStorage.getItem('public-user-token')) {
+            return localStorage.getItem('public-user-token');
+        } else {
+            try {
+                const status = await fetch('/api/auth/public-user', {
+                    method: 'POST'
+                });
+
+                const response = await status.json();
+                localStorage.setItem('public-user-token', response.data.id);
+                return response.data.id;
+            } catch (err) {
+                console.error('Error generating session ID:', err);
+                return null;
+            }
+        }
+    };
+
+    const createSessionID = async (query: string, searchType: string, userID: number) => {
+        try {
+            const status = await fetch('/api/chat/create-new-chat', {
+                method: 'POST',
+                body: JSON.stringify({ query, searchType, userID })
+            });
+            const response = await status.json();
+            if (response.chatId != undefined) {
+                sessionStorage.setItem('sessionID', response.chatId);
+            }
+            return response;
+        } catch (err) {
+            console.error('Error creating session ID:', err);
+            return null;
+        }
+    };
+
+    const CreateNewMessage = async (chatId: string, query: string, userID: number) => {
+        try {
+            const status = await fetch('/api/chat/create-new-message', {
+                method: 'POST',
+                body: JSON.stringify({ chatId, query, searchType, userID })
+            });
+
+            const response = await status.json();
+            return response;
+        } catch (err) {
+            console.error('Error creating session ID:', err);
+            return null;
+        }
+    };
+
+    const updateMessageInDB = async (messageId: string, aiResponse: string, userID: number) => {
+        try {
+            const status = await fetch('/api/chat/update-message', {
+                method: 'PATCH',
+                body: JSON.stringify({ messageId, aiResponse, userID })
+            });
+
+            const response = await status.json();
+            return response;
+        } catch (err) {
+            console.error('Error creating session ID:', err);
+            return null;
+        }
+    };
+
     const sendMessage = async (query: string) => {
         if (query.trim() && !inputDisabled) {
             setInputDisabled(true);
             setMessages((prev) => [...prev, { user: query, ai: '', stream: true, id: null, searchType: searchType }]);
             setTextAreaInputValue('');
-            chatWithLLM(query);
+
+            const userID = await verifyUser();
+
+            if (sessionStorage.getItem('sessionID') == undefined) {
+                sessionStorage.removeItem('sessionID');
+            }
+
+            if (!sessionStorage.getItem('sessionID')) {
+                const data = await createSessionID(query, searchType, userID);
+                chatWithLLM(query, data.messageId, userID);
+            } else {
+                const sessionID = sessionStorage.getItem('sessionID');
+                const data = await CreateNewMessage(`${sessionID}`, query, userID);
+                chatWithLLM(query, data.data, userID);
+            }
         }
     };
 
-    const chatWithLLM = async (query: string) => {
+    const chatWithLLM = async (query: string, messageId: string, userID: number) => {
         const controller = new AbortController();
+        setAbortController(controller);
+
         try {
             const res = await fetch('/api/chat/chat-llm', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({ query, searchType, org: domain }),
+                body: JSON.stringify({ query, searchType, messageId }),
                 signal: controller.signal
             });
 
@@ -72,8 +155,10 @@ export function ChatWidget({ displayModal, setDisplayModal, domain }: { displayM
                 }
             }
 
-            setMessages((prev) => prev.map((msg, idx) => (idx === prev.length - 1 ? { ...msg, stream: false } : msg)));
+            setMessages((prev) => prev.map((msg, idx) => (idx === prev.length - 1 ? { ...msg, stream: false, id: messageId } : msg)));
             setInputDisabled(false);
+            setAbortController(null);
+            updateMessageInDB(messageId, aiResponse, userID);
         } catch (err: unknown) {
             if (err instanceof DOMException && err.name === 'AbortError') {
                 console.warn('Fetch aborted');
@@ -84,7 +169,8 @@ export function ChatWidget({ displayModal, setDisplayModal, domain }: { displayM
                             ? {
                                   ...msg,
                                   ai: err instanceof Error ? JSON.parse(err.message).error : 'Something went wrong!',
-                                  stream: false
+                                  stream: false,
+                                  id: messageId
                               }
                             : msg
                     )
@@ -93,6 +179,8 @@ export function ChatWidget({ displayModal, setDisplayModal, domain }: { displayM
             }
 
             setInputDisabled(false);
+            setAbortController(null);
+            updateMessageInDB(messageId, 'Error occured', userID);
         }
     };
 
@@ -108,19 +196,11 @@ export function ChatWidget({ displayModal, setDisplayModal, domain }: { displayM
                 }}
             >
                 <WidgetHeader isMaximized={isMaximized} toggleMaximize={toggleMaximize} />
-                <div className="flex-grow overflow-hidden flex flex-col">
-                    <WidgetMessageContainer messages={messages} inputDisabled={inputDisabled} sendMessage={sendMessage}/>
+                <div className='flex-grow overflow-hidden flex flex-col'>
+                    <WidgetMessageContainer messages={messages} inputDisabled={inputDisabled} sendMessage={sendMessage} />
                 </div>
-                <SearchContainer 
-                    searchType={searchType} 
-                    setSearchType={setSearchType} 
-                    textAreaInputValue={textAreaInputValue} 
-                    setTextAreaInputValue={setTextAreaInputValue} 
-                    inputDisabled={inputDisabled} 
-                    sendMessage={sendMessage} 
-                />
+                <SearchContainer searchType={searchType} setSearchType={setSearchType} textAreaInputValue={textAreaInputValue} setTextAreaInputValue={setTextAreaInputValue} inputDisabled={inputDisabled} sendMessage={sendMessage} />
             </DialogContent>
         </Dialog>
     );
 }
-
