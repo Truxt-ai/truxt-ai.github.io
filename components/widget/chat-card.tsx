@@ -6,7 +6,7 @@ export default function ChatCard({ data, inputDisabled, sendMessage}: ChatCardPr
     return (
         <div className='my-4 space-y-4'>
             <ChatCardUser content={data.user} />
-            <ChatCardAI content={data.ai} inputDisabled={inputDisabled} key={data.ai} stream={data.stream} sendMessage={sendMessage} />
+            <ChatCardAI id={data.id} content={data.ai} inputDisabled={inputDisabled} key={data.ai} stream={data.stream} sendMessage={sendMessage} />
         </div>
     );
 }

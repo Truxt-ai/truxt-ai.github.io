@@ -49,7 +49,7 @@ const WidgetMessageContainer = ({ messages, inputDisabled, sendMessage }: Messag
                 This is a custom LLM for answering questions about DevOps. Answers are based on the contents of the documentation. This feature is experimental - rate the answers to let us know what you think!
             </p>
             {messages.map((item, index) => (
-                <ChatCard data={item} key={index} inputDisabled={inputDisabled} sendMessage={sendMessage}/>
+                <ChatCard data={item} inputDisabled={inputDisabled} sendMessage={sendMessage} key={index} />
             ))}
         </div>
      <div className='scroll-element h-1' ref={scrollElementRef}></div>
