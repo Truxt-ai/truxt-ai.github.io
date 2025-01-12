@@ -23,6 +23,8 @@ export async function createNewMessage(chatId:string, query: string, searchType:
         });
         const data = await response.json();
         if (!response.ok) {
+            console.log("here===========")
+            console.log(await response.text())
             throw new Error('Could not generate new chat');
         }
 

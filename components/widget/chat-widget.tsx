@@ -35,6 +35,7 @@ export function ChatWidget({ displayModal, setDisplayModal, domain }: { displayM
     };
 
     const verifyUser = async () => {
+        return 1;
         if (localStorage.getItem('public-user-token')) {
             return localStorage.getItem('public-user-token');
         } else {
