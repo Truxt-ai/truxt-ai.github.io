@@ -3,7 +3,7 @@ interface ChatResponse {
     messageId: string;
 }
 
-export async function createNewChat(query: string, searchType: string, organizationId: string, userID:number): Promise<ChatResponse> {
+export async function createNewChat(query: string, searchType: string, organizationId: string, userID: number): Promise<ChatResponse> {
     try {
         const controller = new AbortController();
 
@@ -12,8 +12,8 @@ export async function createNewChat(query: string, searchType: string, organizat
             headers: {
                 'Content-Type': 'application/json',
                 'x-orgid': organizationId,
-                'x-user':`${userID}`,
-                'x-token': `${process.env.CHAT_DB_TOKEN}`,
+                'x-user': `${userID}`,
+                'x-token': `${process.env.CHAT_DB_TOKEN}`
             },
             body: JSON.stringify({
                 query: query.trim(),
@@ -24,6 +24,7 @@ export async function createNewChat(query: string, searchType: string, organizat
         });
 
         if (!response.ok) {
+            console.log(await response.text());
             throw new Error('Could not generate new chat');
         }
 

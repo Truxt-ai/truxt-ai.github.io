@@ -1,4 +1,4 @@
-import { ExternalLink, EyeIcon, Podcast, CircleChevronRight } from 'lucide-react';
+import { ExternalLink, EyeIcon, Podcast } from 'lucide-react';
 import { Dialog, DialogContent, DialogFooter, DialogHeader, DialogTitle, DialogTrigger } from '@/components/ui/dialog';
 import { ScrollArea } from '@/components/ui/scroll-area';
 import { cn } from '@/lib/utils';
@@ -21,7 +21,7 @@ const getFileExtension = (filename: string) => {
 };
 
 export default function SourceCard({ sources }: { sources: Sources[] }) {
-    console.log(sources)
+    console.log(sources);
     return (
         <>
             <h2 className='text-xl font-semibold flex items-center gap-2 px-2 my-3'>
@@ -79,10 +79,7 @@ export default function SourceCard({ sources }: { sources: Sources[] }) {
                         )}
                     </li>
                 ))}
-
-               
             </ul>
         </>
     );
 }
-

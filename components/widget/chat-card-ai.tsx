@@ -34,7 +34,6 @@ function ChatCardAI({id, content, inputDisabled, stream, sendMessage }: ChatCard
             console.error(err);
         }
     }, [id]);
-
     return (
         <div className='content mt-[10px] items-start w-full lg:w-11/12 grid grid-cols-1 lg:grid-cols-12 text-justify text-sm gap-1 dark:bg-transparent'>
             <div className='col-span-1 flex items-center gap-2'>
