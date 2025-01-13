@@ -6,6 +6,10 @@ import { Button } from '@/components/ui/button';
 
 const searchOptions = [
     {
+        value: 'all',
+        label: 'Combined Search',
+    },
+    {
         value: 'web',
         label: 'Web',
         icon: Globe
@@ -14,7 +18,7 @@ const searchOptions = [
         value: 'internal',
         label: 'Internal Data',
         icon: Database
-    }
+    },
 ];
 
 interface SearchContainerProps {

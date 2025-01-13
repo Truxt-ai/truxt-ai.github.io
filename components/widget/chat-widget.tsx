@@ -11,7 +11,7 @@ export function ChatWidget({ displayModal, setDisplayModal, domain }: { displayM
     const [isMaximized, setIsMaximized] = useState(false);
     const [dialogSize, setDialogSize] = useState({ width: '500px', height: '600px' });
     const [textAreaInputValue, setTextAreaInputValue] = useState<string>('');
-    const [searchType, setSearchType] = useState<string>('web');
+    const [searchType, setSearchType] = useState<string>('all');
     const [messages, setMessages] = useState<Message[]>([]);
     const [inputDisabled, setInputDisabled] = useState<boolean>(false);
     const [abortController, setAbortController] = useState<AbortController | null>(null);

@@ -45,9 +45,8 @@ const WidgetMessageContainer = ({ messages, inputDisabled, sendMessage }: Messag
     return (
         <div className='flex-grow overflow-y-auto'>
         <div className='message-container mx-auto w-full h-full p-4 pt-1'>
-            <p className='text-xs px-2 py-2 rounded-sm bg-blue-100 text-blue-800 mb-4'>
-                This is a custom LLM for answering questions about DevOps. Answers are based on the contents of the documentation. This feature is experimental - rate the answers to let us know what you think!
-            </p>
+            <p className='text-xs px-2 py-2 rounded-sm bg-blue-100 text-blue-800 mb-4 text-center'>
+            Truxt AI Agent may occasionally make errors. Please verify critical information.            </p>
             {messages.map((item, index) => (
                 <ChatCard data={item} inputDisabled={inputDisabled} sendMessage={sendMessage} key={index} />
             ))}
