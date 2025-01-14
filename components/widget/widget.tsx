@@ -1,20 +1,12 @@
-'use client'; // This should be placed at the top of your file
+'use client'
 
 import { Button } from '@/components/ui/button';
 import { Bot } from 'lucide-react';
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import { ChatWidget } from './chat-widget';
-import { useSearchParams } from 'next/navigation';
 
 function Widget() {
     const [displayModal, setDisplayModal] = useState<boolean>(false);
-    const [domain,setDomain]=useState<string>('truxt');
-    const searchParams = useSearchParams();
-
-    useEffect(() => {
-        setDomain(`${searchParams.get('org')}`);
-    }, [searchParams]);
-
     return (
         <div className='widget'>
             <Button
@@ -25,7 +17,7 @@ function Widget() {
             >
                 <Bot className='w-16 h-16 text-white' />
             </Button>
-            <ChatWidget displayModal={displayModal} setDisplayModal={setDisplayModal} domain={domain}/>
+            <ChatWidget displayModal={displayModal} setDisplayModal={setDisplayModal} domain={'truxt'}/>
         </div>
     );
 }

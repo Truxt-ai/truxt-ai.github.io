@@ -9,9 +9,12 @@ interface RequestBody {
     use_context: boolean;
     include_sources: boolean;
     mode: string;
+    message_id: string;
 }
 
-const getAnswer = async (inputQuery: string, modeIndex: string, organizationId: string) => {
+const vectorDB = process.env.VECTOR_DB || "qdrant"
+
+const getAnswer = async (inputQuery: string, modeIndex: string, organizationId: string, messageId: string) => {
     const body: RequestBody = {
         messages: [
             {
@@ -23,9 +26,10 @@ const getAnswer = async (inputQuery: string, modeIndex: string, organizationId: 
         use_context: false,
         include_sources: false,
         mode: modeIndex,
+        message_id: messageId
     };
 
-    const response = await fetch(`${baseURL}/v1/chat/stream`, {
+    const response = await fetch(`${baseURL}/v1/chat/stream?db=${vectorDB}`, {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
